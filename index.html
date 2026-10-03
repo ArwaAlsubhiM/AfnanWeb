@@ -140,7 +140,7 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
 .eyebrow{color:var(--sage-dark)}
 .section h2{font-size:clamp(30px,4vw,44px);margin:8px 0 0}
 .section-intro{max-width:560px;color:#746d65}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .card{border:1px solid var(--line);background:#fffaf4;padding:30px;min-height:230px;cursor:pointer;transition:.25s}
 .card:hover{transform:translateY(-4px);box-shadow:var(--soft)}
 .card h3{font-size:16px}.card p{color:#766f67;font-size:14px}.card-link{display:inline-block;margin-top:18px;border-bottom:1px solid #8c8379;font-size:13px}
@@ -598,6 +598,447 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+.report-card{
+  width:min(1050px,100%);
+  margin:0 auto;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.report-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:26px 28px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.report-head h3{
+  margin:5px 0 5px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.report-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.report-open-btn{
+  flex:0 0 auto;
+  padding:10px 18px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-size:13px;
+  font-weight:600;
+  transition:.2s ease;
+}
+.report-open-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.report-frame-wrap{
+  width:100%;
+  height:78vh;
+  min-height:620px;
+  background:#e8e0d7;
+}
+.report-frame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  background:#fff;
+}
+.report-note{
+  margin:0;
+  padding:12px 18px;
+  text-align:center;
+  color:#81786f;
+  font-size:11px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+@media(max-width:900px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+  .report-head{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:20px;
+  }
+  .report-open-btn{
+    width:100%;
+    text-align:center;
+  }
+  .report-frame-wrap{
+    height:68vh;
+    min-height:520px;
+  }
+}
+@media(max-width:650px){
+  .cards{grid-template-columns:1fr}
+}
+
+
+.plan-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-bottom:36px;
+}
+.training-plan-card{
+  background:#fffdfa;
+  border:1px solid var(--line);
+  padding:26px;
+  box-shadow:var(--soft);
+}
+.training-plan-card h3{
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:18px;
+  font-weight:500;
+  margin:8px 0 16px;
+}
+.plan-type{
+  display:inline-block;
+  font-size:11px;
+  color:var(--sage-dark);
+  border:1px solid #c9c0b5;
+  padding:5px 9px;
+  background:#f8f3ed;
+}
+.plan-meta{
+  display:grid;
+  gap:7px;
+  color:#676058;
+  font-size:13px;
+}
+.training-plan-card p{
+  color:#746d65;
+  font-size:13px;
+  margin:14px 0 0;
+}
+.plan-document{
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.plan-document-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:26px 28px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.plan-document-head h3{
+  margin:5px 0 4px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.plan-document-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.plan-open-btn{
+  flex:0 0 auto;
+  padding:10px 18px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-size:13px;
+  font-weight:600;
+}
+.plan-open-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.plan-frame-wrap{
+  width:100%;
+  height:78vh;
+  min-height:620px;
+  background:#e8e0d7;
+}
+.plan-frame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  background:#fff;
+}
+@media(max-width:800px){
+  .plan-summary-grid{grid-template-columns:1fr}
+  .plan-document-head{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:20px;
+  }
+  .plan-open-btn{
+    width:100%;
+    text-align:center;
+  }
+  .plan-frame-wrap{
+    height:68vh;
+    min-height:520px;
+  }
+}
+
+
+/* FINAL LIGHTWEIGHT HERO */
+.hero-shell{
+  grid-template-columns:minmax(0,1fr) 330px !important;
+  min-height:420px !important;
+  height:420px !important;
+}
+.hero-content{
+  height:420px !important;
+  padding:34px 44px !important;
+}
+.hero-visual.photo-visual{
+  height:420px !important;
+  min-height:420px !important;
+  background:#fffdfa !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+.hero-visual.photo-visual::before,
+.hero-visual.photo-visual::after{
+  display:none !important;
+  content:none !important;
+}
+.hero-visual.photo-visual img{
+  position:static !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  margin:0 !important;
+}
+
+/* SLIDES */
+.slide-viewer{
+  width:min(1050px,100%);
+  margin:0 auto;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+}
+.slide-viewer-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:18px 22px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.slide-viewer-head h3{
+  margin:4px 0 0;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:20px;
+  font-weight:500;
+}
+.slide-counter{
+  border:1px solid #c7bdb2;
+  background:#fff;
+  padding:6px 10px;
+  min-width:58px;
+  text-align:center;
+  font-size:13px;
+}
+.slide-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#fff;
+  overflow:hidden;
+}
+.training-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:none;
+  background:#fff;
+}
+.training-slide.active{display:block}
+.slide-controls{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:14px;
+  padding:14px 18px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+.slide-nav-btn{
+  min-width:100px;
+  padding:9px 14px;
+  border:1px solid #2f2c28;
+  background:#2f2c28;
+  color:#fff;
+  cursor:pointer;
+}
+.slide-dots{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.slide-dot{
+  width:9px;height:9px;border:0;border-radius:50%;
+  background:#c9c0b5;padding:0;cursor:pointer;
+}
+.slide-dot.active{background:#6f7869}
+
+@media(max-width:900px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+  .hero-content{
+    height:auto !important;
+    padding:38px 30px !important;
+  }
+  .hero-visual.photo-visual{
+    height:auto !important;
+    min-height:0 !important;
+  }
+  .hero-visual.photo-visual img{
+    width:100% !important;
+    height:auto !important;
+  }
+}
+@media(max-width:650px){
+  .hero-content{padding:32px 20px !important}
+  .slide-viewer-head{padding:14px 16px}
+  .slide-viewer-head h3{font-size:17px}
+  .slide-controls{
+    grid-template-columns:1fr 1fr;
+    padding:10px;
+    gap:10px;
+  }
+  .slide-dots{
+    grid-column:1/-1;
+    grid-row:2;
+  }
+  .slide-nav-btn{
+    width:100%;
+    min-width:0;
+  }
+}
+
+
+/* ORIGINAL PDF PRESENTATION VIEWER */
+.presentation-pdf-card{
+  width:min(1050px,100%);
+  margin:0 auto;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.presentation-pdf-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 28px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.presentation-pdf-head h3{
+  margin:5px 0 4px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.presentation-pdf-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.presentation-open-btn{
+  flex:0 0 auto;
+  padding:11px 20px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-size:14px;
+  font-weight:600;
+  text-align:center;
+}
+.presentation-open-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.presentation-pdf-wrap{
+  width:100%;
+  height:76vh;
+  min-height:620px;
+  background:#ece5dc;
+}
+.presentation-pdf{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.pdf-fallback{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+  padding:30px;
+}
+.pdf-fallback a{
+  display:inline-block;
+  padding:10px 18px;
+  background:#2f2c28;
+  color:#fff;
+}
+.presentation-note{
+  margin:0;
+  padding:11px 18px 13px;
+  text-align:center;
+  color:#81786f;
+  font-size:11px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+@media(max-width:700px){
+  .presentation-pdf-head{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px;
+  }
+  .presentation-open-btn{
+    width:100%;
+  }
+  .presentation-pdf-wrap{
+    height:58vh;
+    min-height:420px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -629,6 +1070,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
       <a data-page="plan" onclick="showPage('plan')">خطة التدريب</a>
       <a data-page="programs" onclick="showPage('programs')">برامج التدريب</a>
       <a data-page="presentations" onclick="showPage('presentations')">العروض</a>
+      <a data-page="reports" onclick="showPage('reports')">التقارير</a>
       <a data-page="about" onclick="showPage('about')">عن المنصة</a>
     </nav>
     <div class="nav-action">
@@ -675,6 +1117,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
         <div class="card" onclick="showPage('plan')"><h3>خطة التدريب</h3><p>عرض مراحل الخطة التدريبية وأهدافها وتنظيمها.</p><span class="card-link">فتح الصفحة ←</span></div>
         <div class="card" onclick="showPage('programs')"><h3>برامج التدريب</h3><p>الوصول إلى كل برنامج تدريبي وصفحته ومواده.</p><span class="card-link">فتح البرامج ←</span></div>
         <div class="card" onclick="showPage('presentations')"><h3>العروض التدريبية</h3><p>الوصول إلى العروض التقديمية والملفات التدريبية.</p><span class="card-link">فتح العروض ←</span></div>
+        <div class="card" onclick="showPage('reports')"><h3>التقارير</h3><p>عرض تقارير البرامج التدريبية ومخرجاتها وشواهدها.</p><span class="card-link">فتح التقارير ←</span></div>
         <div class="card" onclick="showPage('about')"><h3>عن المنصة</h3><p>التعرف على هدف المنصة والفئة المستفيدة والجهة التعليمية.</p><span class="card-link">قراءة المزيد ←</span></div>
       </div>
     </div>
@@ -683,13 +1126,110 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 
 <!-- PLAN -->
 <section class="page" id="page-plan">
-  <section class="page-hero"><div class="container"><span class="eyebrow">القسم الأول</span><h1>خطة التدريب</h1><p>تنظيم رحلة التطوير المهني من تحديد الاحتياج إلى قياس الأثر.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box">
-    <div class="plan-row"><span>01</span><div><h3>تحديد الاحتياجات التدريبية</h3><p>حصر الأولويات والمهارات المستهدفة وفق احتياجات المدرسة.</p></div><span class="pill">المرحلة الأولى</span></div>
-    <div class="plan-row"><span>02</span><div><h3>تصميم البرامج التدريبية</h3><p>اختيار الموضوعات والأدوات والمواد المناسبة.</p></div><span class="pill">الإعداد</span></div>
-    <div class="plan-row"><span>03</span><div><h3>تنفيذ البرامج</h3><p>تقديم البرامج وتوفير العروض والملفات التدريبية.</p></div><span class="pill">التنفيذ</span></div>
-    <div class="plan-row"><span>04</span><div><h3>المتابعة وقياس الأثر</h3><p>توثيق المخرجات ومراجعة الاستفادة وتطوير الخطة.</p></div><span class="pill">المتابعة</span></div>
-  </div></div></section>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">القسم الأول</span>
+      <h1>خطة التدريب ١٤٤٨</h1>
+      <p>الخطة الإجرائية للتنمية المهنية داخل المدرسة وخطة توطين التدريب.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="plan-summary-grid">
+
+        <article class="training-plan-card">
+          <span class="plan-type">مبادرة · برنامج تدريبي</span>
+          <h3>هندسة التعلم</h3>
+          <div class="plan-meta">
+            <span><b>الفئة:</b> المعلمات</span>
+            <span><b>المنفذة:</b> منسقة التدريب أفنان الصبحي</span>
+            <span><b>التاريخ:</b> ٢٤ / ٣ / ١٤٤٨</span>
+            <span><b>المكان:</b> غرفة المصادر</span>
+          </div>
+          <p>المتطلبات: جهاز عرض وأوراق عمل.</p>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">مبادرة · ورشة عمل</span>
+          <h3>توظيف برومتات الذكاء الاصطناعي لتسهيل عملية التعليم</h3>
+          <div class="plan-meta">
+            <span><b>الفئة:</b> المعلمات</span>
+            <span><b>المنفذة:</b> منسقة التدريب أفنان الصبحي</span>
+            <span><b>التاريخ:</b> ٢٤ / ٤ / ١٤٤٨</span>
+            <span><b>المكان:</b> غرفة المصادر</span>
+          </div>
+          <p>المتطلبات: جهاز عرض وأوراق عمل.</p>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">وزاري · برنامج تدريبي</span>
+          <h3>الرعاية النفسية والاجتماعية للموهوبين</h3>
+          <div class="plan-meta">
+            <span><b>الفئة:</b> المجتمع المدرسي</span>
+            <span><b>المنفذة:</b> منسقة الموهوبات نبيلة الدرهمي</span>
+            <span><b>التاريخ:</b> ١ / ٤ / ١٤٤٨</span>
+            <span><b>المكان:</b> عن بعد</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">مبادرة · برنامج تدريبي</span>
+          <h3>التنمر وأثره على الطلبة</h3>
+          <div class="plan-meta">
+            <span><b>الفئة:</b> الطالبات</span>
+            <span><b>المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
+            <span><b>التاريخ:</b> ٤ / ٤ / ١٤٤٨</span>
+            <span><b>المكان:</b> الفصول الدراسية</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">مبادرة · برنامج تدريبي</span>
+          <h3>تدريب الطالبات على برنامج نافس</h3>
+          <div class="plan-meta">
+            <span><b>الفئة:</b> طالبات الصف السادس والصف الثالث</span>
+            <span><b>التنفيذ:</b> طوال الفصل الدراسي</span>
+            <span><b>المكان:</b> الصف السادس والصف الثالث الابتدائي</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">وزاري · ورشة عمل</span>
+          <h3>تنمية الدافعية لرفع مستوى التحصيل الدراسي</h3>
+          <div class="plan-meta">
+            <span><b>الفئة:</b> الطالبات</span>
+            <span><b>المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
+            <span><b>التاريخ:</b> ٢٠ / ٤ / ١٤٤٨</span>
+            <span><b>المكان:</b> غرفة الإرشاد</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="plan-document">
+        <div class="plan-document-head">
+          <div>
+            <span class="eyebrow">الخطة الكاملة</span>
+            <h3>خطة التدريب ١٤٤٨</h3>
+            <p>يمكن تصفح ملف الخطة كاملًا داخل الموقع أو فتحه بصفحة مستقلة.</p>
+          </div>
+          <a class="plan-open-btn" href="assets/training-plan-1448.pdf" target="_blank" rel="noopener">
+            فتح الخطة كاملة
+          </a>
+        </div>
+
+        <div class="plan-frame-wrap">
+          <iframe
+            class="plan-frame"
+            src="assets/training-plan-1448.pdf#view=FitH"
+            title="خطة التدريب ١٤٤٨"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- PROGRAMS -->
@@ -709,40 +1249,84 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="container">
       <span class="eyebrow">قسم العروض</span>
       <h1>العروض التدريبية</h1>
-      <p>تصفحي الشرائح مباشرة داخل الموقع على الجوال أو الكمبيوتر.</p>
+      <p>عرض الشرائح الأصلية كما هي، دون تحويلها إلى صور.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="mobile-slide-viewer">
-        <div class="slide-viewer-head">
+      <div class="presentation-pdf-card">
+        <div class="presentation-pdf-head">
           <div>
             <span class="eyebrow">هندسة التعلم</span>
             <h3>العرض التدريبي</h3>
+            <p>العرض الأصلي بصيغة PDF للحفاظ على نفس تصميم الشرائح.</p>
           </div>
-          <div class="slide-counter"><span id="currentSlide">1</span> / 8</div>
+          <a class="presentation-open-btn"
+             href="assets/Presentation.pdf"
+             target="_blank"
+             rel="noopener">
+            فتح العرض
+          </a>
         </div>
 
-        <div class="slide-stage" id="slideStage">
-          <img class="training-slide active" src="assets/slides/slide-1.png" alt="الشريحة 1" data-slide="1">
-<img class="training-slide" src="assets/slides/slide-2.png" alt="الشريحة 2" data-slide="2">
-<img class="training-slide" src="assets/slides/slide-3.png" alt="الشريحة 3" data-slide="3">
-<img class="training-slide" src="assets/slides/slide-4.png" alt="الشريحة 4" data-slide="4">
-<img class="training-slide" src="assets/slides/slide-5.png" alt="الشريحة 5" data-slide="5">
-<img class="training-slide" src="assets/slides/slide-6.png" alt="الشريحة 6" data-slide="6">
-<img class="training-slide" src="assets/slides/slide-7.png" alt="الشريحة 7" data-slide="7">
-<img class="training-slide" src="assets/slides/slide-8.png" alt="الشريحة 8" data-slide="8">
+        <div class="presentation-pdf-wrap">
+          <object
+            class="presentation-pdf"
+            data="assets/Presentation.pdf#view=FitH"
+            type="application/pdf">
+            <div class="pdf-fallback">
+              <p>متصفحك لا يعرض ملف PDF داخل الصفحة.</p>
+              <a href="assets/Presentation.pdf" target="_blank" rel="noopener">فتح العرض في المتصفح</a>
+            </div>
+          </object>
         </div>
 
-        <div class="slide-controls">
-          <button type="button" class="slide-nav-btn" id="prevSlide">السابق</button>
-          <div class="slide-dots" id="slideDots" aria-label="التنقل بين الشرائح"></div>
-          <button type="button" class="slide-nav-btn" id="nextSlide">التالي</button>
-        </div>
-
-        <p class="slide-hint">يمكنك أيضًا السحب يمينًا أو يسارًا على الجوال للتنقل بين الشرائح.</p>
+        <p class="presentation-note">
+          على الجوال، إذا لم يظهر العرض داخل الصفحة، استخدمي زر «فتح العرض» لعرضه مباشرة في المتصفح.
+        </p>
       </div>
+    </div>
+  </section>
+</section>
+
+<!-- REPORTS -->
+<section class="page" id="page-reports">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">قسم التقارير</span>
+      <h1>التقارير</h1>
+      <p>تقارير البرامج التدريبية ومخرجاتها وشواهد التنفيذ.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="report-card">
+        <div class="report-head">
+          <div>
+            <span class="eyebrow">تقرير برنامج تدريبي</span>
+            <h3>هندسة التعلم</h3>
+            <p>تقرير البرنامج التدريبي متضمنًا الأهداف، النتائج، مؤشر تحقيق الهدف، والشواهد.</p>
+          </div>
+          <a class="report-open-btn" href="assets/learning-engineering-report.pdf" target="_blank" rel="noopener">
+            فتح التقرير كاملًا
+          </a>
+        </div>
+
+        <div class="report-frame-wrap">
+          <iframe
+            class="report-frame"
+            src="assets/learning-engineering-report.pdf#view=FitH"
+            title="تقرير برنامج هندسة التعلم"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <p class="report-note">
+          يمكن تصفح التقرير داخل الموقع، أو فتحه بصفحة كاملة لقراءة التفاصيل والشواهد بشكل أوضح.
+        </p>
+      </article>
     </div>
   </section>
 </section>
@@ -778,7 +1362,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 </footer>
 
 <script>
-const pages=['home','plan','programs','presentations','about','program1','program2','program3'];
+const pages=['home','plan','programs','presentations','reports','about','program1','program2','program3'];
 function showPage(name, updateHash=true){
   if(!pages.includes(name)) name='home';
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -793,67 +1377,6 @@ document.getElementById('menuBtn').onclick=()=>document.getElementById('navLinks
 const initial=location.hash.replace('#','');
 showPage(pages.includes(initial)?initial:'home',false);
 window.addEventListener('hashchange',()=>showPage(location.hash.replace('#',''),false));
-
-let slideIndex = 1;
-const totalSlides = 8;
-
-function setTrainingSlide(n){
-  if(n < 1) n = totalSlides;
-  if(n > totalSlides) n = 1;
-  slideIndex = n;
-
-  document.querySelectorAll('.training-slide').forEach((slide, idx) => {
-    slide.classList.toggle('active', idx === slideIndex - 1);
-  });
-
-  document.querySelectorAll('.slide-dot').forEach((dot, idx) => {
-    dot.classList.toggle('active', idx === slideIndex - 1);
-  });
-
-  const counter = document.getElementById('currentSlide');
-  if(counter) counter.textContent = slideIndex;
-}
-
-function initTrainingSlides(){
-  const dots = document.getElementById('slideDots');
-  if(!dots) return;
-
-  dots.innerHTML = '';
-  for(let i = 1; i <= totalSlides; i++){
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'slide-dot' + (i === 1 ? ' active' : '');
-    dot.setAttribute('aria-label', 'الشريحة ' + i);
-    dot.addEventListener('click', () => setTrainingSlide(i));
-    dots.appendChild(dot);
-  }
-
-  const prev = document.getElementById('prevSlide');
-  const next = document.getElementById('nextSlide');
-  if(prev) prev.addEventListener('click', () => setTrainingSlide(slideIndex - 1));
-  if(next) next.addEventListener('click', () => setTrainingSlide(slideIndex + 1));
-
-  const stage = document.getElementById('slideStage');
-  if(stage){
-    let startX = 0;
-    stage.addEventListener('touchstart', e => {
-      startX = e.changedTouches[0].screenX;
-    }, {passive:true});
-
-    stage.addEventListener('touchend', e => {
-      const endX = e.changedTouches[0].screenX;
-      const delta = endX - startX;
-      if(Math.abs(delta) > 45){
-        if(delta < 0) setTrainingSlide(slideIndex + 1);
-        else setTrainingSlide(slideIndex - 1);
-      }
-    }, {passive:true});
-  }
-
-  setTrainingSlide(1);
-}
-
-document.addEventListener('DOMContentLoaded', initTrainingSlides);
 
 </script>
 </body>
