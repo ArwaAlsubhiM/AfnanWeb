@@ -2758,6 +2758,756 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* TRAINING NEEDS */
+.needs-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin-bottom:38px;
+}
+.needs-card{
+  position:relative;
+  padding:22px 24px;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  border-top:3px solid var(--sage-dark);
+  box-shadow:var(--soft);
+}
+.needs-card span{
+  display:inline-flex;
+  width:34px;
+  height:34px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #c8beb2;
+  border-radius:50%;
+  color:var(--sage-dark);
+  font-size:11px;
+}
+.needs-card h3{
+  margin:12px 0 0;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:16px;
+  line-height:1.8;
+  font-weight:500;
+}
+.needs-document{
+  border:1px solid var(--line);
+  background:#fffdfa;
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.needs-document-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  padding:24px 28px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.needs-document-head h3{
+  margin:5px 0 4px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.needs-document-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.needs-open-btn{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px;
+  border-radius:7px;
+  border:1px solid #6f7869;
+  background:#6f7869;
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+}
+.needs-open-btn:hover{
+  background:#5f685a;
+  border-color:#5f685a;
+}
+.needs-pdf-wrap{
+  width:100%;
+  height:70vh;
+  min-height:560px;
+  background:#ece5dc;
+}
+.needs-pdf{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+@media(max-width:800px){
+  .needs-grid{grid-template-columns:1fr}
+  .needs-document-head{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px;
+  }
+  .needs-open-btn{width:100%}
+  .needs-pdf-wrap{
+    height:58vh;
+    min-height:430px;
+  }
+}
+
+
+/* SCHOOL PHOTO — FULL ORIGINAL IMAGE, NO CROPPING */
+.school-image-section{
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#f8f5ef !important;
+  overflow:visible !important;
+  line-height:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Make sure no mobile rule crops it again */
+@media(max-width:1000px){
+  .school-image-section img{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
+}
+
+@media(max-width:650px){
+  .school-image-section img{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+  }
+}
+
+
+/* HERO MATCHES SCHOOL IMAGE SECTION */
+.hero{
+  padding:20px 0 0 !important;
+  background:var(--paper) !important;
+}
+
+.hero .container{
+  width:min(1180px,92%) !important;
+  margin:auto !important;
+}
+
+.hero-shell,
+.school-image-section{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+}
+
+.hero-shell{
+  display:block !important;
+  height:auto !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  box-shadow:none !important;
+  background:#77756d !important;
+}
+
+.hero-content{
+  width:100% !important;
+  height:auto !important;
+  min-height:360px !important;
+  padding:42px 52px !important;
+  margin:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  background:
+    linear-gradient(150deg,rgba(67,65,58,.82),rgba(110,105,95,.67)),
+    radial-gradient(circle at 15% 15%,rgba(255,255,255,.10),transparent 28%),
+    linear-gradient(120deg,#8c9182,#b5a99d) !important;
+}
+
+.hero h1{
+  max-width:850px !important;
+  margin:14px 0 20px !important;
+  font-size:clamp(36px,4.5vw,58px) !important;
+  line-height:1.5 !important;
+}
+
+.hero p{
+  max-width:850px !important;
+  font-size:18px !important;
+  line-height:2 !important;
+  margin:0 !important;
+}
+
+.hero-actions{
+  margin-top:30px !important;
+}
+
+.school-image-section{
+  display:block !important;
+  padding:0 !important;
+  background:#f8f5ef !important;
+  overflow:visible !important;
+}
+
+.school-image-section img{
+  width:100% !important;
+  height:auto !important;
+  display:block !important;
+  margin:0 !important;
+}
+
+/* phone */
+@media(max-width:650px){
+  .hero .container{
+    width:94% !important;
+  }
+
+  .hero-content{
+    min-height:0 !important;
+    padding:32px 24px !important;
+  }
+
+  .hero h1{
+    font-size:34px !important;
+    line-height:1.55 !important;
+  }
+
+  .hero p{
+    font-size:17px !important;
+  }
+}
+
+
+/* RESTORE HERO BUTTONS */
+.hero-actions{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  margin-top:28px !important;
+  flex-wrap:wrap !important;
+  position:relative !important;
+  z-index:5 !important;
+}
+
+.hero-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:160px !important;
+  padding:11px 20px !important;
+  border:1px solid rgba(255,255,255,.78) !important;
+  border-radius:7px !important;
+  background:#fffdfa !important;
+  color:#3b3934 !important;
+  font-size:14px !important;
+  font-weight:600 !important;
+  cursor:pointer !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  position:relative !important;
+  z-index:6 !important;
+}
+
+.hero-btn:hover{
+  background:#f1ece5 !important;
+  color:#2f2c28 !important;
+}
+
+@media(max-width:650px){
+  .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:9px !important;
+    margin-top:24px !important;
+  }
+
+  .hero-btn{
+    width:100% !important;
+    min-width:0 !important;
+    padding:10px 12px !important;
+    font-size:13px !important;
+  }
+}
+
+
+/* FINAL FIX: KEEP HERO BUTTONS VISIBLE */
+.hero-shell{
+  height:auto !important;
+  min-height:0 !important;
+  overflow:visible !important;
+}
+
+.hero-content{
+  height:auto !important;
+  min-height:0 !important;
+  overflow:visible !important;
+  padding:46px 52px 44px !important;
+}
+
+.hero-actions{
+  display:flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:20 !important;
+  gap:12px !important;
+  margin-top:28px !important;
+  padding-bottom:4px !important;
+}
+
+.hero-btn{
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:21 !important;
+}
+
+/* School photo stays AFTER the complete hero */
+.school-image-section{
+  clear:both !important;
+  position:relative !important;
+  z-index:1 !important;
+  margin:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
+
+/* Narrow screens: give text and buttons their natural height */
+@media(max-width:650px){
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    padding:34px 24px 36px !important;
+  }
+
+  .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+    margin-top:26px !important;
+  }
+
+  .hero-btn{
+    width:100% !important;
+    min-width:0 !important;
+  }
+}
+
+
+/* KEEP BUTTONS COMPLETELY INSIDE HERO */
+.hero-shell{
+  position:relative !important;
+  overflow:hidden !important;
+  margin-bottom:18px !important;
+}
+
+.hero-content{
+  position:relative !important;
+  z-index:2 !important;
+  overflow:visible !important;
+  padding:46px 52px 52px !important;
+}
+
+.hero-actions{
+  position:static !important;
+  z-index:auto !important;
+  margin-top:28px !important;
+  padding:0 !important;
+}
+
+.hero-btn{
+  position:static !important;
+  z-index:auto !important;
+}
+
+/* SCHOOL IMAGE IS A SEPARATE BLOCK BELOW */
+.school-image-section{
+  position:relative !important;
+  z-index:1 !important;
+  clear:both !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  margin:0 !important;
+  object-fit:contain !important;
+}
+
+@media(max-width:650px){
+  .hero-shell{
+    margin-bottom:14px !important;
+  }
+
+  .hero-content{
+    padding:34px 24px 40px !important;
+  }
+}
+
+
+/* FINAL HERO STRUCTURE — BUTTONS INSIDE HERO */
+.hero{
+  padding:20px 0 0 !important;
+  background:var(--paper) !important;
+}
+
+.hero .container{
+  width:min(1180px,92%) !important;
+  margin:0 auto !important;
+}
+
+.hero-shell{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  margin:0 !important;
+  background:#77756d !important;
+  box-shadow:none !important;
+}
+
+.hero-content{
+  position:relative !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  padding:46px 52px 50px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  overflow:visible !important;
+  color:#fff !important;
+  background:
+    linear-gradient(150deg,rgba(67,65,58,.82),rgba(110,105,95,.67)),
+    radial-gradient(circle at 15% 15%,rgba(255,255,255,.10),transparent 28%),
+    linear-gradient(120deg,#8c9182,#b5a99d) !important;
+}
+
+.hero-content h1{
+  margin:14px 0 20px !important;
+  max-width:900px !important;
+}
+
+.hero-content p{
+  margin:0 !important;
+  max-width:900px !important;
+}
+
+.hero-actions{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin-top:28px !important;
+  padding:0 !important;
+  position:relative !important;
+  z-index:5 !important;
+}
+
+.hero-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:165px !important;
+  padding:11px 20px !important;
+  margin:0 !important;
+  border:1px solid rgba(255,255,255,.78) !important;
+  border-radius:7px !important;
+  background:#fffdfa !important;
+  color:#3b3934 !important;
+  font-size:14px !important;
+  font-weight:600 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  position:relative !important;
+  z-index:6 !important;
+  cursor:pointer !important;
+}
+
+.hero-btn:hover{
+  background:#f1ece5 !important;
+  color:#2f2c28 !important;
+}
+
+/* SCHOOL IMAGE IS AFTER HERO, NOT INSIDE IT */
+.hero-visual.photo-visual{
+  display:none !important;
+}
+
+.school-image-section{
+  display:block !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  line-height:0 !important;
+  background:#f8f5ef !important;
+  overflow:hidden !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+@media(max-width:650px){
+  .hero-content{
+    padding:34px 24px 38px !important;
+  }
+
+  .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:9px !important;
+    margin-top:24px !important;
+  }
+
+  .hero-btn{
+    width:100% !important;
+    min-width:0 !important;
+    padding:10px 12px !important;
+    font-size:13px !important;
+  }
+}
+
+
+/* REFERENCE SCREENSHOT LAYOUT — FINAL */
+.hero{
+  padding:20px 0 0 !important;
+  background:var(--paper) !important;
+}
+
+.hero .container{
+  width:min(1180px,92%) !important;
+  margin:0 auto !important;
+}
+
+/* Grey hero block */
+.hero-shell{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  background:#77756d !important;
+  box-shadow:none !important;
+  border:0 !important;
+}
+
+.hero-content{
+  width:100% !important;
+  min-height:610px !important;
+  height:auto !important;
+  padding:46px 64px 56px !important;
+  margin:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:stretch !important;
+  color:#fff !important;
+  background:
+    linear-gradient(150deg,rgba(67,65,58,.80),rgba(110,105,95,.68)),
+    radial-gradient(circle at 12% 18%,rgba(255,255,255,.10),transparent 30%),
+    linear-gradient(120deg,#8c9182,#b5a99d) !important;
+}
+
+.hero-identity{
+  justify-content:center !important;
+  margin-bottom:18px !important;
+}
+
+.hero h1{
+  width:min(920px,100%) !important;
+  margin:12px auto 30px !important;
+  font-size:clamp(44px,5vw,68px) !important;
+  line-height:1.52 !important;
+  text-align:center !important;
+  font-weight:500 !important;
+}
+
+.hero p{
+  width:min(920px,100%) !important;
+  margin:0 auto !important;
+  font-size:clamp(18px,2vw,25px) !important;
+  line-height:2.05 !important;
+  text-align:center !important;
+  color:rgba(255,255,255,.94) !important;
+}
+
+.hero-actions{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:16px !important;
+  flex-wrap:wrap !important;
+  margin-top:42px !important;
+  padding:0 !important;
+}
+
+.hero-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:260px !important;
+  padding:15px 24px !important;
+  margin:0 !important;
+  border:1px solid rgba(255,255,255,.84) !important;
+  border-radius:0 !important;
+  background:#fffdfa !important;
+  color:#34312d !important;
+  font-size:18px !important;
+  font-weight:600 !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  cursor:pointer !important;
+}
+
+.hero-btn:hover{
+  background:#f2ece4 !important;
+  color:#2f2c28 !important;
+  transform:none !important;
+}
+
+/* No image inside hero */
+.hero-visual.photo-visual{
+  display:none !important;
+}
+
+/* School photo directly below hero, full original, no crop */
+.school-image-section{
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#f8f5ef !important;
+  overflow:visible !important;
+  line-height:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Tablet: match reference proportions closely */
+@media(max-width:1000px){
+  .hero-content{
+    min-height:760px !important;
+    padding:44px 44px 56px !important;
+  }
+
+  .hero h1{
+    font-size:56px !important;
+    line-height:1.52 !important;
+  }
+
+  .hero p{
+    font-size:24px !important;
+    line-height:2.05 !important;
+  }
+
+  .hero-actions{
+    margin-top:48px !important;
+  }
+
+  .hero-btn{
+    min-width:300px !important;
+    font-size:18px !important;
+  }
+}
+
+/* Phone */
+@media(max-width:650px){
+  .hero .container{
+    width:94% !important;
+  }
+
+  .hero-content{
+    min-height:560px !important;
+    padding:32px 22px 38px !important;
+  }
+
+  .hero-identity{
+    justify-content:center !important;
+    gap:8px !important;
+  }
+
+  .hero h1{
+    font-size:38px !important;
+    line-height:1.55 !important;
+    margin-bottom:22px !important;
+  }
+
+  .hero p{
+    font-size:18px !important;
+    line-height:2 !important;
+  }
+
+  .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+    width:100% !important;
+    margin-top:34px !important;
+  }
+
+  .hero-btn{
+    width:100% !important;
+    min-width:0 !important;
+    padding:12px 8px !important;
+    font-size:14px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2786,6 +3536,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     </div>
     <nav class="nav-links" id="navLinks">
       <a data-page="home" onclick="showPage('home')">الرئيسية</a>
+      <a data-page="needs" onclick="showPage('needs')">حصر الاحتياجات التدريبية</a>
       <a data-page="plan" onclick="showPage('plan')">خطة التدريب</a>
       <a data-page="programs" onclick="showPage('programs')">برامج التدريب</a>
       <a data-page="evaluation" onclick="showPage('evaluation')">تقييم البرامج التدريبية</a>
@@ -2802,36 +3553,134 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 <section class="page active" id="page-home">
   <section class="hero">
     <div class="container">
+
       <div class="hero-shell">
         <div class="hero-content">
           <div class="hero-identity">
             <span class="kicker">التعلّم المستمر · التطوير · الأثر</span>
             <span class="hero-slogan">معًا نصنع الفرق</span>
           </div>
+
           <h1>مساحة تدريبية صُممت لتطوير الممارسة التعليمية.</h1>
+
           <p>منصة رقمية مخصصة لمعلمات ابتدائية ساحل حلي، تجمع الخطة التدريبية والبرامج والمواد التعليمية في تجربة بسيطة ومنظمة.</p>
+
           <div class="hero-actions">
-            <button class="hero-btn" onclick="showPage('programs')">استعراض البرامج</button>
-            <button class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
+            <button type="button" class="hero-btn" onclick="showPage('programs')">استعراض البرامج</button>
+            <button type="button" class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
       </div>
 
-      <div class="school-image-section">
-        <img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
+      <div class="school-image-section"><img src="assets/school.jpg" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
       </div>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">الأقسام الرئيسية</span>
+          <h2>كل ما تحتاجه المعلمة في مكان واحد</h2>
+        </div>
+        <p class="section-intro">اختاري القسم المطلوب للانتقال إليه مباشرة.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card" onclick="showPage('needs')">
+          <h3>حصر الاحتياجات التدريبية</h3>
+          <p>استعراض احتياجات معلمات المدرسة التدريبية لتوجيه البرامج وفق الأولويات الفعلية.</p>
+          <span class="card-link">عرض الحصر ←</span>
+        </div>
+
+        <div class="card" onclick="showPage('plan')">
+          <h3>خطة التدريب</h3>
+          <p>عرض مراحل الخطة التدريبية وأهدافها وتنظيمها.</p>
+          <span class="card-link">فتح الصفحة ←</span>
+        </div>
+
+        <div class="card" onclick="showPage('programs')">
+          <h3>برامج التدريب</h3>
+          <p>الوصول إلى كل برنامج تدريبي وصفحته ومواده.</p>
+          <span class="card-link">فتح البرامج ←</span>
+        </div>
+
+        <div class="card" onclick="showPage('evaluation')">
+          <h3>تقييم البرامج التدريبية</h3>
+          <p>تقييم البرامج التدريبية وقياس مدى الاستفادة منها.</p>
+          <span class="card-link">فتح التقييمات ←</span>
+        </div>
+
+        <div class="card" onclick="showPage('about')">
+          <h3>عن المنصة</h3>
+          <p>التعرف على هدف المنصة والفئة المستفيدة والجهة التعليمية.</p>
+          <span class="card-link">قراءة المزيد ←</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- TRAINING NEEDS -->
+<section class="page" id="page-needs">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">قبل خطة التدريب</span>
+      <h1>حصر الاحتياجات التدريبية</h1>
+      <p>حصر احتياجات معلمات المدرسة التدريبية بهدف بناء خطة تدريبية أكثر ارتباطًا بالممارسة التعليمية واحتياجات الميدان.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-top"><div><span class="eyebrow">الأقسام الرئيسية</span><h2>كل ما تحتاجه المعلمة في مكان واحد</h2></div><p class="section-intro">اختاري القسم المطلوب للانتقال إليه مباشرة.</p></div>
-      <div class="cards">
-        <div class="card" onclick="showPage('plan')"><h3>خطة التدريب</h3><p>عرض مراحل الخطة التدريبية وأهدافها وتنظيمها.</p><span class="card-link">فتح الصفحة ←</span></div>
-        <div class="card" onclick="showPage('programs')"><h3>برامج التدريب</h3><p>الوصول إلى كل برنامج تدريبي وصفحته ومواده.</p><span class="card-link">فتح البرامج ←</span></div>
-        <div class="card" onclick="showPage('evaluation')"><h3>تقييم البرامج التدريبية</h3><p>تقييم البرامج التدريبية وقياس مدى الاستفادة منها.</p><span class="card-link">فتح التقييمات ←</span></div>
-        <div class="card" onclick="showPage('about')"><h3>عن المنصة</h3><p>التعرف على هدف المنصة والفئة المستفيدة والجهة التعليمية.</p><span class="card-link">قراءة المزيد ←</span></div>
+
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">نتائج الحصر</span>
+          <h2>الاحتياجات التدريبية للمعلمات</h2>
+        </div>
+        <p class="section-intro">
+          تم جمع مقترحات المعلمات حول البرامج والورش التدريبية التي يرغبن في الاستفادة منها.
+        </p>
       </div>
+
+      <div class="needs-grid">
+        <article class="needs-card"><span>01</span><h3>التقنية الحديثة في رياض الأطفال</h3></article>
+        <article class="needs-card"><span>02</span><h3>الذكاء الاصطناعي</h3></article>
+        <article class="needs-card"><span>03</span><h3>التعامل مع تشتت الانتباه وضعف الاستيعاب</h3></article>
+        <article class="needs-card"><span>04</span><h3>توظيف الذكاء الاصطناعي في التعليم</h3></article>
+        <article class="needs-card"><span>05</span><h3>تنمية مهارات التفكير الناقد والإبداعي</h3></article>
+        <article class="needs-card"><span>06</span><h3>إبداع التعليم واستراتيجيات المستقبل</h3></article>
+        <article class="needs-card"><span>07</span><h3>تدريس اللغة الإنجليزية</h3></article>
+      </div>
+
+      <div class="needs-document">
+        <div class="needs-document-head">
+          <div>
+            <span class="eyebrow">ملف الحصر</span>
+            <h3>الاحتياجات التدريبية للمعلمات</h3>
+            <p>الاستجابات الأصلية الواردة في نموذج حصر الاحتياجات التدريبية.</p>
+          </div>
+          <a class="needs-open-btn" href="assets/training-needs.pdf" target="_blank" rel="noopener">
+            فتح الملف كاملًا
+          </a>
+        </div>
+
+        <div class="needs-pdf-wrap">
+          <object class="needs-pdf"
+                  data="assets/training-needs.pdf#view=FitH"
+                  type="application/pdf">
+            <div class="pdf-fallback">
+              <p>متصفحك لا يعرض ملف الحصر داخل الصفحة.</p>
+              <a href="assets/training-needs.pdf" target="_blank" rel="noopener">فتح الملف في المتصفح</a>
+            </div>
+          </object>
+        </div>
+      </div>
+
     </div>
   </section>
 </section>
@@ -3271,7 +4120,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 </footer>
 
 <script>
-const pages=['home','plan','programs','evaluation','about','program1','program2','program3'];
+const pages=['home','needs','plan','programs','evaluation','about','program1','program2','program3'];
 function showPage(name, updateHash=true){
   if(!pages.includes(name)) name='home';
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
