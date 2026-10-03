@@ -72,7 +72,7 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
 .hero h1,.page-hero h1,.section h2,.card h3,.program-card h3,.content-box h2,.plan-row h3{font-family:"Noto Kufi Arabic",sans-serif;font-weight:500}
 .hero h1{font-size:clamp(34px,4.1vw,50px);line-height:1.45;margin:14px 0 18px}
 .hero p{font-size:16px;color:rgba(255,255,255,.90);max-width:590px}
-.hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.hero-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
 .hero-btn{
   min-width:165px;
   padding:12px 22px;
@@ -203,71 +203,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 }
 
 
-.presentation-grid{
-  display:grid;
-  grid-template-columns:minmax(0,780px);
-  justify-content:center;
-}
-.presentation-card{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  background:#fffdfa;
-  border:1px solid var(--line);
-  box-shadow:var(--soft);
-  overflow:hidden;
-}
-.presentation-preview{
-  min-height:320px;
-  background:#eee7dd;
-  overflow:hidden;
-}
-.presentation-preview img{
-  width:100%;
-  height:100%;
-  min-height:320px;
-  display:block;
-  object-fit:cover;
-}
-.presentation-info{
-  padding:34px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-.presentation-info h3{
-  font-family:"Noto Kufi Arabic",sans-serif;
-  font-size:24px;
-  font-weight:500;
-  margin:8px 0 10px;
-}
-.presentation-info p{
-  color:#746d65;
-  margin:0;
-}
-.presentation-btn{
-  display:inline-block;
-  align-self:flex-start;
-  margin-top:24px;
-  padding:11px 22px;
-  background:#2f2c28;
-  color:#fff;
-  border:1px solid #2f2c28;
-  font-weight:600;
-  font-size:14px;
-  transition:.2s ease;
-}
-.presentation-btn:hover{
-  background:#6f7869;
-  border-color:#6f7869;
-}
-@media(max-width:900px){
-  .presentation-card{grid-template-columns:1fr}
-  .presentation-preview,.presentation-preview img{min-height:260px}
-  .cards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:650px){
-  .presentation-info{padding:24px}
-  .cards{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
 }
 
 
@@ -303,6 +239,150 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   .school-slogan{font-size:9px}
   .hero-identity{gap:8px}
   .hero-slogan{font-size:10px;padding:4px 9px}
+}
+
+
+.slides-viewer-card{
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.slides-viewer-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:28px 30px;
+  border-bottom:1px solid var(--line);
+  background:#fbf7f1;
+}
+.slides-viewer-head h3{
+  margin:5px 0 4px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.slides-viewer-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.viewer-open-btn{
+  flex:0 0 auto;
+  padding:10px 18px;
+  border:1px solid #2f2c28;
+  background:#2f2c28;
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  transition:.2s ease;
+}
+.viewer-open-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.pdf-frame-wrap{
+  width:100%;
+  height:78vh;
+  min-height:560px;
+  background:#e8e0d7;
+}
+.pdf-frame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  background:#fff;
+}
+.viewer-note{
+  margin:0;
+  padding:13px 20px;
+  text-align:center;
+  color:#777067;
+  font-size:12px;
+  border-top:1px solid var(--line);
+  background:#faf6f0;
+}
+@media(max-width:700px){
+  .slides-viewer-head{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:22px;
+  }
+  .viewer-open-btn{
+    width:100%;
+    text-align:center;
+  }
+  .pdf-frame-wrap{
+    height:68vh;
+    min-height:480px;
+  }
+}
+
+
+/* BALANCED HERO */
+.hero-shell{
+  height:430px;
+  min-height:430px !important;
+}
+.hero-content{
+  height:430px;
+  padding:36px 46px !important;
+}
+.hero-visual.photo-visual{
+  height:430px;
+  min-height:430px !important;
+}
+.hero-visual.photo-visual img{
+  height:430px !important;
+  min-height:430px !important;
+  object-fit:cover;
+  object-position:center 48%;
+}
+.hero h1{
+  font-size:clamp(30px,3.35vw,43px) !important;
+  line-height:1.45 !important;
+  margin:12px 0 15px !important;
+}
+.hero p{
+  font-size:15px !important;
+  line-height:1.9;
+}
+.hero-actions{
+  margin-top:22px !important;
+}
+.hero-btn{
+  min-width:150px;
+  padding:10px 18px;
+}
+@media(max-width:900px){
+  .hero-shell{
+    height:auto;
+    min-height:0 !important;
+  }
+  .hero-content{
+    height:auto;
+    padding:42px 34px !important;
+  }
+  .hero-visual.photo-visual,
+  .hero-visual.photo-visual img{
+    height:340px !important;
+    min-height:340px !important;
+  }
+}
+@media(max-width:650px){
+  .hero-content{
+    padding:36px 22px !important;
+  }
+  .hero h1{
+    font-size:30px !important;
+  }
+  .hero-visual.photo-visual,
+  .hero-visual.photo-visual img{
+    height:300px !important;
+    min-height:300px !important;
+  }
 }
 
 </style>
@@ -416,24 +496,36 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="container">
       <span class="eyebrow">قسم العروض</span>
       <h1>العروض التدريبية</h1>
-      <p>العروض والملفات التدريبية المساندة للبرامج المهنية.</p>
+      <p>تصفحي العرض التدريبي مباشرة داخل الموقع دون الحاجة إلى تحميله.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="presentation-grid">
-        <article class="presentation-card">
-          <div class="presentation-preview">
-            <img src="assets/presentation-preview.jpg" alt="معاينة العرض التدريبي">
-          </div>
-          <div class="presentation-info">
-            <span class="eyebrow">KEYNOTE</span>
+      <div class="slides-viewer-card">
+        <div class="slides-viewer-head">
+          <div>
+            <span class="eyebrow">عرض تدريبي</span>
             <h3>العرض التدريبي</h3>
-            <p>عرض تقديمي مرفق بصيغة Keynote، متاح للتحميل والفتح على أجهزة Apple.</p>
-            <a class="presentation-btn" href="assets/Presentation.key" download>تحميل العرض</a>
+            <p>استخدمي شريط أدوات الـ PDF للتنقل بين الشرائح أو تكبير العرض.</p>
           </div>
-        </article>
+          <a class="viewer-open-btn" href="assets/Presentation.pdf" target="_blank" rel="noopener">
+            فتح بصفحة كاملة
+          </a>
+        </div>
+
+        <div class="pdf-frame-wrap">
+          <iframe
+            class="pdf-frame"
+            src="assets/Presentation.pdf#view=FitH"
+            title="العرض التدريبي"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <p class="viewer-note">
+          إذا لم يظهر العارض في متصفح معين، اضغطي «فتح بصفحة كاملة» لعرض الشرائح مباشرة في المتصفح.
+        </p>
       </div>
     </div>
   </section>
