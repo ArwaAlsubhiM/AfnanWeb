@@ -151,6 +151,34 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   .moe-logo{width:78px}
   .announcement .desktop-note{display:none}.brand-copy span{display:none}.hero{padding-top:12px}.hero-content{padding:50px 26px}.hero h1{font-size:36px}.hero-visual{min-height:320px}.trust{margin-top:0}.trust-grid{grid-template-columns:1fr}.trust-item{border-left:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.section-top{display:block}.section-intro{margin-top:14px}.plan-row{grid-template-columns:60px 1fr}.pill{grid-column:2;justify-self:start}.footer-wrap{flex-direction:column;align-items:flex-start}
 }
+
+/* FINAL SCHOOL PHOTO FIX */
+.hero-visual.photo-visual{
+  position:relative !important;
+  overflow:hidden !important;
+  background:#d8ccbd !important;
+}
+.hero-visual.photo-visual::before,
+.hero-visual.photo-visual::after{
+  display:none !important;
+  content:none !important;
+  width:0 !important;
+  height:0 !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+.hero-visual.photo-visual img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  display:block !important;
+  z-index:5 !important;
+}
+
 </style>
 </head>
 <body>
