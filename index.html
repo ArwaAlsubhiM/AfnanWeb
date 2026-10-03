@@ -3677,6 +3677,184 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* SMALLER FRONT AREA — KEEP SCHOOL PHOTO EXACTLY AS BEFORE */
+.hero{
+  padding:14px 0 42px !important;
+}
+
+/* Make the whole opening block narrower, instead of shrinking/cropping the photo */
+.hero .container{
+  width:min(980px,88%) !important;
+  margin:0 auto !important;
+}
+
+/* Hero stays compact */
+.hero-content{
+  min-height:340px !important;
+  padding:30px 42px 34px !important;
+}
+
+/* Restore the school photo to its original full-width presentation */
+.school-image-section{
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:visible !important;
+  background:#f8f5ef !important;
+  line-height:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Keep typography balanced */
+.hero h1{
+  font-size:clamp(30px,3.2vw,42px) !important;
+}
+
+.hero p{
+  font-size:15px !important;
+}
+
+@media(max-width:900px){
+  .hero .container{
+    width:90% !important;
+  }
+
+  .hero-content{
+    min-height:310px !important;
+    padding:28px 30px 32px !important;
+  }
+
+  .hero h1{
+    font-size:34px !important;
+  }
+
+  .school-image-section img{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero .container{
+    width:92% !important;
+  }
+
+  .hero-content{
+    min-height:0 !important;
+    padding:26px 20px 28px !important;
+  }
+
+  .hero h1{
+    font-size:27px !important;
+  }
+
+  .hero p{
+    font-size:14px !important;
+  }
+
+  .school-image-section img{
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+  }
+}
+
+
+/* MORE COMPACT FRONT AREA — KEEP IMAGE STYLE UNCHANGED */
+.hero{
+  padding:10px 0 30px !important;
+}
+
+.hero .container{
+  width:min(880px,84%) !important;
+  margin:0 auto !important;
+}
+
+.hero-content{
+  min-height:290px !important;
+  padding:24px 34px 28px !important;
+}
+
+.hero h1{
+  font-size:clamp(28px,3vw,38px) !important;
+  line-height:1.42 !important;
+  margin:8px auto 14px !important;
+}
+
+.hero p{
+  font-size:14px !important;
+  line-height:1.8 !important;
+}
+
+.hero-actions{
+  margin-top:20px !important;
+}
+
+.hero-btn{
+  min-width:180px !important;
+  padding:10px 16px !important;
+  font-size:13px !important;
+}
+
+/* Keep school image exactly full and uncropped */
+.school-image-section img{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+}
+
+@media(max-width:900px){
+  .hero .container{
+    width:88% !important;
+  }
+
+  .hero-content{
+    min-height:270px !important;
+    padding:24px 26px 28px !important;
+  }
+
+  .hero h1{
+    font-size:31px !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero .container{
+    width:90% !important;
+  }
+
+  .hero-content{
+    min-height:0 !important;
+    padding:22px 18px 24px !important;
+  }
+
+  .hero h1{
+    font-size:25px !important;
+  }
+
+  .hero p{
+    font-size:13px !important;
+  }
+
+  .hero-actions{
+    margin-top:18px !important;
+  }
+}
+
 </style>
 </head>
 <body>
