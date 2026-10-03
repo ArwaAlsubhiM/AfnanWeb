@@ -4071,6 +4071,311 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* FULL ORIGINAL SCHOOL PHOTO — NO CROP */
+.hero-shell{
+  height:340px !important;
+  min-height:340px !important;
+  grid-template-columns:191px minmax(0,1fr) !important;
+  grid-template-areas:"school content" !important;
+}
+
+.hero-content{
+  height:340px !important;
+  min-height:340px !important;
+}
+
+.school-image-section{
+  grid-area:school !important;
+  width:191px !important;
+  height:340px !important;
+  min-height:340px !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:transparent !important;
+  display:block !important;
+  line-height:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:191px !important;
+  height:340px !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Keep image proportional on smaller screens */
+@media(max-width:800px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "content"
+      "school" !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .school-image-section{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .school-image-section img{
+    width:100% !important;
+    height:auto !important;
+    max-width:100% !important;
+    object-fit:contain !important;
+  }
+}
+
+
+/* EQUAL HERO + SCHOOL IMAGE SIDES */
+.hero-shell{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  grid-template-areas:"school content" !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  overflow:hidden !important;
+}
+
+.hero-content{
+  grid-area:content !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  padding:26px 30px !important;
+}
+
+.school-image-section{
+  grid-area:school !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  margin:0 !important;
+  padding:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+  background:#f8f5ef !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 !important;
+}
+
+/* Keep the opening area compact */
+.hero h1{
+  font-size:clamp(26px,2.8vw,36px) !important;
+}
+
+.hero p{
+  font-size:14px !important;
+}
+
+@media(max-width:800px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "content"
+      "school" !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .school-image-section{
+    height:300px !important;
+    min-height:300px !important;
+  }
+}
+
+
+/* FINAL 50 / 50 HERO */
+.hero-shell{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  grid-template-areas:"school content" !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  overflow:hidden !important;
+}
+
+.hero-content{
+  grid-area:content !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  padding:26px 30px !important;
+}
+
+.school-image-section{
+  grid-area:school !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:#f8f5ef !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+@media(max-width:800px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "content"
+      "school" !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .school-image-section{
+    height:300px !important;
+    min-height:300px !important;
+  }
+}
+
+
+/* KEEP ALL HERO CONTENT INSIDE THE 50/50 BLOCK */
+.hero-shell{
+  height:360px !important;
+  min-height:360px !important;
+}
+
+.hero-content{
+  height:360px !important;
+  min-height:360px !important;
+  padding:22px 28px !important;
+  overflow:hidden !important;
+  justify-content:center !important;
+}
+
+.hero-identity{
+  margin-bottom:6px !important;
+  gap:8px !important;
+}
+
+.hero .kicker{
+  font-size:10px !important;
+}
+
+.hero .hero-slogan{
+  font-size:9px !important;
+  padding:3px 8px !important;
+}
+
+.hero h1{
+  font-size:30px !important;
+  line-height:1.42 !important;
+  margin:8px 0 12px !important;
+  max-width:100% !important;
+}
+
+.hero p{
+  font-size:13px !important;
+  line-height:1.75 !important;
+  margin:0 !important;
+  max-width:100% !important;
+}
+
+.hero-actions{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  gap:10px !important;
+  margin-top:16px !important;
+  padding:0 !important;
+}
+
+.hero-btn{
+  flex:1 1 0 !important;
+  min-width:0 !important;
+  max-width:none !important;
+  width:auto !important;
+  padding:9px 10px !important;
+  font-size:12px !important;
+  line-height:1.4 !important;
+  white-space:nowrap !important;
+}
+
+.school-image-section{
+  height:360px !important;
+  min-height:360px !important;
+}
+
+/* stack only on small screens */
+@media(max-width:800px){
+  .hero-shell{
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+  }
+
+  .hero-actions{
+    flex-wrap:wrap !important;
+  }
+
+  .hero-btn{
+    flex:1 1 140px !important;
+  }
+
+  .school-image-section{
+    height:300px !important;
+    min-height:300px !important;
+  }
+}
+
 </style>
 </head>
 <body>
