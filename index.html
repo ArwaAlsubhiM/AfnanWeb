@@ -338,7 +338,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   height:430px !important;
   min-height:430px !important;
   object-fit:cover;
-  object-position:center top;
+  object-position:center 48%;
 }
 .hero h1{
   font-size:clamp(30px,3.35vw,43px) !important;
@@ -386,52 +386,215 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 }
 
 
-/* KEEP SCHOOL SIGN VISIBLE */
+/* FULL SCHOOL PHOTO, SHORTER HERO */
+.hero-shell{
+  height:420px !important;
+  min-height:420px !important;
+}
+.hero-content{
+  height:420px !important;
+  padding:34px 44px !important;
+}
+.hero-visual.photo-visual{
+  position:relative !important;
+  height:420px !important;
+  min-height:420px !important;
+  overflow:hidden !important;
+  background:#cfc6ba !important;
+  isolation:isolate;
+}
+.hero-visual.photo-visual::before{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:-22px !important;
+  width:auto !important;
+  height:auto !important;
+  background:url("assets/school.png") center center / cover no-repeat !important;
+  filter:blur(14px) brightness(.82) saturate(.85);
+  transform:scale(1.08);
+  opacity:.62;
+  z-index:0;
+}
+.hero-visual.photo-visual::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:rgba(255,253,249,.12) !important;
+  z-index:1;
+}
 .hero-visual.photo-visual img{
-  object-position:center top !important;
+  position:relative !important;
+  inset:auto !important;
+  z-index:2 !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  margin:0 !important;
 }
 
-/* MOBILE SLIDES IMPROVEMENTS */
-@media(max-width:700px){
-  .pdf-frame-wrap{
-    height:58vh !important;
-    min-height:420px !important;
+/* RESPONSIVE IMAGE SLIDE VIEWER */
+.mobile-slide-viewer{
+  width:min(1050px,100%);
+  margin:0 auto;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.slide-viewer-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:20px 24px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.slide-viewer-head h3{
+  margin:4px 0 0;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:20px;
+  font-weight:500;
+}
+.slide-counter{
+  flex:0 0 auto;
+  min-width:62px;
+  text-align:center;
+  padding:7px 12px;
+  border:1px solid #c8beb2;
+  color:#625c55;
+  font-weight:600;
+  font-size:13px;
+  background:#fff;
+}
+.slide-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#e9e2d9;
+  overflow:hidden;
+  touch-action:pan-y;
+}
+.training-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#fff;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .18s ease;
+}
+.training-slide.active{
+  opacity:1;
+  visibility:visible;
+}
+.slide-controls{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:16px 20px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+.slide-nav-btn{
+  min-width:100px;
+  padding:10px 16px;
+  border:1px solid #2f2c28;
+  background:#2f2c28;
+  color:#fff;
+  cursor:pointer;
+  font-family:"Tajawal",sans-serif;
+  font-weight:600;
+  transition:.18s ease;
+}
+.slide-nav-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.slide-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.slide-dot{
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#c9c0b5;
+  cursor:pointer;
+}
+.slide-dot.active{background:#6f7869}
+.slide-hint{
+  margin:0;
+  padding:10px 18px 13px;
+  text-align:center;
+  color:#81786f;
+  font-size:11px;
+  background:#f7f2eb;
+}
+
+@media(max-width:900px){
+  .hero-shell{
+    height:auto !important;
+    min-height:0 !important;
   }
-  .pdf-frame{
-    width:100% !important;
-    height:100% !important;
+  .hero-content{
+    height:auto !important;
+    padding:40px 32px !important;
   }
-  .slides-viewer-card{
-    overflow:visible;
-  }
-  .slides-viewer-head{
-    padding:20px !important;
-  }
-  .slides-viewer-head h3{
-    font-size:20px;
-  }
-  .viewer-open-btn{
-    display:block;
-    width:100%;
-    text-align:center;
-    padding:12px 16px;
-    font-size:14px;
-  }
-  .viewer-note{
-    font-size:11px;
-    line-height:1.7;
+  .hero-visual.photo-visual{
+    height:380px !important;
+    min-height:380px !important;
   }
 }
 
-/* PHONE HERO: preserve school sign and avoid over-cropping */
 @media(max-width:650px){
-  .hero-visual.photo-visual,
-  .hero-visual.photo-visual img{
-    height:340px !important;
-    min-height:340px !important;
+  .hero-content{
+    padding:34px 22px !important;
   }
-  .hero-visual.photo-visual img{
-    object-position:center top !important;
+  .hero-visual.photo-visual{
+    height:330px !important;
+    min-height:330px !important;
+  }
+  .slide-viewer-head{
+    padding:15px 16px;
+  }
+  .slide-viewer-head h3{
+    font-size:17px;
+  }
+  .slide-counter{
+    min-width:54px;
+    padding:5px 9px;
+  }
+  .slide-stage{
+    aspect-ratio:16 / 9;
+  }
+  .slide-controls{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:12px;
+  }
+  .slide-dots{
+    grid-column:1 / -1;
+    grid-row:2;
+    gap:6px;
+  }
+  .slide-nav-btn{
+    width:100%;
+    min-width:0;
+    padding:10px 12px;
   }
 }
 
@@ -546,36 +709,39 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="container">
       <span class="eyebrow">قسم العروض</span>
       <h1>العروض التدريبية</h1>
-      <p>تصفحي العرض التدريبي مباشرة داخل الموقع دون الحاجة إلى تحميله.</p>
+      <p>تصفحي الشرائح مباشرة داخل الموقع على الجوال أو الكمبيوتر.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="slides-viewer-card">
-        <div class="slides-viewer-head">
+      <div class="mobile-slide-viewer">
+        <div class="slide-viewer-head">
           <div>
-            <span class="eyebrow">عرض تدريبي</span>
+            <span class="eyebrow">هندسة التعلم</span>
             <h3>العرض التدريبي</h3>
-            <p>استخدمي شريط أدوات الـ PDF للتنقل بين الشرائح أو تكبير العرض.</p>
           </div>
-          <a class="viewer-open-btn" href="assets/Presentation.pdf" target="_blank" rel="noopener">
-            فتح بصفحة كاملة
-          </a>
+          <div class="slide-counter"><span id="currentSlide">1</span> / 8</div>
         </div>
 
-        <div class="pdf-frame-wrap">
-          <iframe
-            class="pdf-frame"
-            src="assets/Presentation.pdf#view=FitH"
-            title="العرض التدريبي"
-            loading="lazy">
-          </iframe>
+        <div class="slide-stage" id="slideStage">
+          <img class="training-slide active" src="assets/slides/slide-1.png" alt="الشريحة 1" data-slide="1">
+<img class="training-slide" src="assets/slides/slide-2.png" alt="الشريحة 2" data-slide="2">
+<img class="training-slide" src="assets/slides/slide-3.png" alt="الشريحة 3" data-slide="3">
+<img class="training-slide" src="assets/slides/slide-4.png" alt="الشريحة 4" data-slide="4">
+<img class="training-slide" src="assets/slides/slide-5.png" alt="الشريحة 5" data-slide="5">
+<img class="training-slide" src="assets/slides/slide-6.png" alt="الشريحة 6" data-slide="6">
+<img class="training-slide" src="assets/slides/slide-7.png" alt="الشريحة 7" data-slide="7">
+<img class="training-slide" src="assets/slides/slide-8.png" alt="الشريحة 8" data-slide="8">
         </div>
 
-        <p class="viewer-note">
-          إذا لم يظهر العارض في متصفح معين، اضغطي «فتح بصفحة كاملة» لعرض الشرائح مباشرة في المتصفح.
-        </p>
+        <div class="slide-controls">
+          <button type="button" class="slide-nav-btn" id="prevSlide">السابق</button>
+          <div class="slide-dots" id="slideDots" aria-label="التنقل بين الشرائح"></div>
+          <button type="button" class="slide-nav-btn" id="nextSlide">التالي</button>
+        </div>
+
+        <p class="slide-hint">يمكنك أيضًا السحب يمينًا أو يسارًا على الجوال للتنقل بين الشرائح.</p>
       </div>
     </div>
   </section>
@@ -627,6 +793,68 @@ document.getElementById('menuBtn').onclick=()=>document.getElementById('navLinks
 const initial=location.hash.replace('#','');
 showPage(pages.includes(initial)?initial:'home',false);
 window.addEventListener('hashchange',()=>showPage(location.hash.replace('#',''),false));
+
+let slideIndex = 1;
+const totalSlides = 8;
+
+function setTrainingSlide(n){
+  if(n < 1) n = totalSlides;
+  if(n > totalSlides) n = 1;
+  slideIndex = n;
+
+  document.querySelectorAll('.training-slide').forEach((slide, idx) => {
+    slide.classList.toggle('active', idx === slideIndex - 1);
+  });
+
+  document.querySelectorAll('.slide-dot').forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === slideIndex - 1);
+  });
+
+  const counter = document.getElementById('currentSlide');
+  if(counter) counter.textContent = slideIndex;
+}
+
+function initTrainingSlides(){
+  const dots = document.getElementById('slideDots');
+  if(!dots) return;
+
+  dots.innerHTML = '';
+  for(let i = 1; i <= totalSlides; i++){
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'slide-dot' + (i === 1 ? ' active' : '');
+    dot.setAttribute('aria-label', 'الشريحة ' + i);
+    dot.addEventListener('click', () => setTrainingSlide(i));
+    dots.appendChild(dot);
+  }
+
+  const prev = document.getElementById('prevSlide');
+  const next = document.getElementById('nextSlide');
+  if(prev) prev.addEventListener('click', () => setTrainingSlide(slideIndex - 1));
+  if(next) next.addEventListener('click', () => setTrainingSlide(slideIndex + 1));
+
+  const stage = document.getElementById('slideStage');
+  if(stage){
+    let startX = 0;
+    stage.addEventListener('touchstart', e => {
+      startX = e.changedTouches[0].screenX;
+    }, {passive:true});
+
+    stage.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].screenX;
+      const delta = endX - startX;
+      if(Math.abs(delta) > 45){
+        if(delta < 0) setTrainingSlide(slideIndex + 1);
+        else setTrainingSlide(slideIndex - 1);
+      }
+    }, {passive:true});
+  }
+
+  setTrainingSlide(1);
+}
+
+document.addEventListener('DOMContentLoaded', initTrainingSlides);
+
 </script>
 </body>
 </html>
