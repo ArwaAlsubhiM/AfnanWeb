@@ -2041,6 +2041,128 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* EVALUATION + IMPACT BUTTONS IN SAME CARD */
+.evaluation-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.evaluation-actions .evaluation-btn{
+  margin-top:0 !important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:130px;
+}
+.evaluation-actions .impact-btn{
+  background:transparent;
+  color:#2f2c28;
+  border-color:#6f7869;
+}
+.evaluation-actions .impact-btn:hover{
+  background:#6f7869;
+  color:#fff;
+}
+@media(max-width:650px){
+  .evaluation-actions{
+    flex-direction:column;
+  }
+  .evaluation-actions .evaluation-btn{
+    width:100%;
+  }
+}
+
+
+/* HERO — ORIGINAL SPLIT STYLE */
+.hero{
+  padding:22px 0 58px !important;
+}
+
+.hero-shell{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr) !important;
+  height:360px !important;
+  min-height:360px !important;
+  overflow:hidden !important;
+  background:#b3afa6 !important;
+  box-shadow:var(--shadow) !important;
+}
+
+.hero-content{
+  height:360px !important;
+  min-height:0 !important;
+  padding:30px 42px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+}
+
+.hero-visual.photo-visual{
+  position:relative !important;
+  width:100% !important;
+  height:360px !important;
+  min-height:360px !important;
+  max-height:360px !important;
+  overflow:hidden !important;
+  background:#d8ccbd !important;
+  display:block !important;
+}
+
+.hero-visual.photo-visual::before,
+.hero-visual.photo-visual::after{
+  display:none !important;
+  content:none !important;
+}
+
+.hero-visual.photo-visual img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center 42% !important;
+  display:block !important;
+  margin:0 !important;
+}
+
+@media(max-width:900px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    padding:30px 24px !important;
+  }
+
+  .hero-visual.photo-visual{
+    height:230px !important;
+    min-height:230px !important;
+    max-height:230px !important;
+  }
+
+  .hero-visual.photo-visual img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center 38% !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero-visual.photo-visual{
+    height:205px !important;
+    min-height:205px !important;
+    max-height:205px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2102,12 +2224,6 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
         </div>
       </div>
-
-      <div class="trust"><div class="trust-grid">
-        <div class="trust-item"><strong>تعلّم مهني منظم</strong><span>خطط وبرامج تدعم التطوير داخل البيئة المدرسية</span></div>
-        <div class="trust-item"><strong>برامج مرتبطة بالممارسة التعليمية</strong><span>محتوى تدريبي يساعد المعلمات في العمل اليومي</span></div>
-        <div class="trust-item"><strong>محتوى تعليمي متاح بسهولة</strong><span>مواد تدريبية يمكن الرجوع إليها في أي وقت</span></div>
-      </div></div>
     </div>
   </section>
 
@@ -2319,10 +2435,22 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <span class="evaluation-number">01</span>
           <h3>هندسة التعلم</h3>
           <p>تقييم البرنامج من حيث المحتوى، وضوح الأهداف، الفائدة المهنية، وطريقة التقديم.</p>
-          <a class="evaluation-btn evaluation-link"
-             href="assets/report.pdf"
-             target="_blank"
-             rel="noopener">فتح التقييم</a>
+
+          <div class="evaluation-actions">
+            <a class="evaluation-btn evaluation-link"
+               href="https://forms.cloud.microsoft/r/tD59yq2DV"
+               target="_blank"
+               rel="noopener">
+              فتح التقييم
+            </a>
+
+            <a class="evaluation-btn evaluation-link impact-btn"
+               href="assets/report.pdf"
+               target="_blank"
+               rel="noopener">
+              قياس الأثر
+            </a>
+          </div>
         </article>
 
         <article class="evaluation-card">
