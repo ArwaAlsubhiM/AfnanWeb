@@ -16,14 +16,35 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Tajawal",sans-serif;line-height:1.8}
 a{text-decoration:none;color:inherit} button{font:inherit}.container{width:min(1180px,92%);margin:auto}
+.credit-bar{
+  position:sticky;
+  top:0;
+  z-index:140;
+  background:#2f2c28;
+  color:#fff;
+  text-align:center;
+  padding:9px 16px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.1px;
+  box-shadow:0 6px 18px rgba(38,34,30,.12);
+}
 
 .announcement{background:#e8ddd2;color:#4a433d;font-size:13px;border-bottom:1px solid rgba(0,0,0,.04)}
 .announcement .container{height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--sage-dark);display:inline-block;margin-left:8px}
 
-.header{position:sticky;top:0;z-index:100;background:rgba(255,253,250,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.header{position:sticky;top:40px;z-index:130;background:rgba(255,253,250,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{min-height:78px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:30px}
 .brand{display:flex;align-items:center;gap:14px;cursor:pointer}
+.moe-logo{
+  width:108px;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  mix-blend-mode:multiply;
+}
 .brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #bfb5a9;border-radius:50%;font-family:"Noto Kufi Arabic",sans-serif;font-size:12px;background:#fbf8f3}
 .brand-copy strong{display:block;font-family:"Noto Kufi Arabic",sans-serif;font-size:14px;font-weight:600;line-height:1.5}
 .brand-copy span{display:block;color:#817970;font-size:11px}
@@ -118,15 +139,24 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 .footer-wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-wrap p{color:rgba(255,255,255,.6);font-size:12px}
 
 @media(max-width:900px){
+  .photo-visual img{min-height:390px}
   .nav{grid-template-columns:auto auto}.nav-links{position:absolute;top:78px;right:4%;left:4%;display:none;flex-direction:column;background:var(--paper);border:1px solid var(--line);box-shadow:var(--soft);padding:14px 20px;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0}.nav-links a:after{display:none}.nav-action{justify-self:end}.menu-btn{display:inline-block}.outline-btn{display:none}
   .hero-shell{grid-template-columns:1fr}.hero-visual{min-height:390px}.hero-content{padding:64px 42px}.cards,.program-grid{grid-template-columns:1fr}
 }
 @media(max-width:650px){
+  .photo-visual img{min-height:320px}
+  .credit-bar{font-size:11px;padding:8px 10px}
+  .header{top:37px}
+  .moe-logo{width:78px}
   .announcement .desktop-note{display:none}.brand-copy span{display:none}.hero{padding-top:12px}.hero-content{padding:50px 26px}.hero h1{font-size:36px}.hero-visual{min-height:320px}.trust{margin-top:0}.trust-grid{grid-template-columns:1fr}.trust-item{border-left:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.section-top{display:block}.section-intro{margin-top:14px}.plan-row{grid-template-columns:60px 1fr}.pill{grid-column:2;justify-self:start}.footer-wrap{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
+
+<div class="credit-bar">
+  إعداد المعلمة أفنان حميد الصبحي ، و إشراف المديرة علية الكناني
+</div>
 
 <div class="announcement">
   <div class="container">
@@ -138,6 +168,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 <header class="header">
   <div class="container nav">
     <div class="brand" onclick="showPage('home')">
+      <img class="moe-logo" src="assets/1.png" alt="وزارة التعليم">
       <span class="brand-mark">س ح</span>
       <span class="brand-copy"><strong>ابتدائية ساحل حلي</strong><span>منصة التطوير المهني</span></span>
     </div>
@@ -168,13 +199,11 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
             <button class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="classroom-board"><span class="board-line line-a"></span><span class="board-line line-b"></span><span class="board-line line-c"></span><span class="board-symbol">أ ب ج</span></div>
-          <div class="school-desk"></div>
-          <div class="notebook"><span></span><span></span><span></span></div>
-          <div class="pencil"></div>
-          <div class="school-building"><div class="roof"></div><div class="school-sign">مدرستي</div><div class="school-door"></div><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div><div class="window w4"></div></div>
+        <div class="hero-visual photo-visual">
+          <img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
         </div>
+      </div>
+    </div>
       </div>
 
       <div class="trust"><div class="trust-grid">
