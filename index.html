@@ -1769,6 +1769,91 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* SCHOOL IMAGE AS WIDE BANNER */
+.hero-shell{
+  grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr) !important;
+  height:320px !important;
+  min-height:320px !important;
+}
+.hero-content{
+  height:320px !important;
+  padding:26px 36px !important;
+}
+.hero-visual.photo-visual{
+  width:100% !important;
+  height:320px !important;
+  min-height:320px !important;
+  max-height:320px !important;
+  background:#f5f1ea !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:stretch !important;
+  justify-content:stretch !important;
+}
+.hero-visual.photo-visual::before,
+.hero-visual.photo-visual::after{
+  display:none !important;
+  content:none !important;
+}
+.hero-visual.photo-visual img{
+  width:100% !important;
+  height:100% !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center 18% !important;
+  display:block !important;
+  margin:0 !important;
+}
+
+@media(max-width:1100px){
+  .hero-shell{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.82fr) !important;
+    height:300px !important;
+    min-height:300px !important;
+  }
+  .hero-content,
+  .hero-visual.photo-visual{
+    height:300px !important;
+    min-height:300px !important;
+    max-height:300px !important;
+  }
+}
+
+@media(max-width:850px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+  .hero-content{
+    height:auto !important;
+    padding:28px 22px !important;
+  }
+  .hero-visual.photo-visual{
+    height:220px !important;
+    min-height:220px !important;
+    max-height:220px !important;
+  }
+  .hero-visual.photo-visual img{
+    height:220px !important;
+    object-fit:cover !important;
+    object-position:center 22% !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero-visual.photo-visual{
+    height:180px !important;
+    min-height:180px !important;
+    max-height:180px !important;
+  }
+  .hero-visual.photo-visual img{
+    height:180px !important;
+    object-position:center 20% !important;
+  }
+}
+
 </style>
 </head>
 <body>
