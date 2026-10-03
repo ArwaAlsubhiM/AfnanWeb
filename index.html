@@ -2163,6 +2163,601 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* ORIGINAL SCHOOL PHOTO FINAL FIX */
+.hero-shell{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr) !important;
+  height:360px !important;
+  min-height:360px !important;
+  overflow:hidden !important;
+  background:#b3afa6 !important;
+}
+
+.hero-content{
+  height:360px !important;
+  padding:30px 42px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+}
+
+.hero-visual.photo-visual{
+  position:relative !important;
+  width:100% !important;
+  height:360px !important;
+  min-height:360px !important;
+  overflow:hidden !important;
+  background:#d8ccbd !important;
+}
+
+.hero-visual.photo-visual::before,
+.hero-visual.photo-visual::after{
+  display:none !important;
+  content:none !important;
+}
+
+.hero-visual.photo-visual img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  display:block !important;
+  margin:0 !important;
+}
+
+@media(max-width:900px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    padding:30px 24px !important;
+  }
+
+  .hero-visual.photo-visual{
+    height:230px !important;
+    min-height:230px !important;
+  }
+
+  .hero-visual.photo-visual img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero-visual.photo-visual{
+    height:205px !important;
+    min-height:205px !important;
+  }
+}
+
+
+/* REFINED BUTTONS — SOFTER EDITORIAL STYLE */
+
+/* Hero buttons */
+.hero-actions{
+  gap:10px !important;
+  margin-top:20px !important;
+}
+
+.hero-btn{
+  min-width:145px !important;
+  padding:10px 18px !important;
+  border:1px solid rgba(255,255,255,.72) !important;
+  border-radius:7px !important;
+  background:rgba(255,255,255,.96) !important;
+  color:#3b3934 !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  box-shadow:0 6px 16px rgba(35,31,27,.08) !important;
+  transition:all .2s ease !important;
+}
+
+.hero-btn:hover{
+  background:#f2ece4 !important;
+  color:#2f2c28 !important;
+  border-color:#f2ece4 !important;
+  transform:translateY(-1px) !important;
+  box-shadow:0 8px 18px rgba(35,31,27,.11) !important;
+}
+
+/* Shared dark action buttons */
+.evaluation-btn,
+.evaluation-open-btn,
+.program-open-btn,
+.plan-open-btn,
+.report-open-btn,
+.presentation-open-btn,
+.viewer-open-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:40px !important;
+  padding:9px 16px !important;
+  border-radius:7px !important;
+  border:1px solid #6f7869 !important;
+  background:#6f7869 !important;
+  color:#fff !important;
+  font-size:13px !important;
+  font-weight:600 !important;
+  box-shadow:none !important;
+  transition:all .2s ease !important;
+}
+
+.evaluation-btn:hover,
+.evaluation-open-btn:hover,
+.program-open-btn:hover,
+.plan-open-btn:hover,
+.report-open-btn:hover,
+.presentation-open-btn:hover,
+.viewer-open-btn:hover{
+  background:#5f685a !important;
+  border-color:#5f685a !important;
+  transform:translateY(-1px) !important;
+}
+
+/* Secondary/impact button */
+.evaluation-actions .impact-btn{
+  background:#fffdfa !important;
+  color:#5f685a !important;
+  border:1px solid #a8b09e !important;
+}
+
+.evaluation-actions .impact-btn:hover{
+  background:#eef0e9 !important;
+  color:#4d5549 !important;
+  border-color:#8e9683 !important;
+}
+
+/* Small navigation buttons */
+.slide-nav-btn,
+.plan-nav-btn{
+  min-width:94px !important;
+  padding:9px 14px !important;
+  border-radius:7px !important;
+  border:1px solid #6f7869 !important;
+  background:#6f7869 !important;
+  color:#fff !important;
+  font-weight:600 !important;
+  transition:all .2s ease !important;
+}
+
+.slide-nav-btn:hover,
+.plan-nav-btn:hover{
+  background:#5f685a !important;
+  border-color:#5f685a !important;
+}
+
+/* Header action */
+.outline-btn{
+  border:1px solid #aaa095 !important;
+  border-radius:7px !important;
+  background:#fffdfa !important;
+  padding:8px 15px !important;
+  color:#4a453f !important;
+}
+
+.outline-btn:hover{
+  background:#f0ebe4 !important;
+  color:#2f2c28 !important;
+}
+
+/* Mobile */
+@media(max-width:650px){
+  .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+  }
+
+  .hero-btn{
+    min-width:0 !important;
+    width:100% !important;
+    padding:10px 12px !important;
+    font-size:12px !important;
+  }
+
+  .evaluation-actions{
+    gap:8px !important;
+  }
+}
+
+
+/* MOBILE HERO: SCHOOL IMAGE ABOVE THE TEXT SECTION */
+@media(max-width:900px){
+  .hero-shell{
+    display:flex !important;
+    flex-direction:column !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+
+  .hero-visual.photo-visual{
+    order:1 !important;
+    width:100% !important;
+    height:230px !important;
+    min-height:230px !important;
+    max-height:230px !important;
+    background:#f8f5ef !important;
+    overflow:hidden !important;
+  }
+
+  .hero-visual.photo-visual img{
+    position:static !important;
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    max-height:none !important;
+    object-fit:cover !important;
+    object-position:center 42% !important;
+    display:block !important;
+  }
+
+  .hero-content{
+    order:2 !important;
+    width:100% !important;
+    height:auto !important;
+    padding:30px 24px !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero-visual.photo-visual{
+    height:205px !important;
+    min-height:205px !important;
+    max-height:205px !important;
+  }
+
+  .hero-visual.photo-visual img{
+    height:205px !important;
+    object-fit:cover !important;
+    object-position:center 42% !important;
+  }
+}
+
+
+/* HERO FIRST, SCHOOL IMAGE BELOW AS SEPARATE SECTION */
+.hero-shell{
+  display:block !important;
+  height:auto !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  background:#b3afa6 !important;
+}
+
+.hero-content{
+  width:100% !important;
+  height:auto !important;
+  min-height:340px !important;
+  padding:38px 48px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+}
+
+/* disable old in-hero image styles */
+.hero-visual.photo-visual{
+  display:none !important;
+}
+
+.school-image-section{
+  width:100% !important;
+  margin-top:18px !important;
+  background:#f8f5ef !important;
+  overflow:hidden !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:300px !important;
+  object-fit:cover !important;
+  object-position:center 42% !important;
+  margin:0 !important;
+}
+
+@media(max-width:900px){
+  .hero-content{
+    min-height:0 !important;
+    padding:32px 26px !important;
+  }
+
+  .school-image-section{
+    margin-top:14px !important;
+  }
+
+  .school-image-section img{
+    height:230px !important;
+    object-fit:cover !important;
+    object-position:center 42% !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero-content{
+    padding:30px 22px !important;
+  }
+
+  .school-image-section img{
+    height:205px !important;
+  }
+}
+
+
+/* EXACT LAYOUT: HERO FIRST, SCHOOL PHOTO DIRECTLY BELOW */
+.hero{
+  padding:22px 0 58px !important;
+}
+
+.hero .container{
+  overflow:hidden !important;
+}
+
+.hero-shell{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+}
+
+.hero-content{
+  width:100% !important;
+  min-height:340px !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:38px 48px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+}
+
+/* old image inside hero stays off */
+.hero-visual.photo-visual{
+  display:none !important;
+}
+
+/* school image starts immediately after hero */
+.school-image-section{
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#d8ccbd !important;
+  overflow:hidden !important;
+  line-height:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:300px !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:cover !important;
+  object-position:center 43% !important;
+}
+
+/* tablet */
+@media(max-width:900px){
+  .hero-content{
+    min-height:0 !important;
+    padding:32px 26px !important;
+  }
+
+  .school-image-section img{
+    height:245px !important;
+    object-position:center 42% !important;
+  }
+}
+
+/* phone */
+@media(max-width:650px){
+  .hero-content{
+    padding:30px 22px !important;
+  }
+
+  .school-image-section img{
+    height:220px !important;
+    object-position:center 40% !important;
+  }
+}
+
+
+/* MATCH THE REFERENCE: HERO FIRST, SCHOOL PHOTO BELOW */
+.hero{
+  padding:20px 0 0 !important;
+  background:var(--paper) !important;
+}
+
+.hero .container{
+  width:min(1180px,92%) !important;
+  margin:auto !important;
+  overflow:visible !important;
+}
+
+.hero-shell{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  background:#77756d !important;
+  box-shadow:var(--shadow) !important;
+}
+
+.hero-content{
+  width:100% !important;
+  min-height:610px !important;
+  height:auto !important;
+  margin:0 !important;
+  padding:54px 72px 64px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:stretch !important;
+  background:
+    linear-gradient(150deg,rgba(67,65,58,.84),rgba(110,105,95,.68)),
+    radial-gradient(circle at 15% 15%,rgba(255,255,255,.10),transparent 28%),
+    linear-gradient(120deg,#8c9182,#b5a99d) !important;
+  color:#fff !important;
+}
+
+.hero-identity{
+  margin-bottom:20px !important;
+}
+
+.hero h1{
+  max-width:900px !important;
+  margin:14px 0 26px !important;
+  font-size:clamp(42px,5.3vw,72px) !important;
+  line-height:1.5 !important;
+}
+
+.hero p{
+  max-width:900px !important;
+  margin:0 !important;
+  font-size:clamp(18px,2.1vw,28px) !important;
+  line-height:2.05 !important;
+}
+
+.hero-actions{
+  margin-top:44px !important;
+  display:flex !important;
+  gap:16px !important;
+  flex-wrap:wrap !important;
+}
+
+.hero-btn{
+  min-width:250px !important;
+  padding:16px 24px !important;
+  border-radius:0 !important;
+  font-size:18px !important;
+}
+
+/* no photo inside hero */
+.hero-visual.photo-visual{
+  display:none !important;
+}
+
+/* school image is a separate full-width section directly below */
+.school-image-section{
+  display:block !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:#e2d4c2 !important;
+  line-height:0 !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:360px !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:cover !important;
+  object-position:center 44% !important;
+}
+
+/* keep next section clearly after photo */
+.school-image-section + .section,
+.hero + .section{
+  margin-top:0 !important;
+}
+
+/* Tablet / narrow desktop — close to the reference screenshot */
+@media(max-width:1000px){
+  .hero-content{
+    min-height:790px !important;
+    padding:48px 54px 60px !important;
+  }
+
+  .hero h1{
+    font-size:56px !important;
+    line-height:1.55 !important;
+  }
+
+  .hero p{
+    font-size:24px !important;
+    line-height:2.05 !important;
+  }
+
+  .hero-actions{
+    margin-top:54px !important;
+    justify-content:center !important;
+  }
+
+  .hero-btn{
+    min-width:280px !important;
+    font-size:18px !important;
+  }
+
+  .school-image-section img{
+    height:330px !important;
+  }
+}
+
+/* Phone */
+@media(max-width:650px){
+  .hero .container{
+    width:94% !important;
+  }
+
+  .hero-content{
+    min-height:560px !important;
+    padding:34px 24px 40px !important;
+  }
+
+  .hero-identity{
+    justify-content:center !important;
+  }
+
+  .hero h1{
+    font-size:38px !important;
+    line-height:1.55 !important;
+    text-align:center !important;
+  }
+
+  .hero p{
+    font-size:18px !important;
+    line-height:2 !important;
+    text-align:center !important;
+  }
+
+  .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+    margin-top:38px !important;
+  }
+
+  .hero-btn{
+    width:100% !important;
+    min-width:0 !important;
+    padding:13px 10px !important;
+    font-size:14px !important;
+  }
+
+  .school-image-section img{
+    height:240px !important;
+    object-position:center 42% !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2220,9 +2815,10 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
             <button class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
-        <div class="hero-visual photo-visual">
-          <img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
-        </div>
+      </div>
+
+      <div class="school-image-section">
+        <img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
       </div>
     </div>
   </section>
