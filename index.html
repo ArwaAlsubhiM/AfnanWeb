@@ -1943,6 +1943,104 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* SCHOOL IMAGE — ORIGINAL SPLIT-HERO FEEL, COMPACT */
+.hero-shell{
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr) !important;
+  height:360px !important;
+  min-height:360px !important;
+  overflow:hidden !important;
+}
+
+.hero-content{
+  height:360px !important;
+  padding:30px 42px !important;
+}
+
+.hero-visual.photo-visual{
+  position:relative !important;
+  width:100% !important;
+  height:360px !important;
+  min-height:360px !important;
+  max-height:360px !important;
+  overflow:hidden !important;
+  background:#d8ccbd !important;
+  display:block !important;
+}
+
+.hero-visual.photo-visual::before,
+.hero-visual.photo-visual::after{
+  display:none !important;
+  content:none !important;
+}
+
+.hero-visual.photo-visual img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center 38% !important;
+  display:block !important;
+  margin:0 !important;
+}
+
+/* Keep the same feeling on tablets, just slightly shorter */
+@media(max-width:1100px){
+  .hero-shell{
+    grid-template-columns:minmax(0,1fr) minmax(320px,.9fr) !important;
+    height:340px !important;
+    min-height:340px !important;
+  }
+  .hero-content{
+    height:340px !important;
+    padding:28px 34px !important;
+  }
+  .hero-visual.photo-visual{
+    height:340px !important;
+    min-height:340px !important;
+    max-height:340px !important;
+  }
+}
+
+/* Mobile: image remains a wide, short photo — not a tall portrait */
+@media(max-width:850px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    padding:30px 22px !important;
+  }
+
+  .hero-visual.photo-visual{
+    width:100% !important;
+    height:230px !important;
+    min-height:230px !important;
+    max-height:230px !important;
+  }
+
+  .hero-visual.photo-visual img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center 34% !important;
+  }
+}
+
+@media(max-width:650px){
+  .hero-visual.photo-visual{
+    height:205px !important;
+    min-height:205px !important;
+    max-height:205px !important;
+  }
+}
+
 </style>
 </head>
 <body>
