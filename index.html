@@ -4376,6 +4376,67 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* ORIGINAL SCHOOL PHOTO — DIMENSIONS ONLY */
+.hero-shell{
+  grid-template-columns:1fr 1fr !important;
+  height:360px !important;
+  min-height:360px !important;
+}
+
+.hero-content{
+  height:360px !important;
+  min-height:360px !important;
+}
+
+.school-image-section{
+  width:100% !important;
+  height:360px !important;
+  min-height:360px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+  background:#f8f5ef !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+@media(max-width:800px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .school-image-section{
+    width:100% !important;
+    height:300px !important;
+    min-height:300px !important;
+  }
+
+  .school-image-section img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -4438,7 +4499,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
             <button type="button" class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
-<div class="school-image-section"><img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
+<div class="school-image-section"><img src="assets/school.jpg" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
       </div>
 </div>
 
