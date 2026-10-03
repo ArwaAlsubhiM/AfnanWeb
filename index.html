@@ -1599,6 +1599,85 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* LEARNING ENGINEERING EVALUATION */
+.evaluation-link{
+  display:inline-block;
+  text-decoration:none;
+}
+.evaluation-result-card{
+  margin-top:28px;
+  border:1px solid var(--line);
+  background:#fffdfa;
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.evaluation-result-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:22px 24px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.evaluation-result-head h3{
+  margin:5px 0 4px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:20px;
+  font-weight:500;
+}
+.evaluation-result-head p{
+  margin:0;
+  color:#746d65;
+  font-size:13px;
+}
+.evaluation-open-btn{
+  flex:0 0 auto;
+  display:inline-block;
+  padding:10px 18px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-size:13px;
+  font-weight:600;
+  text-align:center;
+}
+.evaluation-pdf-wrap{
+  width:100%;
+  height:58vh;
+  min-height:480px;
+  background:#ece5dc;
+}
+.evaluation-pdf{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.evaluation-result-note{
+  margin:0;
+  padding:10px 16px 12px;
+  text-align:center;
+  color:#81786f;
+  font-size:11px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+@media(max-width:700px){
+  .evaluation-result-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .evaluation-open-btn{
+    width:100%;
+  }
+  .evaluation-pdf-wrap{
+    height:52vh;
+    min-height:400px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1877,7 +1956,10 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <span class="evaluation-number">01</span>
           <h3>هندسة التعلم</h3>
           <p>تقييم البرنامج من حيث المحتوى، وضوح الأهداف، الفائدة المهنية، وطريقة التقديم.</p>
-          <button type="button" class="evaluation-btn" onclick="openEvaluation('هندسة التعلم')">فتح التقييم</button>
+          <a class="evaluation-btn evaluation-link"
+             href="assets/learning-engineering-evaluation.pdf"
+             target="_blank"
+             rel="noopener">فتح التقييم</a>
         </article>
 
         <article class="evaluation-card">
@@ -1893,6 +1975,35 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <p>تقييم جودة البرنامج ومدى دعمه لتصميم أنشطة تعليمية أكثر تفاعلًا.</p>
           <button type="button" class="evaluation-btn" onclick="openEvaluation('تصميم أنشطة تعليمية تفاعلية')">فتح التقييم</button>
         </article>
+      </div>
+
+      <div class="evaluation-result-card">
+        <div class="evaluation-result-head">
+          <div>
+            <span class="eyebrow">نتائج التقييم</span>
+            <h3>هندسة التعلم</h3>
+            <p>نتائج تقييم البرنامج من قبل المتدربات.</p>
+          </div>
+          <a class="evaluation-open-btn"
+             href="assets/learning-engineering-evaluation.pdf"
+             target="_blank"
+             rel="noopener">فتح التقييم كاملًا</a>
+        </div>
+        <div class="evaluation-pdf-wrap">
+          <object class="evaluation-pdf"
+                  data="assets/learning-engineering-evaluation.pdf#view=FitH"
+                  type="application/pdf">
+            <div class="pdf-fallback">
+              <p>متصفحك لا يعرض ملف التقييم داخل الصفحة.</p>
+              <a href="assets/learning-engineering-evaluation.pdf"
+                 target="_blank"
+                 rel="noopener">فتح التقييم في المتصفح</a>
+            </div>
+          </object>
+        </div>
+        <p class="evaluation-result-note">
+          يوضح الملف نتائج رضا المتدربات عن محتوى البرنامج وتحقيق أهدافه وتنظيمه والوسائل المستخدمة.
+        </p>
       </div>
 
       <div class="evaluation-placeholder" id="evaluationPanel">
