@@ -1,1 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ابتدائية ساحل حلي | منصة التطوير المهني</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2d2b27; --paper:#fffdfa; --ivory:#f8f5ef; --sand:#e9dfd3;
+  --sage:#8e9683; --sage-dark:#6f7869; --taupe:#a89c8e; --line:#e6ddd3;
+  --shadow:0 24px 60px rgba(54,47,40,.10); --soft:0 12px 35px rgba(54,47,40,.07);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Tajawal",sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit} button{font:inherit}.container{width:min(1180px,92%);margin:auto}
 
+.announcement{background:#e8ddd2;color:#4a433d;font-size:13px;border-bottom:1px solid rgba(0,0,0,.04)}
+.announcement .container{height:36px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--sage-dark);display:inline-block;margin-left:8px}
+
+.header{position:sticky;top:0;z-index:100;background:rgba(255,253,250,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:14px;cursor:pointer}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #bfb5a9;border-radius:50%;font-family:"Noto Kufi Arabic",sans-serif;font-size:12px;background:#fbf8f3}
+.brand-copy strong{display:block;font-family:"Noto Kufi Arabic",sans-serif;font-size:14px;font-weight:600;line-height:1.5}
+.brand-copy span{display:block;color:#817970;font-size:11px}
+.nav-links{display:flex;justify-content:center;gap:30px;font-size:14px;color:#5b554e}
+.nav-links a{position:relative;padding:27px 0 25px;cursor:pointer}
+.nav-links a:after{content:"";position:absolute;right:0;bottom:19px;width:0;height:1px;background:var(--ink);transition:.25s}
+.nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.nav-action{display:flex;align-items:center;gap:10px}
+.outline-btn{border:1px solid #bcb2a7;background:transparent;padding:9px 16px;font-size:13px;cursor:pointer}
+.outline-btn:hover{background:var(--ink);color:#fff}
+.menu-btn{display:none;border:0;background:transparent;font-size:24px;cursor:pointer}
+
+.page{display:none}.page.active{display:block}
+
+/* HOME */
+.hero{padding:22px 0 74px;background:var(--paper)}
+.hero-shell{min-height:610px;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;background:#b3afa6;box-shadow:var(--shadow)}
+.hero-content{position:relative;padding:74px 64px;color:#fff;background:
+linear-gradient(150deg,rgba(67,65,58,.78),rgba(110,105,95,.60)),
+radial-gradient(circle at 15% 15%,rgba(255,255,255,.12),transparent 28%),
+linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justify-content:center}
+.hero-content:after{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(255,255,255,.18);border-radius:50%;bottom:-115px;left:-80px}
+.kicker,.eyebrow{font-family:"Noto Kufi Arabic",sans-serif;font-size:12px;font-weight:500}
+.kicker{opacity:.88}
+.hero h1,.page-hero h1,.section h2,.card h3,.program-card h3,.content-box h2,.plan-row h3{font-family:"Noto Kufi Arabic",sans-serif;font-weight:500}
+.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.35;margin:18px 0 24px}
+.hero p{font-size:17px;color:rgba(255,255,255,.88);max-width:610px}
+.hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.hero-btn{min-width:160px;padding:12px 20px;border:1px solid rgba(255,255,255,.72);color:#fff;text-align:center;font-size:14px;cursor:pointer}
+.hero-btn:hover{background:#fff;color:var(--ink)}
+
+.hero-visual{position:relative;overflow:hidden;background:
+linear-gradient(180deg,rgba(255,255,255,.05),rgba(37,32,29,.08)),
+linear-gradient(135deg,#d8ccbd 0%,#eee6dc 48%,#aeb3a2 100%)}
+.hero-visual:before{content:"";position:absolute;width:74%;height:64%;right:13%;top:10%;background:#f5f0e8;box-shadow:0 30px 50px rgba(58,49,42,.10)}
+.classroom-board{position:absolute;width:60%;height:36%;right:20%;top:16%;z-index:3;background:linear-gradient(145deg,#6f7869,#89927f);border:12px solid #e8dfd4;box-shadow:0 16px 34px rgba(61,52,45,.16)}
+.board-line{position:absolute;right:12%;height:2px;background:rgba(255,255,255,.58)} .line-a{top:28%;width:54%}.line-b{top:48%;width:66%}.line-c{top:68%;width:42%}
+.board-symbol{position:absolute;left:9%;bottom:14%;color:#fff;font-family:"Noto Kufi Arabic",sans-serif;font-size:20px}
+.school-desk{position:absolute;left:0;right:0;bottom:0;height:29%;background:linear-gradient(180deg,#ae9c89,#8f7d6b);z-index:2}
+.notebook{position:absolute;width:180px;height:128px;left:13%;bottom:11%;z-index:5;background:#f8f4ed;transform:rotate(-7deg);box-shadow:0 18px 30px rgba(55,45,38,.16);border-right:12px solid #b7a594;padding-top:25px}
+.notebook span{display:block;height:1px;background:#d9d2ca;width:68%;margin:14px auto 0 14%}
+.pencil{position:absolute;width:150px;height:12px;left:25%;bottom:13%;background:#b08d5e;transform:rotate(18deg);z-index:6}
+.school-building{position:absolute;width:210px;height:150px;right:8%;bottom:8%;z-index:5;background:#f1ebe3;box-shadow:0 18px 30px rgba(49,40,33,.15);border:1px solid #d8cdbf}
+.roof{position:absolute;width:235px;height:34px;right:-13px;top:-34px;background:#8f9784;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.school-sign{position:absolute;top:14px;right:50%;transform:translateX(50%);font-family:"Noto Kufi Arabic",sans-serif;font-size:11px}
+.school-door{position:absolute;width:44px;height:62px;right:83px;bottom:0;background:#8d7e6e}
+.window{position:absolute;width:30px;height:34px;background:#b9c0b2;border:5px solid #e8dfd6}.w1{right:22px;top:52px}.w2{right:58px;top:52px}.w3{left:22px;top:52px}.w4{left:58px;top:52px}
+
+.trust{margin-top:-38px;position:relative;z-index:4}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fffaf4;border:1px solid var(--line);box-shadow:var(--soft)}
+.trust-item{padding:28px 24px;text-align:center;border-left:1px solid var(--line)}.trust-item:last-child{border-left:0}
+.trust-item strong{font-family:"Noto Kufi Arabic",sans-serif;font-size:13px;font-weight:500;display:block}.trust-item span{font-size:12px;color:#888078}
+
+.section{padding:96px 0}.section.alt{background:#f3ede6}
+.section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:42px}
+.eyebrow{color:var(--sage-dark)}
+.section h2{font-size:clamp(30px,4vw,44px);margin:8px 0 0}
+.section-intro{max-width:560px;color:#746d65}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--line);background:#fffaf4;padding:30px;min-height:230px;cursor:pointer;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--soft)}
+.card h3{font-size:16px}.card p{color:#766f67;font-size:14px}.card-link{display:inline-block;margin-top:18px;border-bottom:1px solid #8c8379;font-size:13px}
+
+/* INNER PAGES */
+.page-hero{padding:92px 0 80px;background:
+linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.02)),
+linear-gradient(135deg,#d8ccbd 0%,#ede5db 52%,#aeb3a2 100%);border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:clamp(38px,5vw,56px);margin:8px 0 14px}
+.page-hero p{max-width:700px;color:#5e5851;font-size:16px}
+.content-box{background:#fffdfa;border:1px solid var(--line);padding:40px;box-shadow:var(--soft)}
+.content-box h2{font-size:30px}
+
+.plan-row{display:grid;grid-template-columns:90px 1fr 120px;gap:20px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.plan-row:last-child{border-bottom:0}.plan-row h3{font-size:15px;margin:0 0 5px}.plan-row p{margin:0;color:#766f67;font-size:13px}
+.pill{border:1px solid #c5b9ac;padding:7px 10px;text-align:center;font-size:11px;color:#665f58;background:#f8f3ed}
+
+.program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.program-card{min-height:340px;padding:32px;color:#fff;position:relative;overflow:hidden;cursor:pointer;transition:.3s;background:
+linear-gradient(180deg,rgba(35,33,29,.06),rgba(35,33,29,.35)),
+linear-gradient(135deg,#909784,#c6b7a6 58%,#d9cec0)}
+.program-card:nth-child(2){background:linear-gradient(180deg,rgba(35,33,29,.05),rgba(35,33,29,.32)),linear-gradient(135deg,#c9b8a7,#9d9286)}
+.program-card:nth-child(3){background:linear-gradient(180deg,rgba(35,33,29,.05),rgba(35,33,29,.32)),linear-gradient(135deg,#b7aa9d,#8d9685)}
+.program-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.program-card:before{content:"";position:absolute;width:180px;height:220px;left:8%;bottom:-30px;background:rgba(245,239,231,.62);border-radius:90px 90px 14px 14px;transform:rotate(7deg)}
+.program-card h3,.program-card p,.program-card .open{position:relative;z-index:2}
+.program-card h3{font-size:24px;margin-top:150px}.program-card p{color:rgba(255,255,255,.86)}.program-card .open{display:inline-block;margin-top:14px;border-bottom:1px solid rgba(255,255,255,.8);font-size:13px}
+
+.slide-placeholder{min-height:360px;border:1px dashed #bfb3a7;background:#f3eee7;display:grid;place-items:center;text-align:center;color:#756d65;margin-top:24px}
+.back{display:inline-block;margin-top:24px;border-bottom:1px solid #8c8379;cursor:pointer}
+
+footer{background:#2f2c28;color:#fff;padding:42px 0}
+.footer-wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-wrap p{color:rgba(255,255,255,.6);font-size:12px}
+
+@media(max-width:900px){
+  .nav{grid-template-columns:auto auto}.nav-links{position:absolute;top:78px;right:4%;left:4%;display:none;flex-direction:column;background:var(--paper);border:1px solid var(--line);box-shadow:var(--soft);padding:14px 20px;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0}.nav-links a:after{display:none}.nav-action{justify-self:end}.menu-btn{display:inline-block}.outline-btn{display:none}
+  .hero-shell{grid-template-columns:1fr}.hero-visual{min-height:390px}.hero-content{padding:64px 42px}.cards,.program-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .announcement .desktop-note{display:none}.brand-copy span{display:none}.hero{padding-top:12px}.hero-content{padding:50px 26px}.hero h1{font-size:36px}.hero-visual{min-height:320px}.trust{margin-top:0}.trust-grid{grid-template-columns:1fr}.trust-item{border-left:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.section-top{display:block}.section-intro{margin-top:14px}.plan-row{grid-template-columns:60px 1fr}.pill{grid-column:2;justify-self:start}.footer-wrap{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">
+  <div class="container">
+    <div><span class="dot"></span>منصة التطوير المهني لمعلمات المدرسة</div>
+    <div class="desktop-note">ابتدائية ساحل حلي · الإدارة العامة للتعليم بمكة المكرمة</div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand" onclick="showPage('home')">
+      <span class="brand-mark">س ح</span>
+      <span class="brand-copy"><strong>ابتدائية ساحل حلي</strong><span>منصة التطوير المهني</span></span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a data-page="home" onclick="showPage('home')">الرئيسية</a>
+      <a data-page="plan" onclick="showPage('plan')">خطة التدريب</a>
+      <a data-page="programs" onclick="showPage('programs')">برامج التدريب</a>
+      <a data-page="about" onclick="showPage('about')">عن المنصة</a>
+    </nav>
+    <div class="nav-action">
+      <button class="outline-btn" onclick="showPage('programs')">استعراض البرامج</button>
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<section class="page active" id="page-home">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-shell">
+        <div class="hero-content">
+          <span class="kicker">التعلّم المستمر · التطوير · الأثر</span>
+          <h1>مساحة تدريبية صُممت لتطوير الممارسة التعليمية.</h1>
+          <p>منصة رقمية مخصصة لمعلمات ابتدائية ساحل حلي، تجمع الخطة التدريبية والبرامج والمواد التعليمية في تجربة بسيطة ومنظمة.</p>
+          <div class="hero-actions">
+            <button class="hero-btn" onclick="showPage('programs')">استعراض البرامج</button>
+            <button class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="classroom-board"><span class="board-line line-a"></span><span class="board-line line-b"></span><span class="board-line line-c"></span><span class="board-symbol">أ ب ج</span></div>
+          <div class="school-desk"></div>
+          <div class="notebook"><span></span><span></span><span></span></div>
+          <div class="pencil"></div>
+          <div class="school-building"><div class="roof"></div><div class="school-sign">مدرستي</div><div class="school-door"></div><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div><div class="window w4"></div></div>
+        </div>
+      </div>
+
+      <div class="trust"><div class="trust-grid">
+        <div class="trust-item"><strong>تعلّم مهني منظم</strong><span>خطط وبرامج تدعم التطوير داخل البيئة المدرسية</span></div>
+        <div class="trust-item"><strong>برامج مرتبطة بالممارسة التعليمية</strong><span>محتوى تدريبي يساعد المعلمات في العمل اليومي</span></div>
+        <div class="trust-item"><strong>محتوى تعليمي متاح بسهولة</strong><span>مواد تدريبية يمكن الرجوع إليها في أي وقت</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-top"><div><span class="eyebrow">الأقسام الرئيسية</span><h2>كل ما تحتاجه المعلمة في مكان واحد</h2></div><p class="section-intro">اختاري القسم المطلوب للانتقال إليه مباشرة.</p></div>
+      <div class="cards">
+        <div class="card" onclick="showPage('plan')"><h3>خطة التدريب</h3><p>عرض مراحل الخطة التدريبية وأهدافها وتنظيمها.</p><span class="card-link">فتح الصفحة ←</span></div>
+        <div class="card" onclick="showPage('programs')"><h3>برامج التدريب</h3><p>الوصول إلى كل برنامج تدريبي وصفحته ومواده.</p><span class="card-link">فتح البرامج ←</span></div>
+        <div class="card" onclick="showPage('about')"><h3>عن المنصة</h3><p>التعرف على هدف المنصة والفئة المستفيدة والجهة التعليمية.</p><span class="card-link">قراءة المزيد ←</span></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- PLAN -->
+<section class="page" id="page-plan">
+  <section class="page-hero"><div class="container"><span class="eyebrow">القسم الأول</span><h1>خطة التدريب</h1><p>تنظيم رحلة التطوير المهني من تحديد الاحتياج إلى قياس الأثر.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box">
+    <div class="plan-row"><span>01</span><div><h3>تحديد الاحتياجات التدريبية</h3><p>حصر الأولويات والمهارات المستهدفة وفق احتياجات المدرسة.</p></div><span class="pill">المرحلة الأولى</span></div>
+    <div class="plan-row"><span>02</span><div><h3>تصميم البرامج التدريبية</h3><p>اختيار الموضوعات والأدوات والمواد المناسبة.</p></div><span class="pill">الإعداد</span></div>
+    <div class="plan-row"><span>03</span><div><h3>تنفيذ البرامج</h3><p>تقديم البرامج وتوفير العروض والملفات التدريبية.</p></div><span class="pill">التنفيذ</span></div>
+    <div class="plan-row"><span>04</span><div><h3>المتابعة وقياس الأثر</h3><p>توثيق المخرجات ومراجعة الاستفادة وتطوير الخطة.</p></div><span class="pill">المتابعة</span></div>
+  </div></div></section>
+</section>
+
+<!-- PROGRAMS -->
+<section class="page" id="page-programs">
+  <section class="page-hero"><div class="container"><span class="eyebrow">القسم الثاني</span><h1>برامج التدريب</h1><p>كل برنامج يفتح في صفحة خاصة داخل الموقع.</p></div></section>
+  <section class="section"><div class="container"><div class="program-grid">
+    <div class="program-card" onclick="showPage('program1')"><h3>البرنامج التدريبي الأول</h3><p>صفحة مستقلة للبرنامج والشرائح.</p><span class="open">فتح البرنامج ←</span></div>
+    <div class="program-card" onclick="showPage('program2')"><h3>البرنامج التدريبي الثاني</h3><p>صفحة مستقلة للبرنامج والشرائح.</p><span class="open">فتح البرنامج ←</span></div>
+    <div class="program-card" onclick="showPage('program3')"><h3>برنامج تدريبي جديد</h3><p>جاهز لاستبداله باسم البرنامج الحقيقي.</p><span class="open">فتح البرنامج ←</span></div>
+  </div></div></section>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="page-about">
+  <section class="page-hero"><div class="container"><span class="eyebrow">نبذة عن الموقع</span><h1>عن المنصة</h1><p>منصة تدريبية مخصصة لمعلمات ابتدائية ساحل حلي.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box">
+    <h2>مرجع رقمي للتعلم والتطوير المهني</h2>
+    <p>أُنشئت هذه المنصة لخدمة معلمات ابتدائية ساحل حلي من خلال تنظيم البرامج التدريبية والخطة المهنية والمواد المصاحبة في مكان واحد. وتهدف إلى تسهيل الوصول إلى المحتوى، دعم التعلم المستمر، وتعزيز تبادل المعرفة داخل البيئة المدرسية.</p>
+    <p><strong>الجهة:</strong> ابتدائية ساحل حلي — الإدارة العامة للتعليم بمكة المكرمة.</p>
+  </div></div></section>
+</section>
+
+<!-- PROGRAM DETAIL PAGES -->
+<section class="page" id="page-program1">
+  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>البرنامج التدريبي الأول</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box"><h2>البرنامج التدريبي الأول</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+</section>
+
+<section class="page" id="page-program2">
+  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>البرنامج التدريبي الثاني</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box"><h2>البرنامج التدريبي الثاني</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+</section>
+
+<section class="page" id="page-program3">
+  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>برنامج تدريبي جديد</h1><p>صفحة جاهزة لإضافة برنامج آخر.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box"><h2>برنامج تدريبي جديد</h2><p>جاهز لاستبداله باسم البرنامج الحقيقي ومحتواه.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+</section>
+
+<footer>
+  <div class="container footer-wrap"><div><strong>ابتدائية ساحل حلي</strong><p>الإدارة العامة للتعليم بمكة المكرمة</p></div><p>منصة التطوير المهني</p></div>
+</footer>
+
+<script>
+const pages=['home','plan','programs','about','program1','program2','program3'];
+function showPage(name, updateHash=true){
+  if(!pages.includes(name)) name='home';
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const target=document.getElementById('page-'+name);
+  if(target) target.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(updateHash) history.replaceState(null,'','#'+name);
+}
+document.getElementById('menuBtn').onclick=()=>document.getElementById('navLinks').classList.toggle('open');
+const initial=location.hash.replace('#','');
+showPage(pages.includes(initial)?initial:'home',false);
+window.addEventListener('hashchange',()=>showPage(location.hash.replace('#',''),false));
+</script>
+</body>
+</html>
