@@ -4377,26 +4377,15 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 }
 
 
-/* ORIGINAL SCHOOL PHOTO — DIMENSIONS ONLY */
-.hero-shell{
-  grid-template-columns:1fr 1fr !important;
-  height:360px !important;
-  min-height:360px !important;
-}
-
-.hero-content{
-  height:360px !important;
-  min-height:360px !important;
-}
-
+/* SCHOOL IMAGE FILLS ITS 50% CONTAINER */
 .school-image-section{
   width:100% !important;
   height:360px !important;
   min-height:360px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
+  margin:0 !important;
+  padding:0 !important;
   overflow:hidden !important;
+  display:block !important;
   background:#f8f5ef !important;
 }
 
@@ -4404,36 +4393,25 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   display:block !important;
   width:100% !important;
   height:100% !important;
-  max-width:100% !important;
-  max-height:100% !important;
-  object-fit:contain !important;
-  object-position:center center !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
   margin:0 !important;
   padding:0 !important;
+  object-fit:cover !important;
+  object-position:center center !important;
 }
 
 @media(max-width:800px){
-  .hero-shell{
-    grid-template-columns:1fr !important;
-    height:auto !important;
-    min-height:0 !important;
-  }
-
-  .hero-content{
-    height:auto !important;
-    min-height:0 !important;
-  }
-
   .school-image-section{
-    width:100% !important;
     height:300px !important;
     min-height:300px !important;
   }
-
   .school-image-section img{
     width:100% !important;
     height:100% !important;
-    object-fit:contain !important;
+    object-fit:cover !important;
   }
 }
 
