@@ -140,7 +140,7 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
 .eyebrow{color:var(--sage-dark)}
 .section h2{font-size:clamp(30px,4vw,44px);margin:8px 0 0}
 .section-intro{max-width:560px;color:#746d65}
-.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{border:1px solid var(--line);background:#fffaf4;padding:30px;min-height:230px;cursor:pointer;transition:.25s}
 .card:hover{transform:translateY(-4px);box-shadow:var(--soft)}
 .card h3{font-size:16px}.card p{color:#766f67;font-size:14px}.card-link{display:inline-block;margin-top:18px;border-bottom:1px solid #8c8379;font-size:13px}
@@ -1207,6 +1207,398 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* FULL PLAN AS SLIDER */
+.plan-slider{
+  background:#fff;
+}
+.plan-slider-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:4 / 3;
+  background:#fff;
+  overflow:hidden;
+  touch-action:pan-y;
+}
+.plan-slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:none;
+  background:#fff;
+}
+.plan-slide.active{
+  display:block;
+}
+.plan-slider-controls{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:14px 18px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+.plan-nav-btn{
+  min-width:100px;
+  padding:9px 16px;
+  border:1px solid #2f2c28;
+  background:#2f2c28;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+.plan-nav-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.plan-slider-center{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.plan-page-count{
+  font-size:12px;
+  color:#655f58;
+  border:1px solid #c8beb2;
+  background:#fff;
+  padding:4px 9px;
+}
+.plan-dots{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+}
+.plan-dot{
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#c9c0b5;
+  cursor:pointer;
+}
+.plan-dot.active{
+  background:#6f7869;
+}
+
+@media(max-width:650px){
+  .plan-slider-stage{
+    aspect-ratio:4 / 3;
+  }
+  .plan-slider-controls{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:10px;
+  }
+  .plan-slider-center{
+    grid-column:1 / -1;
+    grid-row:2;
+  }
+  .plan-nav-btn{
+    width:100%;
+    min-width:0;
+  }
+}
+
+
+/* EVALUATION */
+.evaluation-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-bottom:34px;
+}
+.evaluation-card{
+  position:relative;
+  padding:28px;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+}
+.evaluation-number{
+  display:inline-flex;
+  width:38px;
+  height:38px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #c8beb2;
+  border-radius:50%;
+  color:var(--sage-dark);
+  font-size:12px;
+}
+.evaluation-card h3{
+  margin:16px 0 10px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:18px;
+  line-height:1.7;
+  font-weight:500;
+}
+.evaluation-card p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.evaluation-btn{
+  margin-top:20px;
+  padding:10px 18px;
+  border:1px solid #2f2c28;
+  background:#2f2c28;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+.evaluation-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.evaluation-placeholder{
+  padding:34px;
+  background:#f3eee7;
+  border:1px solid var(--line);
+  text-align:center;
+}
+.evaluation-placeholder h3{
+  margin:8px 0 8px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.evaluation-placeholder p{
+  margin:0;
+  color:#746d65;
+}
+@media(max-width:900px){
+  .evaluation-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  .cards{grid-template-columns:1fr}
+}
+
+
+/* SLIDES INSIDE PROGRAM PAGES */
+.program-detail-box{
+  padding:34px;
+}
+.program-detail-head{
+  margin-bottom:24px;
+}
+.program-detail-head h2{
+  margin:6px 0 8px;
+}
+.program-detail-head p{
+  margin:0;
+  color:#746d65;
+}
+.program-pdf-card{
+  margin-top:24px;
+  border:1px solid var(--line);
+  background:#fffdfa;
+  overflow:hidden;
+}
+.program-pdf-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:20px 22px;
+  background:#fbf7f1;
+  border-bottom:1px solid var(--line);
+}
+.program-pdf-head h3{
+  margin:5px 0 0;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:20px;
+  font-weight:500;
+}
+.program-open-btn{
+  flex:0 0 auto;
+  padding:10px 18px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-size:13px;
+  font-weight:600;
+}
+.program-open-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.program-pdf-wrap{
+  width:100%;
+  height:72vh;
+  min-height:560px;
+  background:#ece5dc;
+}
+.program-pdf{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.program-slide-placeholder{
+  min-height:240px;
+  margin-top:24px;
+  border:1px dashed #bfb3a7;
+  background:#f3eee7;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-align:center;
+  padding:28px;
+  color:#746d65;
+}
+.program-slide-placeholder strong{
+  color:#3f3b36;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-weight:500;
+}
+.program-slide-placeholder span{
+  font-size:13px;
+}
+@media(max-width:700px){
+  .program-detail-box{
+    padding:22px;
+  }
+  .program-pdf-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .program-open-btn{
+    width:100%;
+    text-align:center;
+  }
+  .program-pdf-wrap{
+    height:58vh;
+    min-height:420px;
+  }
+}
+
+
+/* REPORTS INSIDE EVALUATION */
+.evaluation-reports{
+  margin-top:56px;
+}
+.evaluation-report-heading{
+  margin-bottom:26px;
+}
+@media(max-width:700px){
+  .evaluation-reports{
+    margin-top:42px;
+  }
+}
+
+
+/* SMALLER SCHOOL IMAGE */
+.hero-shell{
+  grid-template-columns:minmax(0,1fr) 340px !important;
+  height:360px !important;
+  min-height:360px !important;
+}
+.hero-content{
+  height:360px !important;
+  padding:28px 40px !important;
+}
+.hero-visual.photo-visual{
+  height:360px !important;
+  min-height:360px !important;
+  background:#fffdfa !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+}
+.hero-visual.photo-visual img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+@media(max-width:1100px){
+  .hero-shell{
+    grid-template-columns:minmax(0,1fr) 320px !important;
+  }
+}
+@media(max-width:900px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+  .hero-content{
+    height:auto !important;
+    padding:32px 24px !important;
+  }
+  .hero-visual.photo-visual{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:260px !important;
+  }
+  .hero-visual.photo-visual img{
+    width:100% !important;
+    height:auto !important;
+    max-height:260px !important;
+    object-fit:contain !important;
+  }
+}
+
+
+/* ORIGINAL PDF VIEWERS: NO IMAGE-CONVERTED PAGES */
+.plan-pdf-wrap{
+  width:100%;
+  height:76vh;
+  min-height:650px;
+  background:#ece5dc;
+}
+.plan-pdf{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.plan-pdf-note,
+.program-pdf-note{
+  margin:0;
+  padding:11px 18px 13px;
+  text-align:center;
+  color:#81786f;
+  font-size:11px;
+  background:#f7f2eb;
+  border-top:1px solid var(--line);
+}
+.program-pdf-wrap{
+  width:100%;
+  height:72vh;
+  min-height:600px;
+  background:#ece5dc;
+}
+.program-pdf{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.program-pdf-head p{
+  margin:5px 0 0;
+  color:#746d65;
+  font-size:13px;
+}
+@media(max-width:700px){
+  .plan-pdf-wrap,
+  .program-pdf-wrap{
+    height:58vh;
+    min-height:430px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1237,8 +1629,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
       <a data-page="home" onclick="showPage('home')">الرئيسية</a>
       <a data-page="plan" onclick="showPage('plan')">خطة التدريب</a>
       <a data-page="programs" onclick="showPage('programs')">برامج التدريب</a>
-      <a data-page="presentations" onclick="showPage('presentations')">العروض</a>
-      <a data-page="reports" onclick="showPage('reports')">التقارير</a>
+      <a data-page="evaluation" onclick="showPage('evaluation')">تقييم البرامج التدريبية</a>
       <a data-page="about" onclick="showPage('about')">عن المنصة</a>
     </nav>
     <div class="nav-action">
@@ -1284,8 +1675,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
       <div class="cards">
         <div class="card" onclick="showPage('plan')"><h3>خطة التدريب</h3><p>عرض مراحل الخطة التدريبية وأهدافها وتنظيمها.</p><span class="card-link">فتح الصفحة ←</span></div>
         <div class="card" onclick="showPage('programs')"><h3>برامج التدريب</h3><p>الوصول إلى كل برنامج تدريبي وصفحته ومواده.</p><span class="card-link">فتح البرامج ←</span></div>
-        <div class="card" onclick="showPage('presentations')"><h3>العروض التدريبية</h3><p>الوصول إلى العروض التقديمية والملفات التدريبية.</p><span class="card-link">فتح العروض ←</span></div>
-        <div class="card" onclick="showPage('reports')"><h3>التقارير</h3><p>عرض تقارير البرامج التدريبية ومخرجاتها وشواهدها.</p><span class="card-link">فتح التقارير ←</span></div>
+        <div class="card" onclick="showPage('evaluation')"><h3>تقييم البرامج التدريبية</h3><p>تقييم البرامج التدريبية وقياس مدى الاستفادة منها.</p><span class="card-link">فتح التقييمات ←</span></div>
         <div class="card" onclick="showPage('about')"><h3>عن المنصة</h3><p>التعرف على هدف المنصة والفئة المستفيدة والجهة التعليمية.</p><span class="card-link">قراءة المزيد ←</span></div>
       </div>
     </div>
@@ -1415,27 +1805,33 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <div>
             <span class="eyebrow">الخطة الكاملة</span>
             <h2>خطة التدريب ١٤٤٨</h2>
-            <p>الصفحات الأصلية من ملف الخطة، معروضة كما هي لتكون واضحة على الجوال والكمبيوتر.</p>
+            <p>الخطة الأصلية كاملة بصيغة PDF، بدون تحويل الصفحات إلى صور.</p>
           </div>
-          <a class="plan-open-btn" href="assets/training-plan-1448.pdf" target="_blank" rel="noopener">
-            فتح ملف PDF
+          <a class="plan-open-btn"
+             href="assets/training-plan-1448.pdf"
+             target="_blank"
+             rel="noopener">
+            فتح الخطة كاملة
           </a>
         </div>
 
-        <div class="plan-pages">
-          <figure class="plan-page">
-            <img src="assets/plan-pages/page-1.png" alt="خطة التدريب ١٤٤٨ - الصفحة الأولى">
-            <figcaption>الصفحة ١ من ٣</figcaption>
-          </figure>
-          <figure class="plan-page">
-            <img src="assets/plan-pages/page-2.png" alt="خطة التدريب ١٤٤٨ - الصفحة الثانية">
-            <figcaption>الصفحة ٢ من ٣</figcaption>
-          </figure>
-          <figure class="plan-page">
-            <img src="assets/plan-pages/page-3.png" alt="خطة التدريب ١٤٤٨ - الصفحة الثالثة">
-            <figcaption>الصفحة ٣ من ٣</figcaption>
-          </figure>
+        <div class="plan-pdf-wrap">
+          <object
+            class="plan-pdf"
+            data="assets/training-plan-1448.pdf#view=FitH"
+            type="application/pdf">
+            <div class="pdf-fallback">
+              <p>متصفحك لا يعرض ملف PDF داخل الصفحة.</p>
+              <a href="assets/training-plan-1448.pdf" target="_blank" rel="noopener">
+                فتح الخطة في المتصفح
+              </a>
+            </div>
+          </object>
         </div>
+
+        <p class="plan-pdf-note">
+          على الجوال، إذا لم يظهر الملف داخل الصفحة، استخدمي زر «فتح الخطة كاملة».
+        </p>
       </div>
 
     </div>
@@ -1453,90 +1849,100 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 </section>
 
 
-<!-- PRESENTATIONS -->
-<section class="page" id="page-presentations">
+
+<!-- EVALUATION -->
+<section class="page" id="page-evaluation">
   <section class="page-hero">
     <div class="container">
-      <span class="eyebrow">قسم العروض</span>
-      <h1>العروض التدريبية</h1>
-      <p>عرض الشرائح الأصلية كما هي، دون تحويلها إلى صور.</p>
+      <span class="eyebrow">القسم الثالث</span>
+      <h1>تقييم البرامج التدريبية</h1>
+      <p>مساحة مخصصة لقياس رضا المستفيدات ومدى تحقق أهداف البرامج التدريبية.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="presentation-pdf-card">
-        <div class="presentation-pdf-head">
-          <div>
-            <span class="eyebrow">هندسة التعلم</span>
-            <h3>العرض التدريبي</h3>
-            <p>العرض الأصلي بصيغة PDF للحفاظ على نفس تصميم الشرائح.</p>
-          </div>
-          <a class="presentation-open-btn"
-             href="assets/Presentation.pdf"
-             target="_blank"
-             rel="noopener">
-            فتح العرض
-          </a>
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">نماذج التقييم</span>
+          <h2>اختاري البرنامج المراد تقييمه</h2>
         </div>
-
-        <div class="presentation-pdf-wrap">
-          <object
-            class="presentation-pdf"
-            data="assets/Presentation.pdf#view=FitH"
-            type="application/pdf">
-            <div class="pdf-fallback">
-              <p>متصفحك لا يعرض ملف PDF داخل الصفحة.</p>
-              <a href="assets/Presentation.pdf" target="_blank" rel="noopener">فتح العرض في المتصفح</a>
-            </div>
-          </object>
-        </div>
-
-        <p class="presentation-note">
-          على الجوال، إذا لم يظهر العرض داخل الصفحة، استخدمي زر «فتح العرض» لعرضه مباشرة في المتصفح.
+        <p class="section-intro">
+          هذه النماذج جاهزة لإضافة أسئلة التقييم الفعلية أو روابط النماذج الإلكترونية لاحقًا.
         </p>
       </div>
-    </div>
-  </section>
-</section>
 
-<!-- REPORTS -->
-<section class="page" id="page-reports">
-  <section class="page-hero">
-    <div class="container">
-      <span class="eyebrow">قسم التقارير</span>
-      <h1>التقارير</h1>
-      <p>تقارير البرامج التدريبية ومخرجاتها وشواهد التنفيذ.</p>
-    </div>
-  </section>
+      <div class="evaluation-grid">
+        <article class="evaluation-card">
+          <span class="evaluation-number">01</span>
+          <h3>هندسة التعلم</h3>
+          <p>تقييم البرنامج من حيث المحتوى، وضوح الأهداف، الفائدة المهنية، وطريقة التقديم.</p>
+          <button type="button" class="evaluation-btn" onclick="openEvaluation('هندسة التعلم')">فتح التقييم</button>
+        </article>
 
-  <section class="section">
-    <div class="container">
-      <article class="report-card">
-        <div class="report-head">
-          <div>
-            <span class="eyebrow">تقرير برنامج تدريبي</span>
-            <h3>هندسة التعلم</h3>
-            <p>تقرير البرنامج التدريبي متضمنًا الأهداف، النتائج، مؤشر تحقيق الهدف، والشواهد.</p>
-          </div>
-          <a class="report-open-btn" href="assets/learning-engineering-report.pdf" target="_blank" rel="noopener">
-            فتح التقرير كاملًا
-          </a>
-        </div>
+        <article class="evaluation-card">
+          <span class="evaluation-number">02</span>
+          <h3>توظيف برومتات الذكاء الاصطناعي</h3>
+          <p>تقييم مدى الاستفادة من البرنامج في توظيف الذكاء الاصطناعي في الممارسات التعليمية.</p>
+          <button type="button" class="evaluation-btn" onclick="openEvaluation('توظيف برومتات الذكاء الاصطناعي')">فتح التقييم</button>
+        </article>
 
-        <div class="report-frame-wrap">
-          <iframe
-            class="report-frame"
-            src="assets/learning-engineering-report.pdf#view=FitH"
-            title="تقرير برنامج هندسة التعلم"
-            loading="lazy">
-          </iframe>
-        </div>
+        <article class="evaluation-card">
+          <span class="evaluation-number">03</span>
+          <h3>تصميم أنشطة تعليمية تفاعلية</h3>
+          <p>تقييم جودة البرنامج ومدى دعمه لتصميم أنشطة تعليمية أكثر تفاعلًا.</p>
+          <button type="button" class="evaluation-btn" onclick="openEvaluation('تصميم أنشطة تعليمية تفاعلية')">فتح التقييم</button>
+        </article>
+      </div>
 
-        <p class="report-note">
-          يمكن تصفح التقرير داخل الموقع، أو فتحه بصفحة كاملة لقراءة التفاصيل والشواهد بشكل أوضح.
+      <div class="evaluation-placeholder" id="evaluationPanel">
+        <span class="eyebrow">نموذج التقييم</span>
+        <h3 id="evaluationTitle">اختاري برنامجًا من الأعلى</h3>
+        <p>
+          عند إرسال أسئلة التقييم أو رابط النموذج، سيتم إدراجه هنا مباشرة داخل الموقع.
         </p>
-      </article>
+      </div>
+      <div class="evaluation-reports">
+        <div class="section-top evaluation-report-heading">
+          <div>
+            <span class="eyebrow">التقارير</span>
+            <h2>تقارير البرامج التدريبية</h2>
+          </div>
+          <p class="section-intro">
+            التقارير الموثقة لنتائج البرامج التدريبية وشواهد التنفيذ.
+          </p>
+        </div>
+
+        <article class="report-card">
+          <div class="report-head">
+            <div>
+              <span class="eyebrow">تقرير برنامج تدريبي</span>
+              <h3>هندسة التعلم</h3>
+              <p>تقرير البرنامج متضمنًا الأهداف والنتائج ومؤشر تحقيق الهدف والشواهد.</p>
+            </div>
+            <a class="report-open-btn"
+               href="assets/learning-engineering-report.pdf"
+               target="_blank"
+               rel="noopener">
+              فتح التقرير كاملًا
+            </a>
+          </div>
+
+          <div class="report-frame-wrap">
+            <iframe
+              class="report-frame"
+              src="assets/learning-engineering-report.pdf#view=FitH"
+              title="تقرير برنامج هندسة التعلم"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <p class="report-note">
+            يمكن قراءة التقرير داخل الموقع أو فتحه بصفحة مستقلة.
+          </p>
+        </article>
+      </div>
+
     </div>
   </section>
 </section>
@@ -1553,18 +1959,113 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 
 <!-- PROGRAM DETAIL PAGES -->
 <section class="page" id="page-program1">
-  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>هندسة التعلم</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box"><h2>هندسة التعلم</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">برنامج تدريبي</span>
+      <h1>هندسة التعلم</h1>
+      <p>برنامج تدريبي يركز على تصميم بيئات تعلم ملائمة لاحتياجات المتعلمين.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-box program-detail-box">
+        <div class="program-detail-head">
+          <div>
+            <span class="eyebrow">محتوى البرنامج</span>
+            <h2>هندسة التعلم</h2>
+            <p>العرض التدريبي الخاص ببرنامج هندسة التعلم متاح هنا داخل صفحة البرنامج.</p>
+          </div>
+        </div>
+
+        <div class="program-pdf-card">
+          <div class="program-pdf-head">
+            <div>
+              <span class="eyebrow">العرض التدريبي</span>
+              <h3>هندسة التعلم</h3>
+              <p>العرض الأصلي كما هو، بدون تحويله إلى صور.</p>
+            </div>
+            <a class="program-open-btn"
+               href="assets/Presentation.pdf"
+               target="_blank"
+               rel="noopener">
+              فتح العرض كاملًا
+            </a>
+          </div>
+
+          <div class="program-pdf-wrap">
+            <object
+              class="program-pdf"
+              data="assets/Presentation.pdf#view=FitH"
+              type="application/pdf">
+              <div class="pdf-fallback">
+                <p>متصفحك لا يعرض العرض داخل الصفحة.</p>
+                <a href="assets/Presentation.pdf" target="_blank" rel="noopener">
+                  فتح العرض في المتصفح
+                </a>
+              </div>
+            </object>
+          </div>
+
+          <p class="program-pdf-note">
+            على الجوال، استخدمي زر «فتح العرض كاملًا» إذا لم يظهر داخل الصفحة.
+          </p>
+        </div>
+
+        <span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span>
+      </div>
+    </div>
+  </section>
 </section>
 
 <section class="page" id="page-program2">
-  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>توظيف برومتات الذكاء الاصطناعي</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box"><h2>توظيف برومتات الذكاء الاصطناعي</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">برنامج تدريبي</span>
+      <h1>توظيف برومتات الذكاء الاصطناعي</h1>
+      <p>برنامج تدريبي لتوظيف أوامر الذكاء الاصطناعي بما يدعم الممارسات التعليمية.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-box program-detail-box">
+        <span class="eyebrow">العرض التدريبي</span>
+        <h2>توظيف برومتات الذكاء الاصطناعي</h2>
+        <p>سيتم إدراج سلايدات هذا البرنامج هنا عند إرسالها.</p>
+        <div class="program-slide-placeholder">
+          <strong>مكان العرض الخاص بهذا البرنامج</strong>
+          <span>أرسلي PowerPoint أو Keynote أو PDF وسأضيفه هنا مباشرة.</span>
+        </div>
+        <span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span>
+      </div>
+    </div>
+  </section>
 </section>
 
 <section class="page" id="page-program3">
-  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>تصميم أنشطة تعليمية تفاعلية</h1><p>صفحة جاهزة لإضافة برنامج آخر.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box"><h2>تصميم أنشطة تعليمية تفاعلية</h2><p>جاهز لاستبداله باسم البرنامج الحقيقي ومحتواه.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">برنامج تدريبي</span>
+      <h1>تصميم أنشطة تعليمية تفاعلية</h1>
+      <p>برنامج تدريبي يركز على تصميم أنشطة تعليمية أكثر تفاعلًا وارتباطًا بأهداف التعلم.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-box program-detail-box">
+        <span class="eyebrow">العرض التدريبي</span>
+        <h2>تصميم أنشطة تعليمية تفاعلية</h2>
+        <p>سيتم إدراج سلايدات هذا البرنامج هنا عند إرسالها.</p>
+        <div class="program-slide-placeholder">
+          <strong>مكان العرض الخاص بهذا البرنامج</strong>
+          <span>أرسلي PowerPoint أو Keynote أو PDF وسأضيفه هنا مباشرة.</span>
+        </div>
+        <span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span>
+      </div>
+    </div>
+  </section>
 </section>
 
 <footer>
@@ -1572,7 +2073,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 </footer>
 
 <script>
-const pages=['home','plan','programs','presentations','reports','about','program1','program2','program3'];
+const pages=['home','plan','programs','evaluation','about','program1','program2','program3'];
 function showPage(name, updateHash=true){
   if(!pages.includes(name)) name='home';
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -1587,6 +2088,14 @@ document.getElementById('menuBtn').onclick=()=>document.getElementById('navLinks
 const initial=location.hash.replace('#','');
 showPage(pages.includes(initial)?initial:'home',false);
 window.addEventListener('hashchange',()=>showPage(location.hash.replace('#',''),false));
+
+
+function openEvaluation(programName){
+  const title = document.getElementById('evaluationTitle');
+  const panel = document.getElementById('evaluationPanel');
+  if(title) title.textContent = 'تقييم برنامج: ' + programName;
+  if(panel) panel.scrollIntoView({behavior:'smooth', block:'center'});
+}
 
 </script>
 </body>
