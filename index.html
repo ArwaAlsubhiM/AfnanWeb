@@ -3914,6 +3914,163 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   padding:0 !important;
 }
 
+
+/* HERO + SCHOOL IMAGE SIDE BY SIDE, SAME HEIGHT */
+.hero .container{
+  width:min(980px,88%) !important;
+  margin:0 auto !important;
+}
+
+.hero-shell{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  overflow:hidden !important;
+  background:#77756d !important;
+}
+
+.hero-content{
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  padding:28px 34px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+}
+
+.hero h1{
+  font-size:clamp(27px,3vw,38px) !important;
+  line-height:1.45 !important;
+  margin:8px 0 14px !important;
+}
+
+.hero p{
+  font-size:14px !important;
+  line-height:1.8 !important;
+}
+
+.hero-actions{
+  margin-top:20px !important;
+}
+
+.hero-btn{
+  min-width:150px !important;
+  padding:9px 15px !important;
+  font-size:13px !important;
+}
+
+/* School image occupies the other half, matching hero height */
+.school-image-section{
+  width:100% !important;
+  height:340px !important;
+  min-height:340px !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#f8f5ef !important;
+}
+
+.school-image-section img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Mobile stacks cleanly */
+@media(max-width:800px){
+  .hero .container{
+    width:92% !important;
+  }
+
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .hero-content{
+    height:auto !important;
+    min-height:0 !important;
+    padding:28px 24px 30px !important;
+  }
+
+  .school-image-section{
+    height:300px !important;
+    min-height:300px !important;
+  }
+
+  .school-image-section img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+  }
+}
+
+@media(max-width:650px){
+  .school-image-section{
+    height:250px !important;
+    min-height:250px !important;
+  }
+}
+
+
+/* TEXT FIRST (RIGHT), SCHOOL IMAGE SECOND (LEFT) */
+.hero-shell{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  grid-template-areas:"school content" !important;
+  direction:ltr !important;
+}
+
+.hero-content{
+  grid-area:content !important;
+  direction:rtl !important;
+  text-align:right !important;
+}
+
+.school-image-section{
+  grid-area:school !important;
+  direction:rtl !important;
+}
+
+.hero-content h1{
+  text-align:right !important;
+  margin-right:0 !important;
+  margin-left:0 !important;
+}
+
+.hero-content p{
+  text-align:right !important;
+  margin-right:0 !important;
+  margin-left:0 !important;
+}
+
+.hero-actions{
+  justify-content:flex-start !important;
+}
+
+@media(max-width:800px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "content"
+      "school" !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3976,10 +4133,9 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
             <button type="button" class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
+<div class="school-image-section"><img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
       </div>
-
-      <div class="school-image-section"><img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
-      </div>
+</div>
 
     </div>
   </section>
