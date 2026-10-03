@@ -795,7 +795,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 
 /* FINAL LIGHTWEIGHT HERO */
 .hero-shell{
-  grid-template-columns:minmax(0,1fr) 330px !important;
+  grid-template-columns:minmax(0,1fr) 460px !important;
   min-height:420px !important;
   height:420px !important;
 }
@@ -1039,6 +1039,174 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* COMPLETE TRAINING PLAN */
+.plan-section-title{
+  margin-bottom:26px;
+}
+.plan-section-title h2{
+  margin:6px 0 0;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:30px;
+  font-weight:500;
+}
+.plan-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-bottom:48px;
+}
+.training-plan-card{
+  background:#fffdfa;
+  border:1px solid var(--line);
+  padding:24px;
+  box-shadow:var(--soft);
+}
+.training-plan-card.featured-plan{
+  border-top:3px solid var(--sage-dark);
+}
+.training-plan-card h3{
+  margin:9px 0 16px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:18px;
+  line-height:1.7;
+  font-weight:500;
+}
+.plan-type{
+  display:inline-block;
+  padding:5px 9px;
+  border:1px solid #c9c0b5;
+  background:#f8f3ed;
+  color:var(--sage-dark);
+  font-size:11px;
+}
+.plan-meta{
+  display:grid;
+  gap:7px;
+  color:#655f58;
+  font-size:13px;
+}
+.plan-full-block{
+  margin-top:10px;
+  border:1px solid var(--line);
+  background:#f8f3ed;
+  box-shadow:var(--soft);
+}
+.plan-full-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:26px 28px;
+  background:#fffdfa;
+  border-bottom:1px solid var(--line);
+}
+.plan-full-head h2{
+  margin:5px 0 5px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:26px;
+  font-weight:500;
+}
+.plan-full-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.plan-open-btn{
+  flex:0 0 auto;
+  display:inline-block;
+  padding:10px 18px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-size:13px;
+  font-weight:600;
+  text-align:center;
+}
+.plan-open-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+.plan-pages{
+  display:grid;
+  gap:22px;
+  padding:22px;
+}
+.plan-page{
+  width:min(100%,1050px);
+  margin:0 auto;
+  background:#fff;
+  border:1px solid #ddd5cc;
+  box-shadow:0 12px 30px rgba(54,47,40,.08);
+}
+.plan-page img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.plan-page figcaption{
+  padding:8px 12px 10px;
+  text-align:center;
+  color:#746d65;
+  font-size:11px;
+  border-top:1px solid #eee7df;
+  background:#fffdfa;
+}
+@media(max-width:800px){
+  .plan-summary-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .training-plan-card{
+    padding:20px;
+  }
+  .plan-full-head{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px;
+  }
+  .plan-open-btn{
+    width:100%;
+  }
+  .plan-pages{
+    padding:10px;
+    gap:14px;
+  }
+  .plan-page{
+    border-left:0;
+    border-right:0;
+  }
+}
+
+
+/* WIDER HERO IMAGE */
+.hero-shell{
+  grid-template-columns:minmax(0,1fr) 460px !important;
+  min-height:420px !important;
+  height:420px !important;
+}
+.hero-visual.photo-visual{
+  width:100% !important;
+}
+.hero-visual.photo-visual img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+@media(max-width:1100px){
+  .hero-shell{
+    grid-template-columns:minmax(0,1fr) 400px !important;
+  }
+}
+@media(max-width:900px){
+  .hero-shell{
+    grid-template-columns:1fr !important;
+    height:auto !important;
+    min-height:0 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1130,46 +1298,29 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="container">
       <span class="eyebrow">القسم الأول</span>
       <h1>خطة التدريب ١٤٤٨</h1>
-      <p>الخطة الإجرائية للتنمية المهنية داخل المدرسة وخطة توطين التدريب.</p>
+      <p>الخطة الإجرائية للتنمية المهنية داخل المدرسة (خطة توطين التدريب داخل المدرسة).</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+
+      <div class="plan-section-title">
+        <span class="eyebrow">جميع البرامج الواردة في الخطة</span>
+        <h2>برامج الخطة التدريبية</h2>
+      </div>
+
       <div class="plan-summary-grid">
-
-        <article class="training-plan-card">
-          <span class="plan-type">مبادرة · برنامج تدريبي</span>
-          <h3>هندسة التعلم</h3>
-          <div class="plan-meta">
-            <span><b>الفئة:</b> المعلمات</span>
-            <span><b>المنفذة:</b> منسقة التدريب أفنان الصبحي</span>
-            <span><b>التاريخ:</b> ٢٤ / ٣ / ١٤٤٨</span>
-            <span><b>المكان:</b> غرفة المصادر</span>
-          </div>
-          <p>المتطلبات: جهاز عرض وأوراق عمل.</p>
-        </article>
-
-        <article class="training-plan-card">
-          <span class="plan-type">مبادرة · ورشة عمل</span>
-          <h3>توظيف برومتات الذكاء الاصطناعي لتسهيل عملية التعليم</h3>
-          <div class="plan-meta">
-            <span><b>الفئة:</b> المعلمات</span>
-            <span><b>المنفذة:</b> منسقة التدريب أفنان الصبحي</span>
-            <span><b>التاريخ:</b> ٢٤ / ٤ / ١٤٤٨</span>
-            <span><b>المكان:</b> غرفة المصادر</span>
-          </div>
-          <p>المتطلبات: جهاز عرض وأوراق عمل.</p>
-        </article>
 
         <article class="training-plan-card">
           <span class="plan-type">وزاري · برنامج تدريبي</span>
           <h3>الرعاية النفسية والاجتماعية للموهوبين</h3>
           <div class="plan-meta">
-            <span><b>الفئة:</b> المجتمع المدرسي</span>
-            <span><b>المنفذة:</b> منسقة الموهوبات نبيلة الدرهمي</span>
+            <span><b>الفئة المستهدفة:</b> المجتمع المدرسي</span>
+            <span><b>الفئة المنفذة:</b> منسقة الموهوبات نبيلة الدرهمي</span>
             <span><b>التاريخ:</b> ١ / ٤ / ١٤٤٨</span>
             <span><b>المكان:</b> عن بعد</span>
+            <span><b>المتطلبات:</b> جهاز عرض · حقيبة تدريبية</span>
           </div>
         </article>
 
@@ -1177,10 +1328,11 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <span class="plan-type">مبادرة · برنامج تدريبي</span>
           <h3>التنمر وأثره على الطلبة</h3>
           <div class="plan-meta">
-            <span><b>الفئة:</b> الطالبات</span>
-            <span><b>المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
+            <span><b>الفئة المستهدفة:</b> الطالبات</span>
+            <span><b>الفئة المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
             <span><b>التاريخ:</b> ٤ / ٤ / ١٤٤٨</span>
             <span><b>المكان:</b> الفصول الدراسية</span>
+            <span><b>المتطلبات:</b> جهاز عرض · حقيبة تدريبية</span>
           </div>
         </article>
 
@@ -1188,9 +1340,47 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <span class="plan-type">مبادرة · برنامج تدريبي</span>
           <h3>تدريب الطالبات على برنامج نافس</h3>
           <div class="plan-meta">
-            <span><b>الفئة:</b> طالبات الصف السادس والصف الثالث</span>
+            <span><b>الفئة المستهدفة:</b> طالبات الصف السادس والصف الثالث</span>
+            <span><b>الفئة المنفذة:</b> منسقة الطالبات · معلمات المواد</span>
             <span><b>التنفيذ:</b> طوال الفصل الدراسي</span>
-            <span><b>المكان:</b> الصف السادس والصف الثالث الابتدائي</span>
+            <span><b>المكان:</b> الصف السادس · الصف الثالث الابتدائي</span>
+            <span><b>المتطلبات:</b> جهاز عرض · أوراق عمل</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card featured-plan">
+          <span class="plan-type">مبادرة · برنامج تدريبي</span>
+          <h3>هندسة التعلم</h3>
+          <div class="plan-meta">
+            <span><b>الفئة المستهدفة:</b> المعلمات</span>
+            <span><b>الفئة المنفذة:</b> منسقة التدريب أفنان الصبحي</span>
+            <span><b>التاريخ:</b> ٢٤ / ٣ / ١٤٤٨</span>
+            <span><b>المكان:</b> غرفة المصادر</span>
+            <span><b>المتطلبات:</b> جهاز عرض · أوراق عمل</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card featured-plan">
+          <span class="plan-type">مبادرة · ورشة عمل</span>
+          <h3>توظيف برومتات الذكاء الاصطناعي لتسهيل عملية التعليم</h3>
+          <div class="plan-meta">
+            <span><b>الفئة المستهدفة:</b> المعلمات</span>
+            <span><b>الفئة المنفذة:</b> منسقة التدريب أفنان الصبحي</span>
+            <span><b>التاريخ:</b> ٢٤ / ٤ / ١٤٤٨</span>
+            <span><b>المكان:</b> غرفة المصادر</span>
+            <span><b>المتطلبات:</b> جهاز عرض · أوراق عمل</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">وزاري · ورشة عمل</span>
+          <h3>التعريف بقواعد السلوك والمواظبة</h3>
+          <div class="plan-meta">
+            <span><b>الفئة المستهدفة:</b> الطالبات</span>
+            <span><b>الفئة المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
+            <span><b>التواريخ:</b> ٢٥ / ٣ / ١٤٤٨ و ٢٩ / ٣ / ١٤٤٨</span>
+            <span><b>المكان:</b> الفصول الدراسية</span>
+            <span><b>المتطلبات:</b> جهاز عرض · أوراق عمل</span>
           </div>
         </article>
 
@@ -1198,36 +1388,56 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <span class="plan-type">وزاري · ورشة عمل</span>
           <h3>تنمية الدافعية لرفع مستوى التحصيل الدراسي</h3>
           <div class="plan-meta">
-            <span><b>الفئة:</b> الطالبات</span>
-            <span><b>المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
+            <span><b>الفئة المستهدفة:</b> الطالبات</span>
+            <span><b>الفئة المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
             <span><b>التاريخ:</b> ٢٠ / ٤ / ١٤٤٨</span>
             <span><b>المكان:</b> غرفة الإرشاد</span>
+            <span><b>المتطلبات:</b> جهاز عرض · أوراق عمل</span>
+          </div>
+        </article>
+
+        <article class="training-plan-card">
+          <span class="plan-type">وزاري · ورشة عمل</span>
+          <h3>تعزيز المهارات النفسية والاجتماعية - برنامج نبيه وبرنامج درع</h3>
+          <div class="plan-meta">
+            <span><b>الفئة المستهدفة:</b> الطالبات</span>
+            <span><b>الفئة المنفذة:</b> الموجهة الطلابية صالحة العمري</span>
+            <span><b>التاريخ الوارد في الخطة:</b> ٢ / ٤ / ١٤٤٧</span>
+            <span><b>المكان:</b> غرفة الإرشاد</span>
+            <span><b>المتطلبات:</b> جهاز عرض · أوراق عمل</span>
           </div>
         </article>
 
       </div>
 
-      <div class="plan-document">
-        <div class="plan-document-head">
+      <div class="plan-full-block">
+        <div class="plan-full-head">
           <div>
             <span class="eyebrow">الخطة الكاملة</span>
-            <h3>خطة التدريب ١٤٤٨</h3>
-            <p>يمكن تصفح ملف الخطة كاملًا داخل الموقع أو فتحه بصفحة مستقلة.</p>
+            <h2>خطة التدريب ١٤٤٨</h2>
+            <p>الصفحات الأصلية من ملف الخطة، معروضة كما هي لتكون واضحة على الجوال والكمبيوتر.</p>
           </div>
           <a class="plan-open-btn" href="assets/training-plan-1448.pdf" target="_blank" rel="noopener">
-            فتح الخطة كاملة
+            فتح ملف PDF
           </a>
         </div>
 
-        <div class="plan-frame-wrap">
-          <iframe
-            class="plan-frame"
-            src="assets/training-plan-1448.pdf#view=FitH"
-            title="خطة التدريب ١٤٤٨"
-            loading="lazy">
-          </iframe>
+        <div class="plan-pages">
+          <figure class="plan-page">
+            <img src="assets/plan-pages/page-1.png" alt="خطة التدريب ١٤٤٨ - الصفحة الأولى">
+            <figcaption>الصفحة ١ من ٣</figcaption>
+          </figure>
+          <figure class="plan-page">
+            <img src="assets/plan-pages/page-2.png" alt="خطة التدريب ١٤٤٨ - الصفحة الثانية">
+            <figcaption>الصفحة ٢ من ٣</figcaption>
+          </figure>
+          <figure class="plan-page">
+            <img src="assets/plan-pages/page-3.png" alt="خطة التدريب ١٤٤٨ - الصفحة الثالثة">
+            <figcaption>الصفحة ٣ من ٣</figcaption>
+          </figure>
         </div>
       </div>
+
     </div>
   </section>
 </section>
