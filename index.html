@@ -60,9 +60,9 @@ a{text-decoration:none;color:inherit} button{font:inherit}.container{width:min(1
 .page{display:none}.page.active{display:block}
 
 /* HOME */
-.hero{padding:22px 0 74px;background:var(--paper)}
-.hero-shell{min-height:610px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);overflow:hidden;background:#b3afa6;box-shadow:var(--shadow)}
-.hero-content{position:relative;min-width:0;overflow:hidden;z-index:2;padding:74px 64px;color:#fff;background:
+.hero{padding:22px 0 58px;background:var(--paper)}
+.hero-shell{min-height:500px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);overflow:hidden;background:#b3afa6;box-shadow:var(--shadow)}
+.hero-content{position:relative;min-width:0;overflow:hidden;z-index:2;padding:52px 58px;color:#fff;background:
 linear-gradient(150deg,rgba(67,65,58,.78),rgba(110,105,95,.60)),
 radial-gradient(circle at 15% 15%,rgba(255,255,255,.12),transparent 28%),
 linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justify-content:center}
@@ -70,11 +70,38 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
 .kicker,.eyebrow{font-family:"Noto Kufi Arabic",sans-serif;font-size:12px;font-weight:500}
 .kicker{opacity:.88}
 .hero h1,.page-hero h1,.section h2,.card h3,.program-card h3,.content-box h2,.plan-row h3{font-family:"Noto Kufi Arabic",sans-serif;font-weight:500}
-.hero h1{font-size:clamp(38px,5.4vw,64px);line-height:1.35;margin:18px 0 24px}
-.hero p{font-size:17px;color:rgba(255,255,255,.88);max-width:610px}
+.hero h1{font-size:clamp(34px,4.1vw,50px);line-height:1.45;margin:14px 0 18px}
+.hero p{font-size:16px;color:rgba(255,255,255,.90);max-width:590px}
 .hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
-.hero-btn{min-width:160px;padding:12px 20px;border:1px solid rgba(255,255,255,.72);color:#fff;text-align:center;font-size:14px;cursor:pointer}
-.hero-btn:hover{background:#fff;color:var(--ink)}
+.hero-btn{
+  min-width:165px;
+  padding:12px 22px;
+  border:1px solid #fff;
+  background:#fff;
+  color:#3f3b36;
+  text-align:center;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.22s ease;
+  box-shadow:0 7px 20px rgba(35,31,27,.10);
+}
+.hero-btn + .hero-btn{
+  background:#fff;
+  color:#3f3b36;
+  border-color:#fff;
+  box-shadow:0 7px 20px rgba(35,31,27,.10);
+}
+.hero-btn:hover{
+  background:#f4eee7;
+  color:#2d2b27;
+  transform:translateY(-2px);
+}
+.hero-btn + .hero-btn:hover{
+  background:#f4eee7;
+  color:#2d2b27;
+  transform:translateY(-2px);
+}
 
 .hero-visual.photo-visual{
   position:relative;
@@ -82,7 +109,7 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
   width:100%;
   max-width:100%;
   overflow:hidden;
-  min-height:610px;
+  min-height:500px;
   background:#d8ccbd;
   isolation:isolate;
 }
@@ -95,7 +122,7 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
   width:100%;
   max-width:100%;
   height:100%;
-  min-height:610px;
+  min-height:500px;
   display:block;
   object-fit:cover;
   object-position:center center;
@@ -113,7 +140,7 @@ linear-gradient(120deg,#8c9182,#b5a99d);display:flex;flex-direction:column;justi
 .eyebrow{color:var(--sage-dark)}
 .section h2{font-size:clamp(30px,4vw,44px);margin:8px 0 0}
 .section-intro{max-width:560px;color:#746d65}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{border:1px solid var(--line);background:#fffaf4;padding:30px;min-height:230px;cursor:pointer;transition:.25s}
 .card:hover{transform:translateY(-4px);box-shadow:var(--soft)}
 .card h3{font-size:16px}.card p{color:#766f67;font-size:14px}.card-link{display:inline-block;margin-top:18px;border-bottom:1px solid #8c8379;font-size:13px}
@@ -150,13 +177,13 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 
 @media(max-width:900px){
   .nav{grid-template-columns:auto auto}.nav-links{position:absolute;top:78px;right:4%;left:4%;display:none;flex-direction:column;background:var(--paper);border:1px solid var(--line);box-shadow:var(--soft);padding:14px 20px;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 0}.nav-links a:after{display:none}.nav-action{justify-self:end}.menu-btn{display:inline-block}.outline-btn{display:none}
-  .hero-shell{grid-template-columns:1fr}.hero-visual{min-height:390px}.hero-content{padding:64px 42px}.cards,.program-grid{grid-template-columns:1fr}
+  .hero-shell{grid-template-columns:1fr}.hero-visual{min-height:390px}.hero-content{padding:46px 34px}.cards,.program-grid{grid-template-columns:1fr}
 }
 @media(max-width:650px){
   .credit-bar{font-size:11px;padding:8px 10px}
   .header{top:37px}
   .moe-logo{width:78px}
-  .announcement .desktop-note{display:none}.brand-copy span{display:none}.hero{padding-top:12px}.hero-content{padding:50px 26px}.hero h1{font-size:36px}.hero-visual{min-height:320px}.trust{margin-top:0}.trust-grid{grid-template-columns:1fr}.trust-item{border-left:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.section-top{display:block}.section-intro{margin-top:14px}.plan-row{grid-template-columns:60px 1fr}.pill{grid-column:2;justify-self:start}.footer-wrap{flex-direction:column;align-items:flex-start}
+  .announcement .desktop-note{display:none}.brand-copy span{display:none}.hero{padding-top:12px}.hero-content{padding:42px 24px}.hero h1{font-size:32px}.hero-visual{min-height:320px}.trust{margin-top:0}.trust-grid{grid-template-columns:1fr}.trust-item{border-left:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.section-top{display:block}.section-intro{margin-top:14px}.plan-row{grid-template-columns:60px 1fr}.pill{grid-column:2;justify-self:start}.footer-wrap{flex-direction:column;align-items:flex-start}
 }
 
 
@@ -173,6 +200,109 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 .hero-content > *{
   position:relative;
   z-index:2;
+}
+
+
+.presentation-grid{
+  display:grid;
+  grid-template-columns:minmax(0,780px);
+  justify-content:center;
+}
+.presentation-card{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  background:#fffdfa;
+  border:1px solid var(--line);
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+.presentation-preview{
+  min-height:320px;
+  background:#eee7dd;
+  overflow:hidden;
+}
+.presentation-preview img{
+  width:100%;
+  height:100%;
+  min-height:320px;
+  display:block;
+  object-fit:cover;
+}
+.presentation-info{
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.presentation-info h3{
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:24px;
+  font-weight:500;
+  margin:8px 0 10px;
+}
+.presentation-info p{
+  color:#746d65;
+  margin:0;
+}
+.presentation-btn{
+  display:inline-block;
+  align-self:flex-start;
+  margin-top:24px;
+  padding:11px 22px;
+  background:#2f2c28;
+  color:#fff;
+  border:1px solid #2f2c28;
+  font-weight:600;
+  font-size:14px;
+  transition:.2s ease;
+}
+.presentation-btn:hover{
+  background:#6f7869;
+  border-color:#6f7869;
+}
+@media(max-width:900px){
+  .presentation-card{grid-template-columns:1fr}
+  .presentation-preview,.presentation-preview img{min-height:260px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  .presentation-info{padding:24px}
+  .cards{grid-template-columns:1fr}
+}
+
+
+.school-slogan{
+  display:block;
+  margin-top:3px;
+  color:var(--sage-dark);
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:10px;
+  font-style:normal;
+  font-weight:500;
+}
+.hero-identity{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.hero-slogan{
+  display:inline-flex;
+  align-items:center;
+  padding:5px 11px;
+  border:1px solid rgba(255,255,255,.42);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border-radius:999px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:11px;
+  font-weight:500;
+  backdrop-filter:blur(6px);
+}
+@media(max-width:650px){
+  .school-slogan{font-size:9px}
+  .hero-identity{gap:8px}
+  .hero-slogan{font-size:10px;padding:4px 9px}
 }
 
 </style>
@@ -195,12 +325,17 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="brand" onclick="showPage('home')">
       <img class="moe-logo" src="assets/1.png" alt="وزارة التعليم">
       <span class="brand-mark">س ح</span>
-      <span class="brand-copy"><strong>ابتدائية ساحل حلي</strong><span>منصة التطوير المهني</span></span>
+      <span class="brand-copy">
+        <strong>ابتدائية ساحل حلي</strong>
+        <span>منصة التطوير المهني</span>
+        <em class="school-slogan">معًا نصنع الفرق</em>
+      </span>
     </div>
     <nav class="nav-links" id="navLinks">
       <a data-page="home" onclick="showPage('home')">الرئيسية</a>
       <a data-page="plan" onclick="showPage('plan')">خطة التدريب</a>
       <a data-page="programs" onclick="showPage('programs')">برامج التدريب</a>
+      <a data-page="presentations" onclick="showPage('presentations')">العروض</a>
       <a data-page="about" onclick="showPage('about')">عن المنصة</a>
     </nav>
     <div class="nav-action">
@@ -216,7 +351,10 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="container">
       <div class="hero-shell">
         <div class="hero-content">
-          <span class="kicker">التعلّم المستمر · التطوير · الأثر</span>
+          <div class="hero-identity">
+            <span class="kicker">التعلّم المستمر · التطوير · الأثر</span>
+            <span class="hero-slogan">معًا نصنع الفرق</span>
+          </div>
           <h1>مساحة تدريبية صُممت لتطوير الممارسة التعليمية.</h1>
           <p>منصة رقمية مخصصة لمعلمات ابتدائية ساحل حلي، تجمع الخطة التدريبية والبرامج والمواد التعليمية في تجربة بسيطة ومنظمة.</p>
           <div class="hero-actions">
@@ -243,6 +381,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
       <div class="cards">
         <div class="card" onclick="showPage('plan')"><h3>خطة التدريب</h3><p>عرض مراحل الخطة التدريبية وأهدافها وتنظيمها.</p><span class="card-link">فتح الصفحة ←</span></div>
         <div class="card" onclick="showPage('programs')"><h3>برامج التدريب</h3><p>الوصول إلى كل برنامج تدريبي وصفحته ومواده.</p><span class="card-link">فتح البرامج ←</span></div>
+        <div class="card" onclick="showPage('presentations')"><h3>العروض التدريبية</h3><p>الوصول إلى العروض التقديمية والملفات التدريبية.</p><span class="card-link">فتح العروض ←</span></div>
         <div class="card" onclick="showPage('about')"><h3>عن المنصة</h3><p>التعرف على هدف المنصة والفئة المستفيدة والجهة التعليمية.</p><span class="card-link">قراءة المزيد ←</span></div>
       </div>
     </div>
@@ -264,10 +403,40 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 <section class="page" id="page-programs">
   <section class="page-hero"><div class="container"><span class="eyebrow">القسم الثاني</span><h1>برامج التدريب</h1><p>كل برنامج يفتح في صفحة خاصة داخل الموقع.</p></div></section>
   <section class="section"><div class="container"><div class="program-grid">
-    <div class="program-card" onclick="showPage('program1')"><h3>البرنامج التدريبي الأول</h3><p>صفحة مستقلة للبرنامج والشرائح.</p><span class="open">فتح البرنامج ←</span></div>
-    <div class="program-card" onclick="showPage('program2')"><h3>البرنامج التدريبي الثاني</h3><p>صفحة مستقلة للبرنامج والشرائح.</p><span class="open">فتح البرنامج ←</span></div>
-    <div class="program-card" onclick="showPage('program3')"><h3>برنامج تدريبي جديد</h3><p>جاهز لاستبداله باسم البرنامج الحقيقي.</p><span class="open">فتح البرنامج ←</span></div>
+    <div class="program-card" onclick="showPage('program1')"><h3>هندسة التعلم</h3><p>صفحة مستقلة للبرنامج والشرائح.</p><span class="open">فتح البرنامج ←</span></div>
+    <div class="program-card" onclick="showPage('program2')"><h3>توظيف برومتات الذكاء الاصطناعي</h3><p>صفحة مستقلة للبرنامج والشرائح.</p><span class="open">فتح البرنامج ←</span></div>
+    <div class="program-card" onclick="showPage('program3')"><h3>تصميم أنشطة تعليمية تفاعلية</h3><p>جاهز لاستبداله باسم البرنامج الحقيقي.</p><span class="open">فتح البرنامج ←</span></div>
   </div></div></section>
+</section>
+
+
+<!-- PRESENTATIONS -->
+<section class="page" id="page-presentations">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">قسم العروض</span>
+      <h1>العروض التدريبية</h1>
+      <p>العروض والملفات التدريبية المساندة للبرامج المهنية.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="presentation-grid">
+        <article class="presentation-card">
+          <div class="presentation-preview">
+            <img src="assets/presentation-preview.jpg" alt="معاينة العرض التدريبي">
+          </div>
+          <div class="presentation-info">
+            <span class="eyebrow">KEYNOTE</span>
+            <h3>العرض التدريبي</h3>
+            <p>عرض تقديمي مرفق بصيغة Keynote، متاح للتحميل والفتح على أجهزة Apple.</p>
+            <a class="presentation-btn" href="assets/Presentation.key" download>تحميل العرض</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- ABOUT -->
@@ -282,18 +451,18 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 
 <!-- PROGRAM DETAIL PAGES -->
 <section class="page" id="page-program1">
-  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>البرنامج التدريبي الأول</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box"><h2>البرنامج التدريبي الأول</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>هندسة التعلم</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box"><h2>هندسة التعلم</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
 </section>
 
 <section class="page" id="page-program2">
-  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>البرنامج التدريبي الثاني</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box"><h2>البرنامج التدريبي الثاني</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>توظيف برومتات الذكاء الاصطناعي</h1><p>صفحة مخصصة لمحتوى البرنامج وشرائحه التدريبية.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box"><h2>توظيف برومتات الذكاء الاصطناعي</h2><p>سيتم وضع نبذة البرنامج وأهدافه هنا بعد إرسال السلايدز.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
 </section>
 
 <section class="page" id="page-program3">
-  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>برنامج تدريبي جديد</h1><p>صفحة جاهزة لإضافة برنامج آخر.</p></div></section>
-  <section class="section"><div class="container"><div class="content-box"><h2>برنامج تدريبي جديد</h2><p>جاهز لاستبداله باسم البرنامج الحقيقي ومحتواه.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
+  <section class="page-hero"><div class="container"><span class="eyebrow">برنامج تدريبي</span><h1>تصميم أنشطة تعليمية تفاعلية</h1><p>صفحة جاهزة لإضافة برنامج آخر.</p></div></section>
+  <section class="section"><div class="container"><div class="content-box"><h2>تصميم أنشطة تعليمية تفاعلية</h2><p>جاهز لاستبداله باسم البرنامج الحقيقي ومحتواه.</p><div class="slide-placeholder"><div><strong>مكان عرض الشرائح التدريبية</strong><br>PowerPoint · PDF · صور الشرائح</div></div><span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span></div></div></section>
 </section>
 
 <footer>
@@ -301,7 +470,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
 </footer>
 
 <script>
-const pages=['home','plan','programs','about','program1','program2','program3'];
+const pages=['home','plan','programs','presentations','about','program1','program2','program3'];
 function showPage(name, updateHash=true){
   if(!pages.includes(name)) name='home';
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
