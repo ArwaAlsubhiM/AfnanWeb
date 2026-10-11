@@ -4415,6 +4415,848 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* AI PROMPTS WORKSHOP — INLINE EVALUATION */
+.workshop-evaluation{
+  margin-top:42px;
+  padding:30px;
+  border:1px solid var(--line);
+  background:#fffdfa;
+  box-shadow:var(--soft);
+}
+.workshop-evaluation-head{
+  margin-bottom:24px;
+}
+.workshop-evaluation-head h2{
+  margin:6px 0 8px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:26px;
+  font-weight:500;
+}
+.workshop-evaluation-head p{
+  margin:0;
+  color:#746d65;
+  font-size:14px;
+}
+.workshop-form{
+  display:grid;
+  gap:16px;
+}
+.workshop-question{
+  margin:0;
+  padding:22px;
+  border:1px solid var(--line);
+  background:#fbf7f1;
+}
+.workshop-question legend{
+  padding:0 8px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.8;
+}
+.choice-grid{
+  display:grid;
+  gap:9px;
+  margin-top:10px;
+}
+.choice-grid.five{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+}
+.choice-grid label,
+.rating-scale label{
+  cursor:pointer;
+}
+.choice-grid input,
+.rating-scale input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+.choice-grid span,
+.rating-scale span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:8px;
+  border:1px solid #c9c0b5;
+  background:#fff;
+  text-align:center;
+  color:#4e4943;
+  transition:.18s ease;
+}
+.choice-grid input:checked + span,
+.rating-scale input:checked + span{
+  border-color:var(--sage-dark);
+  background:var(--sage-dark);
+  color:#fff;
+}
+.rating-row{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+}
+.rating-scale{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:6px;
+}
+.rating-end{
+  color:#746d65;
+  font-size:12px;
+}
+.likert-scroll{
+  overflow-x:auto;
+  margin-top:10px;
+}
+.workshop-likert{
+  width:100%;
+  min-width:780px;
+  border-collapse:collapse;
+  background:#fff;
+}
+.workshop-likert th,
+.workshop-likert td{
+  padding:14px 11px;
+  border:1px solid var(--line);
+  text-align:center;
+  vertical-align:middle;
+}
+.workshop-likert th{
+  background:#efeae3;
+  font-size:12px;
+  font-weight:600;
+}
+.workshop-likert td:first-child{
+  width:40%;
+  text-align:right;
+  line-height:1.7;
+  font-size:13px;
+}
+.workshop-likert input{
+  width:20px;
+  height:20px;
+  accent-color:#6f7869;
+  cursor:pointer;
+}
+.workshop-submit{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.workshop-submit button{
+  padding:11px 24px;
+  border:1px solid var(--sage-dark);
+  border-radius:7px;
+  background:var(--sage-dark);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.workshop-submit span,
+.workshop-storage-note{
+  color:#81786f;
+  font-size:12px;
+}
+.workshop-success{
+  padding:13px 16px;
+  border:1px solid #cbd2c4;
+  background:#eef1eb;
+  color:#4b5747;
+  font-weight:600;
+}
+.workshop-storage-note{
+  margin:18px 0 0;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+@media(max-width:760px){
+  .workshop-evaluation{
+    padding:20px;
+  }
+  .choice-grid.five{
+    grid-template-columns:1fr 1fr;
+  }
+  .choice-grid.five label:last-child{
+    grid-column:1/-1;
+  }
+  .rating-row{
+    grid-template-columns:1fr;
+  }
+  .rating-end{
+    display:none;
+  }
+  .rating-scale{
+    grid-template-columns:repeat(5,1fr);
+  }
+}
+
+
+/* PARTICIPANT NAME + DIGITAL CERTIFICATE */
+.participant-name-question{
+  background:linear-gradient(135deg,#fbf7f1,#f6f0e8);
+  border-top:3px solid var(--sage-dark);
+}
+.participant-name-label{
+  display:block;
+  margin:4px 0 10px;
+  color:#746d65;
+  font-size:13px;
+}
+.participant-name-input{
+  width:100%;
+  padding:13px 15px;
+  border:1px solid #c9c0b5;
+  border-radius:7px;
+  background:#fff;
+  color:var(--ink);
+  font-family:"Tajawal",sans-serif;
+  font-size:16px;
+  outline:none;
+}
+.participant-name-input:focus{
+  border-color:var(--sage-dark);
+  box-shadow:0 0 0 3px rgba(111,120,105,.10);
+}
+
+.certificate-area{
+  margin-top:34px;
+}
+.certificate-toolbar{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:16px;
+}
+.certificate-toolbar h3{
+  margin:4px 0 0;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:22px;
+  font-weight:500;
+}
+.certificate-print-btn{
+  padding:10px 18px;
+  border:1px solid var(--sage-dark);
+  border-radius:7px;
+  background:var(--sage-dark);
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+.certificate-shell{
+  position:relative;
+  width:min(100%,1050px);
+  aspect-ratio:1.414 / 1;
+  margin:0 auto;
+  padding:38px 46px 28px;
+  overflow:hidden;
+  direction:rtl;
+  color:#302d29;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(142,150,131,.12),transparent 24%),
+    radial-gradient(circle at 90% 88%,rgba(168,156,142,.13),transparent 26%),
+    linear-gradient(135deg,#fffdfa,#f8f3ec);
+  border:1px solid #d9cec2;
+  box-shadow:0 24px 70px rgba(54,47,40,.12);
+}
+.certificate-shell:before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(111,120,105,.46);
+  pointer-events:none;
+}
+.certificate-shell:after{
+  content:"";
+  position:absolute;
+  inset:22px;
+  border:1px solid rgba(168,156,142,.22);
+  pointer-events:none;
+}
+.certificate-corner{
+  position:absolute;
+  width:170px;
+  height:170px;
+  border:28px solid rgba(111,120,105,.08);
+  transform:rotate(45deg);
+}
+.certificate-corner-a{right:-110px;top:-110px}
+.certificate-corner-b{left:-110px;bottom:-110px}
+.certificate-top{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+}
+.certificate-identity{
+  font-size:11px;
+  line-height:1.65;
+  color:#615a53;
+}
+.certificate-identity strong{
+  display:block;
+  margin-top:3px;
+  color:#35312d;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:12px;
+  font-weight:600;
+}
+.certificate-logo-wrap{
+  width:122px;
+  height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.certificate-logo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+.certificate-main{
+  position:relative;
+  z-index:2;
+  max-width:780px;
+  margin:8px auto 0;
+  text-align:center;
+}
+.certificate-kicker{
+  display:inline-block;
+  padding:5px 14px;
+  border-radius:999px;
+  background:#eef0ea;
+  color:var(--sage-dark);
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+.certificate-main h2{
+  margin:10px 0 6px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:34px;
+  font-weight:500;
+  color:#3b3833;
+}
+.certificate-rule{
+  width:80px;
+  height:2px;
+  margin:0 auto 18px;
+  background:linear-gradient(90deg,transparent,var(--sage-dark),transparent);
+}
+.certificate-lead,
+.certificate-copy,
+.certificate-date,
+.certificate-wish{
+  margin:6px 0;
+  color:#5c554f;
+  font-size:15px;
+}
+.certificate-name{
+  display:inline-block;
+  min-width:360px;
+  margin:7px auto 9px;
+  padding:5px 22px 8px;
+  border-bottom:1px solid #9d9185;
+  color:#596351;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:27px;
+  font-weight:600;
+}
+.certificate-program{
+  margin:6px 0 9px;
+  color:#302d29;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:21px;
+  font-weight:600;
+}
+.certificate-wish{
+  margin-top:12px;
+  font-size:13px;
+}
+.certificate-signatures{
+  position:absolute;
+  z-index:2;
+  right:54px;
+  left:54px;
+  bottom:48px;
+  display:grid;
+  grid-template-columns:1fr 95px 1fr;
+  align-items:end;
+  gap:20px;
+}
+.signature-box{
+  text-align:center;
+}
+.signature-box span{
+  display:block;
+  color:#7a726a;
+  font-size:11px;
+}
+.signature-box strong{
+  display:block;
+  margin:3px 0 10px;
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:13px;
+  font-weight:600;
+}
+.signature-line{
+  width:160px;
+  max-width:100%;
+  margin:0 auto;
+  padding-top:5px;
+  border-top:1px solid #c3b8ac;
+  color:#938a80;
+  font-size:9px;
+}
+.certificate-seal{
+  width:84px;
+  height:84px;
+  margin:0 auto;
+  padding:6px;
+  border:1px solid rgba(111,120,105,.45);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+}
+.seal-inner{
+  width:100%;
+  height:100%;
+  border:1px dashed rgba(111,120,105,.58);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:var(--sage-dark);
+  font-family:"Noto Kufi Arabic",sans-serif;
+  font-size:10px;
+  line-height:1.65;
+}
+.certificate-footer{
+  position:absolute;
+  z-index:2;
+  right:0;
+  bottom:13px;
+  left:0;
+  text-align:center;
+  color:#a1988e;
+  font-size:9px;
+}
+
+@media(max-width:780px){
+  .certificate-toolbar{
+    align-items:stretch;
+    flex-direction:column;
+  }
+  .certificate-print-btn{width:100%}
+  .certificate-shell{
+    aspect-ratio:auto;
+    min-height:680px;
+    padding:30px 24px 24px;
+  }
+  .certificate-main h2{font-size:27px}
+  .certificate-name{
+    min-width:0;
+    width:90%;
+    font-size:22px;
+  }
+  .certificate-program{font-size:18px}
+  .certificate-signatures{
+    right:24px;
+    left:24px;
+    grid-template-columns:1fr 70px 1fr;
+    gap:8px;
+  }
+  .certificate-seal{width:66px;height:66px}
+  .signature-box strong{font-size:11px}
+}
+
+@media print{
+  body *{visibility:hidden !important}
+  #aiCertificate,
+  #aiCertificate *{visibility:visible !important}
+  #aiCertificate{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:100vh !important;
+    aspect-ratio:auto !important;
+    margin:0 !important;
+    box-shadow:none !important;
+    border:0 !important;
+  }
+}
+
+
+/* Refined formal certificate wording */
+.certificate-lead,
+.certificate-copy,
+.certificate-date,
+.certificate-wish{
+  line-height:1.9 !important;
+}
+.certificate-wish{
+  max-width:680px !important;
+  margin:14px auto 0 !important;
+}
+
+
+/* MOBILE-FIRST REFINEMENT FOR AI EVALUATION */
+@media(max-width:700px){
+
+  #page-evaluation .workshop-evaluation{
+    margin:22px -4px 34px !important;
+    padding:16px !important;
+    border-radius:12px !important;
+    box-shadow:none !important;
+  }
+
+  .workshop-evaluation-head{
+    margin-bottom:18px !important;
+  }
+
+  .workshop-evaluation-head h2{
+    font-size:21px !important;
+    line-height:1.65 !important;
+    margin:5px 0 7px !important;
+  }
+
+  .workshop-evaluation-head p{
+    font-size:13px !important;
+    line-height:1.8 !important;
+  }
+
+  .workshop-form{
+    gap:13px !important;
+  }
+
+  .workshop-question{
+    padding:16px !important;
+    border-radius:10px !important;
+    background:#fffdfa !important;
+  }
+
+  .workshop-question legend{
+    width:100% !important;
+    padding:0 !important;
+    margin-bottom:10px !important;
+    font-size:13px !important;
+    line-height:1.8 !important;
+  }
+
+  .participant-name-question{
+    padding-top:18px !important;
+  }
+
+  .participant-name-label{
+    font-size:12px !important;
+    line-height:1.7 !important;
+  }
+
+  .participant-name-input{
+    min-height:48px !important;
+    padding:12px 13px !important;
+    font-size:15px !important;
+  }
+
+  /* Satisfaction choices become large two-column tap targets */
+  .choice-grid.five{
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+  }
+
+  .choice-grid.five label:last-child{
+    grid-column:1 / -1 !important;
+  }
+
+  .choice-grid span{
+    min-height:50px !important;
+    padding:10px 8px !important;
+    border-radius:8px !important;
+    font-size:13px !important;
+  }
+
+  /* Trainer rating */
+  .rating-row{
+    display:block !important;
+  }
+
+  .rating-scale{
+    grid-template-columns:repeat(5,1fr) !important;
+    gap:7px !important;
+  }
+
+  .rating-scale span{
+    min-height:44px !important;
+    border-radius:8px !important;
+    font-size:13px !important;
+  }
+
+  .rating-row::before{
+    content:"ضعيف";
+    display:block;
+    margin-bottom:7px;
+    color:#81786f;
+    font-size:11px;
+  }
+
+  .rating-row::after{
+    content:"ممتاز";
+    display:block;
+    margin-top:7px;
+    color:#81786f;
+    font-size:11px;
+    text-align:left;
+  }
+
+  /* Convert Likert table to stacked mobile cards */
+  .likert-scroll{
+    overflow:visible !important;
+  }
+
+  .workshop-likert{
+    min-width:0 !important;
+    width:100% !important;
+    display:block !important;
+    background:transparent !important;
+  }
+
+  .workshop-likert thead{
+    display:none !important;
+  }
+
+  .workshop-likert tbody{
+    display:grid !important;
+    gap:12px !important;
+  }
+
+  .workshop-likert tr{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+    padding:14px !important;
+    border:1px solid var(--line) !important;
+    border-radius:10px !important;
+    background:#fff !important;
+  }
+
+  .workshop-likert td{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:46px !important;
+    padding:9px 8px !important;
+    border:1px solid #ded6cd !important;
+    border-radius:8px !important;
+    font-size:12px !important;
+    text-align:center !important;
+    background:#faf7f2 !important;
+  }
+
+  .workshop-likert td:first-child{
+    grid-column:1 / -1 !important;
+    width:auto !important;
+    min-height:0 !important;
+    padding:0 0 10px !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    color:#393530 !important;
+    font-size:13px !important;
+    line-height:1.8 !important;
+    text-align:right !important;
+    justify-content:flex-start !important;
+    font-weight:500 !important;
+  }
+
+  .workshop-likert td:nth-child(2)::before{content:"أتفق وبشدة";margin-left:7px}
+  .workshop-likert td:nth-child(3)::before{content:"أتفق إلى حد ما";margin-left:7px}
+  .workshop-likert td:nth-child(4)::before{content:"محايد";margin-left:7px}
+  .workshop-likert td:nth-child(5)::before{content:"لا أتفق";margin-left:7px}
+
+  .workshop-likert input{
+    width:19px !important;
+    height:19px !important;
+    flex:0 0 auto !important;
+  }
+
+  .workshop-submit{
+    display:grid !important;
+    gap:9px !important;
+  }
+
+  .workshop-submit button{
+    width:100% !important;
+    min-height:48px !important;
+    border-radius:8px !important;
+    font-size:14px !important;
+  }
+
+  .workshop-submit span{
+    text-align:center !important;
+    font-size:11px !important;
+  }
+
+  .workshop-success{
+    border-radius:8px !important;
+    font-size:13px !important;
+    text-align:center !important;
+  }
+
+  .workshop-storage-note{
+    font-size:11px !important;
+    line-height:1.8 !important;
+  }
+
+  /* Certificate preview also fits phones better */
+  .certificate-area{
+    margin-top:24px !important;
+  }
+
+  .certificate-toolbar h3{
+    font-size:19px !important;
+  }
+
+  .certificate-shell{
+    min-height:620px !important;
+    padding:24px 18px 22px !important;
+    border-radius:10px !important;
+  }
+
+  .certificate-top{
+    gap:10px !important;
+  }
+
+  .certificate-logo-wrap{
+    width:82px !important;
+    height:48px !important;
+  }
+
+  .certificate-identity{
+    font-size:9px !important;
+  }
+
+  .certificate-main{
+    margin-top:18px !important;
+  }
+
+  .certificate-main h2{
+    font-size:24px !important;
+  }
+
+  .certificate-lead,
+  .certificate-copy,
+  .certificate-date,
+  .certificate-wish{
+    font-size:12px !important;
+    line-height:1.8 !important;
+  }
+
+  .certificate-name{
+    width:100% !important;
+    font-size:19px !important;
+    padding-inline:8px !important;
+  }
+
+  .certificate-program{
+    font-size:16px !important;
+    line-height:1.7 !important;
+  }
+
+  .certificate-signatures{
+    right:18px !important;
+    left:18px !important;
+    bottom:45px !important;
+    grid-template-columns:1fr 58px 1fr !important;
+  }
+
+  .certificate-seal{
+    width:54px !important;
+    height:54px !important;
+  }
+
+  .seal-inner{
+    font-size:8px !important;
+  }
+
+  .signature-box strong{
+    font-size:10px !important;
+  }
+}
+
+@media(max-width:390px){
+  .choice-grid.five{
+    grid-template-columns:1fr !important;
+  }
+
+  .choice-grid.five label:last-child{
+    grid-column:auto !important;
+  }
+
+  .workshop-likert tr{
+    grid-template-columns:1fr !important;
+  }
+
+  .workshop-likert td:first-child{
+    grid-column:1 !important;
+  }
+}
+
+
+/* SEPARATE AI EVALUATION VIEW */
+.evaluation-detail-view[hidden],
+#evaluationOverview[hidden]{
+  display:none !important;
+}
+
+.evaluation-detail-view{
+  margin-top:10px;
+}
+
+.evaluation-detail-top{
+  display:flex;
+  justify-content:flex-start;
+  margin-bottom:18px;
+}
+
+.evaluation-back-btn{
+  padding:9px 16px;
+  border:1px solid #c8beb2;
+  border-radius:7px;
+  background:#fffdfa;
+  color:#514b45;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.evaluation-back-btn:hover{
+  background:#f3eee7;
+}
+
+#aiEvaluationView .workshop-evaluation{
+  margin-top:0 !important;
+}
+
+@media(max-width:700px){
+  .evaluation-detail-top{
+    margin-bottom:12px;
+  }
+
+  .evaluation-back-btn{
+    width:100%;
+    min-height:44px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -4477,7 +5319,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
             <button type="button" class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
-<div class="school-image-section"><img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
+<div class="school-image-section"><img src="assets/school-hero.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
       </div>
 </div>
 
@@ -4781,7 +5623,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
         </p>
       </div>
 
-      <div class="evaluation-grid">
+      <div id="evaluationOverview"><div class="evaluation-grid">
         <article class="evaluation-card">
           <span class="evaluation-number">01</span>
           <h3>هندسة التعلم</h3>
@@ -4808,7 +5650,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           <span class="evaluation-number">02</span>
           <h3>توظيف برومتات الذكاء الاصطناعي</h3>
           <p>تقييم مدى الاستفادة من البرنامج في توظيف الذكاء الاصطناعي في الممارسات التعليمية.</p>
-          <button type="button" class="evaluation-btn" onclick="openEvaluation('توظيف برومتات الذكاء الاصطناعي')">فتح التقييم</button>
+          <button type="button" class="evaluation-btn" onclick="openAIEvaluationOnly()">فتح التقييم</button>
         </article>
 
         <article class="evaluation-card">
@@ -4855,7 +5697,237 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
           عند إرسال أسئلة التقييم أو رابط النموذج، سيتم إدراجه هنا مباشرة داخل الموقع.
         </p>
       </div>
-      <div class="evaluation-reports">
+      
+
+
+        </div>
+<div class="evaluation-detail-view" id="aiEvaluationView" hidden>
+          <div class="evaluation-detail-top">
+            <button type="button" class="evaluation-back-btn" onclick="closeAIEvaluationOnly()">← العودة إلى تقييم البرامج</button>
+          </div>
+          <div class="workshop-evaluation" id="ai-prompts-form">
+          <div class="workshop-evaluation-head">
+            <span class="eyebrow">تقييم الورشة</span>
+            <h2>تقييم ورشة برومتات الذكاء الاصطناعي في التعليم</h2>
+            <p>نأمل تعبئة التقييم التالي لقياس مدى الاستفادة من الورشة وتطوير البرامج التدريبية القادمة.</p>
+          </div>
+
+          <form class="workshop-form" id="aiWorkshopForm" onsubmit="submitAIWorkshopForm(event)">
+            <fieldset class="workshop-question participant-name-question">
+              <legend>الاسم الكامل للمعلمة</legend>
+              <label class="participant-name-label" for="aiParticipantName">يُكتب الاسم كما سيظهر في شهادة الحضور</label>
+              <input id="aiParticipantName" class="participant-name-input" type="text" name="fullName"
+                     autocomplete="name" minlength="6" required
+                     placeholder="اكتبي الاسم الكامل">
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>1. مدى رضاك عن تحقق أهداف البرنامج التدريبي</legend>
+              <div class="choice-grid five">
+                <label><input type="radio" name="q1" value="راضي جدًا" required><span>راضي جدًا</span></label>
+                <label><input type="radio" name="q1" value="راضي"><span>راضي</span></label>
+                <label><input type="radio" name="q1" value="محايد"><span>محايد</span></label>
+                <label><input type="radio" name="q1" value="غير راضي"><span>غير راضي</span></label>
+                <label><input type="radio" name="q1" value="غير راضي جدًا"><span>غير راضي جدًا</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>2. مدى رضاك عن المعرفة والمهارات المكتسبة من البرنامج التدريبي</legend>
+              <div class="choice-grid five">
+                <label><input type="radio" name="q2" value="راضي جدًا" required><span>راضي جدًا</span></label>
+                <label><input type="radio" name="q2" value="راضي"><span>راضي</span></label>
+                <label><input type="radio" name="q2" value="محايد"><span>محايد</span></label>
+                <label><input type="radio" name="q2" value="غير راضي"><span>غير راضي</span></label>
+                <label><input type="radio" name="q2" value="غير راضي جدًا"><span>غير راضي جدًا</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>3. مدى رضاك عن جودة تنظيم محتوى البرنامج التدريبي</legend>
+              <div class="choice-grid five">
+                <label><input type="radio" name="q3" value="راضي جدًا" required><span>راضي جدًا</span></label>
+                <label><input type="radio" name="q3" value="راضي"><span>راضي</span></label>
+                <label><input type="radio" name="q3" value="محايد"><span>محايد</span></label>
+                <label><input type="radio" name="q3" value="غير راضي"><span>غير راضي</span></label>
+                <label><input type="radio" name="q3" value="غير راضي جدًا"><span>غير راضي جدًا</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>4. مدى رضاك عن الوسائل والتقنيات المستخدمة لإكساب المتدربة المهارات اللازمة</legend>
+              <div class="choice-grid five">
+                <label><input type="radio" name="q4" value="راضي جدًا" required><span>راضي جدًا</span></label>
+                <label><input type="radio" name="q4" value="راضي"><span>راضي</span></label>
+                <label><input type="radio" name="q4" value="محايد"><span>محايد</span></label>
+                <label><input type="radio" name="q4" value="غير راضي"><span>غير راضي</span></label>
+                <label><input type="radio" name="q4" value="غير راضي جدًا"><span>غير راضي جدًا</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>5. مدى رضاك عن مدة البرنامج</legend>
+              <div class="choice-grid five">
+                <label><input type="radio" name="q5" value="راضي جدًا" required><span>راضي جدًا</span></label>
+                <label><input type="radio" name="q5" value="راضي"><span>راضي</span></label>
+                <label><input type="radio" name="q5" value="محايد"><span>محايد</span></label>
+                <label><input type="radio" name="q5" value="غير راضي"><span>غير راضي</span></label>
+                <label><input type="radio" name="q5" value="غير راضي جدًا"><span>غير راضي جدًا</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>6. تقييمك لأداء المدربة بشكل عام</legend>
+              <div class="rating-row">
+                <span class="rating-end">ضعيف</span>
+                <div class="rating-scale">
+                  <label><input type="radio" name="q6" value="1" required><span>1</span></label>
+                  <label><input type="radio" name="q6" value="2"><span>2</span></label>
+                  <label><input type="radio" name="q6" value="3"><span>3</span></label>
+                  <label><input type="radio" name="q6" value="4"><span>4</span></label>
+                  <label><input type="radio" name="q6" value="5"><span>5</span></label>
+                  <label><input type="radio" name="q6" value="6"><span>6</span></label>
+                  <label><input type="radio" name="q6" value="7"><span>7</span></label>
+                  <label><input type="radio" name="q6" value="8"><span>8</span></label>
+                  <label><input type="radio" name="q6" value="9"><span>9</span></label>
+                  <label><input type="radio" name="q6" value="10"><span>10</span></label>
+                </div>
+                <span class="rating-end">ممتاز</span>
+              </div>
+            </fieldset>
+
+            <fieldset class="workshop-question">
+              <legend>7. مدى اتفاقك مع الجمل التالية</legend>
+              <div class="likert-scroll">
+                <table class="workshop-likert">
+                  <thead>
+                    <tr>
+                      <th>العبارة</th>
+                      <th>أتفق وبشدة</th>
+                      <th>أتفق إلى حد ما</th>
+                      <th>محايد</th>
+                      <th>لا أتفق</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>لدى المدربة إلمام بمحتوى البرنامج التدريبي</td>
+                      <td><input type="radio" name="q7_1" value="أتفق وبشدة" required></td>
+                      <td><input type="radio" name="q7_1" value="أتفق إلى حد ما"></td>
+                      <td><input type="radio" name="q7_1" value="محايد"></td>
+                      <td><input type="radio" name="q7_1" value="لا أتفق"></td>
+                    </tr>
+                    <tr>
+                      <td>تجيب المدربة على تساؤلات واستفسارات المتدربات</td>
+                      <td><input type="radio" name="q7_2" value="أتفق وبشدة" required></td>
+                      <td><input type="radio" name="q7_2" value="أتفق إلى حد ما"></td>
+                      <td><input type="radio" name="q7_2" value="محايد"></td>
+                      <td><input type="radio" name="q7_2" value="لا أتفق"></td>
+                    </tr>
+                    <tr>
+                      <td>قامت المدربة بإيصال محتوى البرنامج بطريقة سهلة وواضحة</td>
+                      <td><input type="radio" name="q7_3" value="أتفق وبشدة" required></td>
+                      <td><input type="radio" name="q7_3" value="أتفق إلى حد ما"></td>
+                      <td><input type="radio" name="q7_3" value="محايد"></td>
+                      <td><input type="radio" name="q7_3" value="لا أتفق"></td>
+                    </tr>
+                    <tr>
+                      <td>ساعدني البرنامج التدريبي على تحسين أدائي الوظيفي</td>
+                      <td><input type="radio" name="q7_4" value="أتفق وبشدة" required></td>
+                      <td><input type="radio" name="q7_4" value="أتفق إلى حد ما"></td>
+                      <td><input type="radio" name="q7_4" value="محايد"></td>
+                      <td><input type="radio" name="q7_4" value="لا أتفق"></td>
+                    </tr>
+                    <tr>
+                      <td>ساعدني البرنامج التدريبي على معالجة القصور في المعارف والمهارات المتعلقة ببرومتات الذكاء الاصطناعي في التعليم</td>
+                      <td><input type="radio" name="q7_5" value="أتفق وبشدة" required></td>
+                      <td><input type="radio" name="q7_5" value="أتفق إلى حد ما"></td>
+                      <td><input type="radio" name="q7_5" value="محايد"></td>
+                      <td><input type="radio" name="q7_5" value="لا أتفق"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </fieldset>
+
+            <div class="workshop-submit">
+              <button type="submit">إرسال التقييم</button>
+              <span>جميع الأسئلة مطلوبة.</span>
+            </div>
+
+            <div class="workshop-success" id="aiWorkshopSuccess" hidden>
+              تم استكمال التقييم بنجاح. أصبحت شهادة الحضور جاهزة أدناه.
+            </div>
+          </form>
+
+          <div class="certificate-area" id="aiCertificateArea" hidden>
+            <div class="certificate-toolbar">
+              <div>
+                <span class="eyebrow">شهادة الحضور</span>
+                <h3>شهادتك جاهزة</h3>
+              </div>
+              <button type="button" class="certificate-print-btn" onclick="printAICertificate()">طباعة / حفظ PDF</button>
+            </div>
+
+            <div class="certificate-shell" id="aiCertificate">
+              <div class="certificate-corner certificate-corner-a"></div>
+              <div class="certificate-corner certificate-corner-b"></div>
+
+              <div class="certificate-top">
+                <div class="certificate-identity">
+                  <div>المملكة العربية السعودية</div>
+                  <div>وزارة التعليم</div>
+                  <div>الإدارة العامة للتعليم بمكة المكرمة</div>
+                  <strong>ابتدائية ساحل حلي</strong>
+                </div>
+                <div class="certificate-logo-wrap">
+                  <img src="assets/1.png" alt="وزارة التعليم">
+                </div>
+              </div>
+
+              <div class="certificate-main">
+                <div class="certificate-kicker">شهادة حضور وإتمام</div>
+                <h2>شهادة إتمام ورشة تدريبية</h2>
+                <div class="certificate-rule"></div>
+
+                <p class="certificate-lead">تتشرف إدارة ابتدائية ساحل حلي بمنح هذه الشهادة للمعلمة</p>
+                <div class="certificate-name" id="certificateParticipantName">اسم المعلمة</div>
+                <p class="certificate-copy">تقديرًا لحضورها وإتمامها الورشة التدريبية بعنوان</p>
+                <div class="certificate-program">برومتات الذكاء الاصطناعي في التعليم</div>
+                <p class="certificate-date">وذلك بتاريخ ٢٤ / ٤ / ١٤٤٨هـ، ضمن برامج التطوير المهني بالمدرسة.</p>
+
+                <p class="certificate-wish">مع خالص التقدير لحرصها على التطوير المهني، وتمنياتنا لها بمزيد من التميز والعطاء.</p>
+              </div>
+
+              <div class="certificate-signatures">
+                <div class="signature-box">
+                  <span>منسقة التدريب</span>
+                  <strong>أفنان حميد الصبحي</strong>
+                  <div class="signature-line">التوقيع</div>
+                </div>
+                <div class="certificate-seal">
+                  <div class="seal-inner">معًا<br>نصنع الفرق</div>
+                </div>
+                <div class="signature-box">
+                  <span>مديرة المدرسة</span>
+                  <strong>علية الكناني</strong>
+                  <div class="signature-line">الختم / التوقيع</div>
+                </div>
+              </div>
+
+              <div class="certificate-footer">
+                شهادة إلكترونية صادرة عن ابتدائية ساحل حلي ضمن برامج التطوير المهني
+              </div>
+            </div>
+          </div>
+
+          <p class="workshop-storage-note">
+            بعد الإرسال تُنشأ الشهادة مباشرة باسم المعلمة. ربط الردود بحفظ مركزي يتطلب خدمة خارجية مثل Microsoft Forms أو Google Sheets.
+          </p>
+        </div>
+        </div>
+
+<div class="evaluation-reports">
         <div class="section-top evaluation-report-heading">
           <div>
             <span class="eyebrow">التقارير</span>
@@ -4975,7 +6047,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow">برنامج تدريبي</span>
-      <h1>توظيف برومتات الذكاء الاصطناعي</h1>
+      <h1>برومتات الذكاء الاصطناعي في التعليم</h1>
       <p>برنامج تدريبي لتوظيف أوامر الذكاء الاصطناعي بما يدعم الممارسات التعليمية.</p>
     </div>
   </section>
@@ -4984,12 +6056,15 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
     <div class="container">
       <div class="content-box program-detail-box">
         <span class="eyebrow">العرض التدريبي</span>
-        <h2>توظيف برومتات الذكاء الاصطناعي</h2>
+        <h2>برومتات الذكاء الاصطناعي في التعليم</h2>
         <p>سيتم إدراج سلايدات هذا البرنامج هنا عند إرسالها.</p>
         <div class="program-slide-placeholder">
           <strong>مكان العرض الخاص بهذا البرنامج</strong>
           <span>أرسلي PowerPoint أو Keynote أو PDF وسأضيفه هنا مباشرة.</span>
         </div>
+
+        
+
         <span class="back" onclick="showPage('programs')">← العودة إلى البرامج</span>
       </div>
     </div>
@@ -5048,6 +6123,84 @@ function openEvaluation(programName){
   const panel = document.getElementById('evaluationPanel');
   if(title) title.textContent = 'تقييم برنامج: ' + programName;
   if(panel) panel.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+
+
+
+function submitAIWorkshopForm(event){
+  event.preventDefault();
+
+  const form=event.target;
+  if(!form.checkValidity()){
+    form.reportValidity();
+    return false;
+  }
+
+  const nameInput=document.getElementById('aiParticipantName');
+  const fullName=(nameInput ? nameInput.value : '').trim();
+  if(fullName.length < 6){
+    if(nameInput){
+      nameInput.setCustomValidity('فضلاً اكتبي الاسم الكامل كما سيظهر في الشهادة');
+      nameInput.reportValidity();
+      nameInput.addEventListener('input',function clearNameError(){
+        nameInput.setCustomValidity('');
+        nameInput.removeEventListener('input',clearNameError);
+      });
+    }
+    return false;
+  }
+
+  const data=Object.fromEntries(new FormData(form).entries());
+  data.submittedAt=new Date().toISOString();
+
+  try{
+    const existing=JSON.parse(localStorage.getItem('aiPromptsEvaluations') || '[]');
+    existing.push(data);
+    localStorage.setItem('aiPromptsEvaluations',JSON.stringify(existing));
+  }catch(e){}
+
+  const certName=document.getElementById('certificateParticipantName');
+  if(certName) certName.textContent=fullName;
+
+  const success=document.getElementById('aiWorkshopSuccess');
+  const certificate=document.getElementById('aiCertificateArea');
+  if(success) success.hidden=false;
+  if(certificate) certificate.hidden=false;
+
+  if(certificate){
+    setTimeout(()=>certificate.scrollIntoView({behavior:'smooth',block:'start'}),100);
+  }
+  return false;
+}
+
+function printAICertificate(){
+  window.print();
+}
+
+
+
+
+
+function openAIEvaluationOnly(){
+  showPage('evaluation');
+  const overview=document.getElementById('evaluationOverview');
+  const view=document.getElementById('aiEvaluationView');
+  if(overview) overview.hidden=true;
+  if(view){
+    view.hidden=false;
+    setTimeout(()=>view.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }
+}
+
+function closeAIEvaluationOnly(){
+  const overview=document.getElementById('evaluationOverview');
+  const view=document.getElementById('aiEvaluationView');
+  if(view) view.hidden=true;
+  if(overview){
+    overview.hidden=false;
+    setTimeout(()=>overview.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }
 }
 
 </script>
