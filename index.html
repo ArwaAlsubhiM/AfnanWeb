@@ -6505,7 +6505,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
               </div>
               <button type="button" class="certificate-print-btn" onclick="printAICertificate()">فتح الشهادة للطباعة / حفظ PDF</button>
             </div>
-            <p class="certificate-phone-note">على الجوال ستفتح الشهادة وحدها في صفحة مستقلة قبل الطباعة لضمان ظهورها في صفحة واحدة.</p>
+            <p class="certificate-phone-note">على الجوال ستفتح الشهادة بنفس تصميم نسخة الكمبيوتر وبنفس النسب، جاهزة للطباعة في صفحة A4 أفقية واحدة.</p>
 
             <div class="certificate-shell" id="aiCertificate">
               <div class="certificate-corner certificate-corner-a"></div>
@@ -6813,156 +6813,154 @@ function submitAIWorkshopForm(event){
 }
 
 function printAICertificate(){
-  const cert = document.getElementById('aiCertificate');
-  if(!cert) return;
+  const nameEl = document.getElementById('certificateParticipantName');
+  const participantName = nameEl ? nameEl.textContent.trim() : 'اسم المعلمة';
 
-  const clone = cert.cloneNode(true);
-
-  // Make image paths absolute so they work in the print-only window.
-  clone.querySelectorAll('img').forEach(function(img){
+  const logoEl = document.querySelector('#aiCertificate .certificate-logo-wrap img');
+  let logoSrc = '';
+  if(logoEl){
     try{
-      img.src = new URL(img.getAttribute('src'), window.location.href).href;
-    }catch(e){}
-  });
+      logoSrc = new URL(logoEl.getAttribute('src'), window.location.href).href;
+    }catch(e){
+      logoSrc = logoEl.src || '';
+    }
+  }
 
-  const printWindow = window.open('', '_blank');
-  if(!printWindow){
+  const w = window.open('', '_blank');
+  if(!w){
     alert('فضلاً اسمحي بفتح النافذة المنبثقة لطباعة الشهادة.');
     return;
   }
 
-  const certificateHTML = clone.outerHTML;
-
-  printWindow.document.open();
-  printWindow.document.write(`<!doctype html>
+  w.document.open();
+  w.document.write(`<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>شهادة حضور - برومتات الذكاء الاصطناعي في التعليم</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>شهادة إتمام ورشة تدريبية</title>
 <style>
   @page{
     size:A4 landscape;
     margin:0;
   }
 
+  :root{
+    color-scheme:light only;
+  }
+
   *{
     box-sizing:border-box;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    forced-color-adjust:none !important;
   }
 
   html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-    height:100%;
-    background:#ffffff;
-    color:#302d29;
-    font-family:Tahoma, Arial, sans-serif;
-    direction:rtl;
-  }
-
-  body{
-    display:flex;
-    align-items:flex-start;
-    justify-content:center;
-  }
-
-  #aiCertificate{
-    position:relative !important;
+    margin:0 !important;
+    padding:0 !important;
     width:297mm !important;
     height:210mm !important;
     min-width:297mm !important;
     min-height:210mm !important;
     max-width:297mm !important;
     max-height:210mm !important;
-    margin:0 !important;
-    padding:11mm 15mm 9mm !important;
     overflow:hidden !important;
-    display:grid !important;
-    grid-template-rows:auto 1fr auto auto !important;
-    background:
-      radial-gradient(circle at 8% 12%,rgba(142,150,131,.10),transparent 24%),
-      radial-gradient(circle at 90% 88%,rgba(168,156,142,.11),transparent 26%),
-      linear-gradient(135deg,#fffdfa,#f8f3ec) !important;
+    background:#f8f3ec !important;
     color:#302d29 !important;
-    border:0 !important;
-    box-shadow:none !important;
-    page-break-inside:avoid !important;
-    break-inside:avoid-page !important;
+    font-family:Arial,Tahoma,"Geeza Pro",sans-serif !important;
+    direction:rtl !important;
   }
 
-  #aiCertificate:before{
+  body{
+    position:relative !important;
+  }
+
+  .certificate{
+    position:absolute !important;
+    inset:0 !important;
+    width:297mm !important;
+    height:210mm !important;
+    margin:0 !important;
+    padding:13mm 16mm 10mm !important;
+    overflow:hidden !important;
+    background:#fbf7f1 !important;
+    color:#302d29 !important;
+    display:grid !important;
+    grid-template-rows:auto 1fr auto auto !important;
+  }
+
+  .certificate:before{
     content:"";
     position:absolute;
     inset:4mm;
-    border:.35mm solid rgba(111,120,105,.48);
+    border:.5mm solid #8b9482;
     pointer-events:none;
   }
 
-  #aiCertificate:after{
+  .certificate:after{
     content:"";
     position:absolute;
-    inset:6mm;
-    border:.25mm solid rgba(168,156,142,.26);
+    inset:6.5mm;
+    border:.25mm solid #d8cfc4;
     pointer-events:none;
   }
 
-  .certificate-corner{
+  .corner{
     position:absolute;
-    width:38mm;
-    height:38mm;
-    border:7mm solid rgba(111,120,105,.07);
+    width:40mm;
+    height:40mm;
+    border:7mm solid #eef0eb;
     transform:rotate(45deg);
   }
-  .certificate-corner-a{right:-24mm;top:-24mm}
-  .certificate-corner-b{left:-24mm;bottom:-24mm}
 
-  .certificate-top{
+  .corner.a{
+    right:-25mm;
+    top:-25mm;
+  }
+
+  .corner.b{
+    left:-25mm;
+    bottom:-25mm;
+  }
+
+  .top{
     position:relative;
     z-index:2;
     display:flex;
     align-items:flex-start;
     justify-content:space-between;
-    gap:8mm;
+    gap:10mm;
   }
 
-  .certificate-identity{
-    font-size:8.5pt;
-    line-height:1.5;
-    color:#5f5952;
+  .identity{
+    font-size:9pt;
+    line-height:1.55;
+    color:#5c5751;
   }
 
-  .certificate-identity strong{
+  .identity strong{
     display:block;
     margin-top:1mm;
-    color:#302d29;
-    font-size:10pt;
+    color:#2f2c29;
+    font-size:11pt;
+    font-weight:700;
   }
 
-  .certificate-logo-wrap{
-    width:31mm;
-    height:16mm;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .certificate-logo-wrap img{
-    display:block;
-    max-width:100%;
-    max-height:100%;
+  .logo{
+    width:33mm;
+    height:18mm;
     object-fit:contain;
+    display:block;
   }
 
-  .certificate-main{
+  .main{
     position:relative;
     z-index:2;
-    width:100%;
     max-width:205mm;
+    width:100%;
     margin:0 auto;
-    padding:0;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -6970,111 +6968,110 @@ function printAICertificate(){
     text-align:center;
   }
 
-  .certificate-kicker{
+  .tag{
     display:inline-block;
-    padding:2mm 7mm;
-    border-radius:999px;
-    background:#edf0e9;
-    color:#66715f;
-    font-size:9pt;
+    min-width:125mm;
+    padding:2.2mm 8mm;
+    border-radius:30mm;
+    background:#e9ede5 !important;
+    color:#697363;
+    font-size:10.5pt;
     font-weight:700;
   }
 
-  .certificate-main h2{
-    margin:3mm 0 1.5mm;
-    font-size:26pt;
-    line-height:1.2;
-    font-weight:700;
+  h1{
+    margin:4mm 0 2mm;
+    font-size:28pt;
+    line-height:1.15;
     color:#38342f;
+    font-weight:700;
   }
 
-  .certificate-rule{
-    width:22mm;
+  .rule{
+    width:24mm;
     height:.45mm;
     margin:0 auto 4mm;
-    background:#75806e;
+    background:#7d8776 !important;
   }
 
-  .certificate-lead,
-  .certificate-copy,
-  .certificate-date,
-  .certificate-wish{
-    margin:1.2mm 0;
-    font-size:11.5pt;
+  p{
+    margin:1.5mm 0;
+    font-size:12pt;
     line-height:1.55;
-    color:#57514a;
+    color:#57514b;
   }
 
-  .certificate-name{
+  .name{
     min-width:110mm;
-    max-width:185mm;
+    max-width:180mm;
     margin:2mm auto 2.5mm;
-    padding:1mm 8mm 2mm;
-    border-bottom:.35mm solid #9d9185;
-    color:#596351;
-    font-size:22pt;
-    line-height:1.3;
+    padding:1mm 8mm 2.5mm;
+    border-bottom:.4mm solid #958a7e;
+    color:#5f6b58;
+    font-size:23pt;
+    line-height:1.25;
     font-weight:700;
     text-align:center;
   }
 
-  .certificate-program{
+  .program{
     margin:2mm 0 2.5mm;
     color:#302d29;
-    font-size:17pt;
-    line-height:1.35;
+    font-size:18pt;
+    line-height:1.3;
     font-weight:700;
   }
 
-  .certificate-wish{
+  .wish{
     max-width:185mm;
     margin-top:2.5mm;
-    font-size:10.5pt;
+    font-size:10.8pt;
   }
 
-  .certificate-signatures{
+  .signatures{
     position:relative;
     z-index:2;
     display:grid;
     grid-template-columns:1fr 22mm 1fr;
-    align-items:end;
     gap:10mm;
-    margin-top:2mm;
+    align-items:end;
+    padding:0 18mm;
   }
 
-  .signature-box{
+  .sig{
     text-align:center;
   }
 
-  .signature-box span{
+  .sig span{
     display:block;
-    color:#766f67;
-    font-size:8.5pt;
+    color:#746d65;
+    font-size:9pt;
   }
 
-  .signature-box strong{
+  .sig strong{
     display:block;
     margin:1mm 0 2.5mm;
     color:#302d29;
     font-size:11pt;
+    font-weight:700;
   }
 
-  .signature-line{
+  .sig-line{
     width:48mm;
     max-width:100%;
     margin:0 auto;
     padding-top:1.5mm;
-    border-top:.3mm solid #c3b8ac;
-    color:#938a80;
+    border-top:.3mm solid #bdb3a8;
+    color:#8f867d;
     font-size:7pt;
   }
 
-  .certificate-seal{
+  .seal{
     width:20mm;
     height:20mm;
     margin:0 auto;
     padding:1.5mm;
-    border:.35mm solid rgba(111,120,105,.48);
+    border:.35mm solid #919b89;
     border-radius:50%;
     display:grid;
     place-items:center;
@@ -7083,22 +7080,22 @@ function printAICertificate(){
   .seal-inner{
     width:100%;
     height:100%;
-    border:.3mm dashed rgba(111,120,105,.58);
+    border:.3mm dashed #a4ad9c;
     border-radius:50%;
     display:grid;
     place-items:center;
     text-align:center;
-    color:#66715f;
+    color:#6b7564;
     font-size:6.8pt;
     line-height:1.3;
   }
 
-  .certificate-footer{
+  .footer{
     position:relative;
     z-index:2;
-    margin-top:2mm;
+    margin-top:2.5mm;
     text-align:center;
-    color:#9b9288;
+    color:#9a9188;
     font-size:7pt;
   }
 
@@ -7106,16 +7103,13 @@ function printAICertificate(){
     html,body{
       width:297mm !important;
       height:210mm !important;
+      background:#f8f3ec !important;
       overflow:hidden !important;
     }
 
-    body{
-      display:block !important;
-    }
-
-    #aiCertificate{
-      position:absolute !important;
-      inset:0 !important;
+    .certificate{
+      width:297mm !important;
+      height:210mm !important;
       page-break-before:avoid !important;
       page-break-after:avoid !important;
       page-break-inside:avoid !important;
@@ -7127,39 +7121,77 @@ function printAICertificate(){
 </style>
 </head>
 <body>
-${certificateHTML}
+  <section class="certificate">
+    <div class="corner a"></div>
+    <div class="corner b"></div>
+
+    <div class="top">
+      <div class="identity">
+        <div>المملكة العربية السعودية</div>
+        <div>وزارة التعليم</div>
+        <div>الإدارة العامة للتعليم بمكة المكرمة</div>
+        <strong>ابتدائية ساحل حلي</strong>
+      </div>
+      ${logoSrc ? `<img class="logo" src="${logoSrc}" alt="وزارة التعليم">` : ''}
+    </div>
+
+    <div class="main">
+      <div class="tag">شهادة حضور وإتمام</div>
+      <h1>شهادة إتمام ورشة تدريبية</h1>
+      <div class="rule"></div>
+
+      <p>تتشرف إدارة ابتدائية ساحل حلي بمنح هذه الشهادة للمعلمة</p>
+      <div class="name">${participantName}</div>
+      <p>تقديرًا لحضورها وإتمامها الورشة التدريبية بعنوان</p>
+      <div class="program">برومتات الذكاء الاصطناعي في التعليم</div>
+      <p>وذلك بتاريخ ٢٤ / ٤ / ١٤٤٨هـ، ضمن برامج التطوير المهني بالمدرسة.</p>
+      <p class="wish">مع خالص التقدير لحرصها على التطوير المهني، وتمنياتنا لها بمزيد من التميز والعطاء.</p>
+    </div>
+
+    <div class="signatures">
+      <div class="sig">
+        <span>منسقة التدريب</span>
+        <strong>أفنان حميد الصبحي</strong>
+        <div class="sig-line">التوقيع</div>
+      </div>
+
+      <div class="seal">
+        <div class="seal-inner">معًا<br>نصنع الفرق</div>
+      </div>
+
+      <div class="sig">
+        <span>مديرة المدرسة</span>
+        <strong>علية الكناني</strong>
+        <div class="sig-line">الختم / التوقيع</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      شهادة إلكترونية صادرة عن ابتدائية ساحل حلي ضمن برامج التطوير المهني
+    </div>
+  </section>
+
 <script>
-  (function(){
-    function doPrint(){
-      setTimeout(function(){
-        window.focus();
-        window.print();
-      }, 500);
-    }
+(function(){
+  function doPrint(){
+    setTimeout(function(){
+      window.focus();
+      window.print();
+    },700);
+  }
 
-    var imgs = Array.from(document.images || []);
-    if(!imgs.length){
-      doPrint();
-      return;
-    }
-
-    var pending = imgs.length;
-    imgs.forEach(function(img){
-      if(img.complete){
-        pending--;
-        if(pending===0) doPrint();
-      }else{
-        img.onload = img.onerror = function(){
-          pending--;
-          if(pending===0) doPrint();
-        };
-      }
-    });
-  })();
+  var img=document.querySelector('.logo');
+  if(!img || img.complete){
+    doPrint();
+  }else{
+    img.onload=doPrint;
+    img.onerror=doPrint;
+  }
+})();
 <\/script>
 </body>
 </html>`);
-  printWindow.document.close();
+  w.document.close();
 }
 
 
