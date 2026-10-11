@@ -5257,6 +5257,203 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
   }
 }
 
+
+/* CERTIFICATE — CLEAN SINGLE PAGE */
+.certificate-shell{
+  width:min(100%,1050px) !important;
+  aspect-ratio:297 / 210 !important;
+  min-height:0 !important;
+  padding:32px 42px 24px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:space-between !important;
+}
+
+.certificate-main{
+  margin:0 auto !important;
+  flex:1 1 auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+}
+
+.certificate-main h2{
+  font-size:30px !important;
+  margin:8px 0 5px !important;
+}
+
+.certificate-name{
+  font-size:24px !important;
+  margin:5px auto 7px !important;
+}
+
+.certificate-program{
+  font-size:19px !important;
+  margin:5px 0 7px !important;
+}
+
+.certificate-lead,
+.certificate-copy,
+.certificate-date,
+.certificate-wish{
+  margin:4px 0 !important;
+  line-height:1.65 !important;
+}
+
+.certificate-wish{
+  margin-top:8px !important;
+}
+
+.certificate-signatures{
+  position:static !important;
+  right:auto !important;
+  left:auto !important;
+  bottom:auto !important;
+  margin-top:14px !important;
+  display:grid !important;
+  grid-template-columns:1fr 80px 1fr !important;
+  align-items:end !important;
+  gap:18px !important;
+}
+
+.certificate-footer{
+  position:static !important;
+  right:auto !important;
+  left:auto !important;
+  bottom:auto !important;
+  margin-top:10px !important;
+}
+
+@media(max-width:780px){
+  .certificate-shell{
+    aspect-ratio:auto !important;
+    min-height:0 !important;
+    padding:24px 18px 20px !important;
+  }
+
+  .certificate-signatures{
+    grid-template-columns:1fr 58px 1fr !important;
+    gap:8px !important;
+  }
+}
+
+/* PRINT EXACTLY ONE A4 LANDSCAPE PAGE */
+@page{
+  size:A4 landscape;
+  margin:0;
+}
+
+@media print{
+  html,body{
+    width:297mm !important;
+    height:210mm !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
+    background:#fff !important;
+  }
+
+  body *{
+    visibility:hidden !important;
+  }
+
+  #aiCertificate,
+  #aiCertificate *{
+    visibility:visible !important;
+  }
+
+  #aiCertificate{
+    position:fixed !important;
+    inset:0 !important;
+    width:297mm !important;
+    height:210mm !important;
+    min-height:210mm !important;
+    max-height:210mm !important;
+    aspect-ratio:auto !important;
+    margin:0 !important;
+    padding:14mm 16mm 10mm !important;
+    border:0 !important;
+    box-shadow:none !important;
+    overflow:hidden !important;
+    page-break-after:avoid !important;
+    break-after:avoid-page !important;
+    box-sizing:border-box !important;
+  }
+
+  #aiCertificate .certificate-top{
+    flex:0 0 auto !important;
+  }
+
+  #aiCertificate .certificate-main{
+    flex:1 1 auto !important;
+    margin:0 auto !important;
+    justify-content:center !important;
+  }
+
+  #aiCertificate .certificate-signatures{
+    position:static !important;
+    flex:0 0 auto !important;
+    margin-top:4mm !important;
+  }
+
+  #aiCertificate .certificate-footer{
+    position:static !important;
+    flex:0 0 auto !important;
+    margin-top:3mm !important;
+  }
+
+  #aiCertificate .certificate-corner{
+    opacity:.65 !important;
+  }
+
+  #aiCertificate .certificate-main h2{
+    font-size:24pt !important;
+  }
+
+  #aiCertificate .certificate-name{
+    font-size:19pt !important;
+    min-width:110mm !important;
+  }
+
+  #aiCertificate .certificate-program{
+    font-size:16pt !important;
+  }
+
+  #aiCertificate .certificate-lead,
+  #aiCertificate .certificate-copy,
+  #aiCertificate .certificate-date,
+  #aiCertificate .certificate-wish{
+    font-size:11pt !important;
+    line-height:1.5 !important;
+  }
+
+  #aiCertificate .certificate-identity{
+    font-size:8.5pt !important;
+  }
+
+  #aiCertificate .certificate-logo-wrap{
+    width:32mm !important;
+    height:16mm !important;
+  }
+
+  #aiCertificate .certificate-seal{
+    width:18mm !important;
+    height:18mm !important;
+  }
+
+  #aiCertificate .signature-box strong{
+    font-size:10pt !important;
+  }
+
+  #aiCertificate .signature-line{
+    width:42mm !important;
+  }
+
+  #aiCertificate .certificate-footer{
+    font-size:7.5pt !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -5319,7 +5516,7 @@ footer{background:#2f2c28;color:#fff;padding:42px 0}
             <button type="button" class="hero-btn" onclick="showPage('plan')">خطة التدريب</button>
           </div>
         </div>
-<div class="school-image-section"><img src="assets/school-hero.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
+<div class="school-image-section"><img src="assets/school.png" alt="واجهة روضة وابتدائية ساحل حلي والطفولة المبكرة">
       </div>
 </div>
 
